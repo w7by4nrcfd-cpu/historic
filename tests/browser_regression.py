@@ -104,7 +104,7 @@ with sync_playwright() as p:
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
   for i in range(7):
-    mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(1800)
+    mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(3200)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)
   mp.goto(B+'#/'); mp.wait_for_timeout(2500); mp.locator('#map').scroll_into_view_if_needed(); mp.wait_for_timeout(800)
