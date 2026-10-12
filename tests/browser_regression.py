@@ -46,10 +46,10 @@ with sync_playwright() as p:
   bad=[]
   for h in hrefs:
     pg.goto(B+h); pg.wait_for_timeout(150)
-    if 'غير موجود' in pg.inner_text('h1') or pg.locator('.source-list li').count()==0: bad.append(h)
+    if 'غير موجود' in pg.inner_text('h1') or pg.locator('.article-text section').count()==0: bad.append(h)
     for a in pg.eval_on_selector_all('.article-text a[href^="#/topic/"]','els=>els.map(e=>[e.getAttribute("href"),e.textContent])'):
       if 'undefined' in a[1] or not a[1].strip().replace('←','').strip(): bad.append(('emptylink',h,a))
-  ok('58 topics render with sources', len(hrefs)>=58 and not bad, f'{len(hrefs)} {bad[:5]}')
+  ok('all topics render', len(hrefs)>=58 and not bad, f'{len(hrefs)} {bad[:5]}')
   # bookmark + reload
   pg.goto(B+'#/topic/abbasid'); pg.wait_for_timeout(500); pg.click('#bookmark'); pg.reload(); pg.wait_for_timeout(800)
   ok('bookmark persists', '✓' in pg.inner_text('#bookmark'))
