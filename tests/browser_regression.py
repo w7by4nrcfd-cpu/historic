@@ -110,3 +110,18 @@ with sync_playwright() as p:
   mp.goto(B+'#/'); mp.wait_for_timeout(2500); mp.locator('#map').scroll_into_view_if_needed(); mp.wait_for_timeout(800)
   mp.locator('#map').screenshot(path='/tmp/after-mob-homemap.png')
   b.close()
+# games
+with sync_playwright() as p:
+  b=p.chromium.launch(); pg=b.new_page(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
+  pg.goto(B+'#/play'); pg.wait_for_timeout(800); print(('PASS' if pg.locator('.game-card').count()==2 else 'FAIL'),'play hub')
+  pg.goto(B+'#/play/order'); pg.wait_for_timeout(800)
+  for k in range(4): pg.locator('[data-pick]').first.click(); pg.wait_for_timeout(100)
+  print(('PASS' if pg.locator('.game-result').count()==1 and pg.locator('.slot.good,.slot.bad').count()==4 else 'FAIL'),'order game completes')
+  pg.click('[data-again]'); pg.wait_for_timeout(200); print(('PASS' if pg.locator('[data-pick]').count()==4 else 'FAIL'),'order new round')
+  pg.goto(B+'#/play/owner'); pg.wait_for_timeout(800)
+  for k in range(10):
+    pg.locator('[data-own]').first.click(); pg.wait_for_timeout(80); pg.click('[data-next]'); pg.wait_for_timeout(80)
+  t=pg.inner_text('main'); print(('PASS' if 'من 10' in t and 'نتيجتك' in t else 'FAIL'),'owner game completes')
+  g=pg.evaluate("localStorage.getItem('atlas-games')"); s=pg.evaluate("localStorage.getItem('atlas-v1')"); print(('PASS' if g else 'FAIL'),'scores saved separately',g)
+  print(('PASS' if not errs else 'FAIL'),'game no errors',errs[:2])
+  b.close()
