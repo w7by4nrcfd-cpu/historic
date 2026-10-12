@@ -56,7 +56,7 @@ with sync_playwright() as p:
   pg.goto(B+'#/saved'); pg.wait_for_timeout(500); ok('saved page lists', pg.locator('.result-card').count()==1)
   # journeys
   from re import escape
-  JA={'caliphates':[1,2,0],'rome':[1,1,2],'arabia':[1,0,1]}
+  JA={'caliphates':[1,2,0],'rome':[1,1,2],'arabia':[1,0,1],'constantinople':[2,0,1]}
   for jid,ans in JA.items():
     pg.goto(B+f'#/journey/{jid}'); pg.wait_for_timeout(500)
     for step,a in enumerate(ans):
