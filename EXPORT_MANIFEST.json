@@ -1,0 +1,167 @@
+{
+  "project": "ATLAS",
+  "release": "V1",
+  "export_date": "2026-10-12",
+  "published_url": "https://atlas-history-v1.idbri.chatgpt.site",
+  "source_commit": "6b79ff45cbede6be897479ad7c0a53279ba1a671",
+  "source_files_modified": false,
+  "v1_1_status": "Blocked at sign-in; visual and real WebGL QA not completed",
+  "excluded": [
+    {
+      "path": "node_modules",
+      "reason": "رابط اعتماديات محلي إلى مسار خاص ببيئة التطوير؛ يُستعاد npm install بدل نقله."
+    }
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 41,
+      "sha256": "1517006ee095be07910be87eb1e317ac2127a135231306a2b3271c6ced2ea196",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 105,
+      "sha256": "cb5c6d71407d4ac6c939fe4f584d94e8d171d1d0f847fbecb05402bf7bc2ba1c",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "HANDOFF_CLAUDE.md",
+      "bytes": 8240,
+      "sha256": "03026ecc8ffac6c51b97a28afbaef68226dbc6f9bd90e35f53eb516c0c6d8a34",
+      "origin": "handoff-document"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2769,
+      "sha256": "40f39ad864b693782c043bef29d689592cd11cb4ec1152c96b033958a5069459",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/COMPETITOR_RESEARCH.md",
+      "bytes": 7135,
+      "sha256": "23bb33f339169bb3f3722fd34913f5ce2dd344a3ad43262b64fb982d23aa3792",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/QA.md",
+      "bytes": 3134,
+      "sha256": "8aa9e2e88a6698f2836094fde849e45e27297b0241d190f642b097d365640607",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/README.md",
+      "bytes": 2769,
+      "sha256": "40f39ad864b693782c043bef29d689592cd11cb4ec1152c96b033958a5069459",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/app.js",
+      "bytes": 45969,
+      "sha256": "c1c95e13703e7c4ef99f961d638ac738e8d7711251ecf21cde37a9df9d989a73",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/FONT-LICENSE.txt",
+      "bytes": 4456,
+      "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/MAPLIBRE-LICENSE.txt",
+      "bytes": 5984,
+      "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/arabic.ttf",
+      "bytes": 235924,
+      "sha256": "6f611412270a132bbac838da9259d4c68569b4175f3b3b8fa3fa36a30b56dab9",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/hero.webp",
+      "bytes": 287980,
+      "sha256": "8134ebb76eb2648b4fb6b6c96569b64225cd00d7c86d8f53f8cb3768e1a3cb5d",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/land.geojson",
+      "bytes": 138160,
+      "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/maplibre-gl.css",
+      "bytes": 69422,
+      "sha256": "792ac997dcf6ae6f643eb4e2dee4630c85e7056526bd8fb85ffe83c67d6c41b4",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/assets/maplibre-gl.js",
+      "bytes": 939308,
+      "sha256": "b5a34e6930ff937dbbb9eec8892cffb80ba473cce88ae5ca8c4654432f5f0ebc",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/content.json",
+      "bytes": 131360,
+      "sha256": "e29fa154a4477d59b3d3d0dd8403710468f9d46ba8d8ca048093634da9e7772b",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/core.mjs",
+      "bytes": 2812,
+      "sha256": "acb392a522d6115233e03300962a32064ca9a061ed24ef4669e1c1fd266d53ff",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 2539,
+      "sha256": "73378ff7c95cca2c4806b0e3dbe4201c9997030c0d1f6a13253b1809701f0ac3",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/journeys.mjs",
+      "bytes": 9262,
+      "sha256": "d4d43a8ab1e68d6e98c8de81e4a53cc0554bc86baecad0d896b643b19c566afe",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/style.css",
+      "bytes": 19654,
+      "sha256": "b867aa16bb096963dc8910d3d08ed67a14fb7585480ac3aeab765aa36016c0ea",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "dist/visuals.mjs",
+      "bytes": 4346,
+      "sha256": "91b59696227587bce3604b7027a5f416e2a2c9c9336a8be113397a62565e42be",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "package.json",
+      "bytes": 161,
+      "sha256": "c8c9758adb8887cecd3a196e8b60ffe14a50459e9336be466414995e68d0d59b",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "reports/COMPETITOR_RESEARCH.md",
+      "bytes": 7135,
+      "sha256": "23bb33f339169bb3f3722fd34913f5ce2dd344a3ad43262b64fb982d23aa3792",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "reports/QA.md",
+      "bytes": 3134,
+      "sha256": "8aa9e2e88a6698f2836094fde849e45e27297b0241d190f642b097d365640607",
+      "origin": "published-source-commit"
+    },
+    {
+      "path": "tests/functional.mjs",
+      "bytes": 5253,
+      "sha256": "309cbd22bfa7f5bb1cfd532ec5a5ad37f9aec80aaa733cf237880f1323972bb4",
+      "origin": "published-source-commit"
+    }
+  ]
+}
