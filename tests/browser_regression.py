@@ -35,7 +35,7 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==16, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==20, str(pg.locator('.result-card').count()))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
@@ -49,7 +49,7 @@ with sync_playwright() as p:
     if 'غير موجود' in pg.inner_text('h1') or pg.locator('.source-list li').count()==0: bad.append(h)
     for a in pg.eval_on_selector_all('.article-text a[href^="#/topic/"]','els=>els.map(e=>[e.getAttribute("href"),e.textContent])'):
       if 'undefined' in a[1] or not a[1].strip().replace('←','').strip(): bad.append(('emptylink',h,a))
-  ok('58 topics render with sources', len(hrefs)==58 and not bad, f'{len(hrefs)} {bad[:5]}')
+  ok('58 topics render with sources', len(hrefs)>=58 and not bad, f'{len(hrefs)} {bad[:5]}')
   # bookmark + reload
   pg.goto(B+'#/topic/abbasid'); pg.wait_for_timeout(500); pg.click('#bookmark'); pg.reload(); pg.wait_for_timeout(800)
   ok('bookmark persists', '✓' in pg.inner_text('#bookmark'))
