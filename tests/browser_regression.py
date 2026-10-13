@@ -14,13 +14,13 @@ with sync_playwright() as p:
   land=pg.evaluate("()=>{const m=document.querySelector('#map');return m&&m.querySelector('canvas').width>0}")
   ok('canvas sized',land)
   counts=[]
-  for i in range(7):
+  for i in range(9):
     pg.click(f'[data-frame="{i}"]'); pg.wait_for_timeout(300)
     counts.append(pg.locator('.map-point').count())
   ok('every frame has markers', all(c>0 for c in counts), str(counts))
   pg.check('#layer-event'); pg.wait_for_timeout(300)
   ev=pg.locator('.map-point.event').count(); ok('events layer at 1750', ev>0, str(ev))
-  pg.click('[data-frame="4"]'); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
+  pg.click('[data-frame="5"]'); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
   
   try:
     pg.locator('.map-point:not(.event)').first.click(timeout=3000); ok('city marker clickable with events on',True)
@@ -35,7 +35,7 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==20, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==26, str(pg.locator('.result-card').count()))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
@@ -103,7 +103,7 @@ with sync_playwright() as p:
   m=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); mp=m.new_page()
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
-  for i in range(7):
+  for i in range(9):
     mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(3200)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)

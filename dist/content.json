@@ -108,7 +108,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "تواريخ مصر القديمة تقريبية، وقد تختلف بين المراجع ببضع سنوات.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Luxor%2C_Tal_der_K%C3%B6nige_%281995%2C_860x605%29.jpg",
+        "file": "Luxor, Tal der Könige (1995, 860x605).jpg",
+        "author": "Peter J. Bubenik",
+        "license": "CC BY-SA 2.0",
+        "caption": "وادي الملوك في طيبة",
+        "page": "https://commons.wikimedia.org/wiki/File:Luxor,_Tal_der_Könige_(1995,_860x605).jpg"
+      }
     },
     {
       "id": "rome",
@@ -219,7 +227,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يعرض هذا الموضوع الفترة من 27 ق.م إلى 330 م، وتاريخ روما أطول من ذلك بكثير.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1280px-Colosseo_2020.jpg",
+        "file": "Colosseo 2020.jpg",
+        "author": "FeaturedPics",
+        "license": "CC BY-SA 4.0",
+        "caption": "الكولوسيوم في روما",
+        "page": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg"
+      }
     },
     {
       "id": "greece",
@@ -328,7 +344,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يعرض هذا الموضوع العصر الكلاسيكي (نحو 480–323 ق.م)، وتاريخ اليونان أطول من ذلك.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg",
+        "file": "The Parthenon in Athens.jpg",
+        "author": "Steve Swayne",
+        "license": "CC BY 2.0",
+        "caption": "البارثينون",
+        "page": "https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg"
+      }
     },
     {
       "id": "umayyad",
@@ -439,7 +463,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يرد تاريخ اكتمال قبة الصخرة 691 أو 691–692 م بحسب المرجع.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Jerusalem_DomeoftheRock_J65_%28cropped%29.JPG/1280px-Jerusalem_DomeoftheRock_J65_%28cropped%29.JPG",
+        "file": "Jerusalem DomeoftheRock J65 (cropped).JPG",
+        "author": "Ludvig14",
+        "license": "CC BY-SA 4.0",
+        "caption": "قبة الصخرة في القدس",
+        "page": "https://commons.wikimedia.org/wiki/File:Jerusalem_DomeoftheRock_J65_(cropped).JPG"
+      }
     },
     {
       "id": "abbasid",
@@ -554,7 +586,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يتناول هذا الموضوع الخلافة العباسية في العراق (750–1258 م)، ولا يشمل الخلافة العباسية اللاحقة في القاهرة.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Samrraa_05.jpg/1280px-Samrraa_05.jpg",
+        "file": "Samrraa 05.jpg",
+        "author": "Fakhri Mahmood",
+        "license": "CC BY-SA 4.0",
+        "caption": "المئذنة الملوية في سامراء",
+        "page": "https://commons.wikimedia.org/wiki/File:Samrraa_05.jpg"
+      }
     },
     {
       "id": "andalus",
@@ -662,7 +702,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يركز هذا الموضوع على العصر الأموي في الأندلس (711–1031 م)، وتاريخ الأندلس يمتد حتى 1492 م.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Mezquita_de_C%C3%B3rdoba_desde_el_aire_%28C%C3%B3rdoba%2C_Espa%C3%B1a%29.jpg/1280px-Mezquita_de_C%C3%B3rdoba_desde_el_aire_%28C%C3%B3rdoba%2C_Espa%C3%B1a%29.jpg",
+        "file": "Mezquita de Córdoba desde el aire (Córdoba, España).jpg",
+        "author": "Toni Castillo Quero",
+        "license": "CC BY-SA 2.0",
+        "caption": "جامع قرطبة من الجو",
+        "page": "https://commons.wikimedia.org/wiki/File:Mezquita_de_Córdoba_desde_el_aire_(Córdoba,_España).jpg"
+      }
     },
     {
       "id": "first-saudi",
@@ -774,7 +822,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يعتمد الموقع سنة 1727 م لتأسيس الدولة وفق المرجعية السعودية الرسمية؛ أما سنة 1744 م فترد في كتابات أخرى لحدث مختلف.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/At-Turaif_District.jpg/1280px-At-Turaif_District.jpg",
+        "file": "At-Turaif District.jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "caption": "حي الطريف في الدرعية",
+        "page": "https://commons.wikimedia.org/wiki/File:At-Turaif_District.jpg"
+      }
     },
     {
       "id": "china",
@@ -880,7 +936,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "هان الغربية حكمت حتى 9 م، وهان الشرقية من 25 م. وتشانغآن عاصمة هان غير شيانيانغ عاصمة تشين.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/1280px-51714-Terracota-Army.jpg",
+        "file": "51714-Terracota-Army.jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "caption": "جيش الطين قرب شيآن",
+        "page": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg"
+      }
     },
     {
       "id": "persia",
@@ -996,7 +1060,15 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "نقطة برسيبوليس مركز احتفالي وإداري، ولا تمثل امتداد الإمبراطورية أو حدودها.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/2018-09-21_Iran%2C_Persepolis%2C_Tachara_%28from_the_southeast%29.jpg/1280px-2018-09-21_Iran%2C_Persepolis%2C_Tachara_%28from_the_southeast%29.jpg",
+        "file": "2018-09-21 Iran, Persepolis, Tachara (from the southeast).jpg",
+        "author": "Laurens R. Krol",
+        "license": "CC BY 4.0",
+        "caption": "قصر تَچَر في برسيبوليس",
+        "page": "https://commons.wikimedia.org/wiki/File:2018-09-21_Iran,_Persepolis,_Tachara_(from_the_southeast).jpg"
+      }
     },
     {
       "id": "ottoman",
@@ -1108,7 +1180,435 @@
       ],
       "certainty": "اطلع على درجة التوثيق في كل قسم",
       "caveat": "يبدأ هذا المدخل من 1453 م؛ تاريخ الدولة العثمانية يبدأ قبل ذلك بنحو قرن ونصف.",
-      "mapRepresentation": "city-points-only"
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/S%C3%BCleymaniyeMosqueIstanbul_%28cropped%29.jpg/1280px-S%C3%BCleymaniyeMosqueIstanbul_%28cropped%29.jpg",
+        "file": "SüleymaniyeMosqueIstanbul (cropped).jpg",
+        "author": "Hunanuk",
+        "license": "CC0",
+        "caption": "جامع السليمانية في إسطنبول",
+        "page": "https://commons.wikimedia.org/wiki/File:SüleymaniyeMosqueIstanbul_(cropped).jpg"
+      }
+    },
+    {
+      "id": "saba",
+      "type": "civilization",
+      "title": "مملكة سبأ",
+      "subtitle": "مملكة البخور والسدود",
+      "startYear": -800,
+      "endYear": 275,
+      "period": "نحو القرن الثامن ق.م – 275 م",
+      "region": "جنوب الجزيرة العربية (اليمن)",
+      "cityId": "marib",
+      "coordinates": [
+        45.3236,
+        15.4271
+      ],
+      "summary": "في جنوب الجزيرة العربية، قامت مملكة سبأ على تجارة اللبان والبخور، وبنت في مأرب سدًا عظيمًا حوّل الصحراء إلى واحة خضراء. ذكرها القرآن الكريم في سورة تحمل اسمها.",
+      "sections": [
+        {
+          "title": "مملكة على طريق البخور",
+          "text": "كان اللبان والمر من أثمن السلع في العالم القديم، تُحرق في المعابد من مصر إلى روما. وكانت سبأ تتحكم في جزء كبير من طريق البخور الذي يعبر الجزيرة العربية نحو البحر المتوسط وشرق أفريقيا. ومن هذه التجارة جاءت ثروة ملوكها ومعابدها وقصورها.",
+          "sourceIds": [
+            "unesco-saba",
+            "whe-saba"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "سد مأرب: واحة صنعها الإنسان",
+          "text": "في القرن الثامن قبل الميلاد تقريبًا بُني سد مأرب الكبير ليحجز مياه السيول الموسمية ويوزعها على الحقول. صنع هذا النظام أكبر واحة من صنع الإنسان في العالم القديم. وفي القرآن الكريم ذكر «جنتين عن يمين وشمال» وذكر «سيل العرم» في سورة سبأ.",
+          "sourceIds": [
+            "whe-saba",
+            "unesco-saba"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "من سبأ إلى حمير",
+          "text": "حكم سبأ ملوك سجلوا أعمالهم بخط المسند على الحجر، ومن أشهرهم كرب إيل وتر. ثم ضعفت المملكة أمام جيرانها، حتى ضمتها مملكة حمير سنة 275 م تقريبًا. وفي سنة 2023 م سجلت اليونسكو معالم مملكة سبأ في مأرب ضمن قائمة التراث العالمي.",
+          "sourceIds": [
+            "whe-saba",
+            "unesco-saba"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        }
+      ],
+      "events": [
+        {
+          "id": "marib-dam",
+          "title": "بناء سد مأرب الكبير",
+          "year": -750,
+          "dateLabel": "نحو 760–740 ق.م",
+          "sourceIds": [
+            "whe-saba"
+          ]
+        },
+        {
+          "id": "himyar-saba",
+          "title": "حمير تضم سبأ",
+          "year": 275,
+          "dateLabel": "نحو 275 م",
+          "sourceIds": [
+            "whe-saba"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "id": "karibil-watar",
+          "name": "كرب إيل وتر",
+          "role": "ملك سبئي وسّع المملكة",
+          "sourceIds": [
+            "whe-saba"
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "على أي تجارة قامت ثروة سبأ؟",
+        "options": [
+          "تجارة الحرير الصيني",
+          "تجارة اللبان والبخور",
+          "تجارة الذهب من أوروبا"
+        ],
+        "answer": 1,
+        "explanation": "كانت سبأ تتحكم في جزء كبير من طريق البخور، واللبان من أثمن سلع العالم القديم."
+      },
+      "sourceIds": [
+        "unesco-saba",
+        "whe-saba"
+      ],
+      "certainty": "اطلع على درجة التوثيق في كل قسم",
+      "caveat": "بداية مملكة سبأ غير محسومة؛ أكثر الباحثين يضعها في القرن الثامن ق.م.",
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Jemen1988-022_hg.jpg/1280px-Jemen1988-022_hg.jpg",
+        "file": "Jemen1988-022 hg.jpg",
+        "author": "H. Grobe",
+        "license": "CC BY-SA 3.0",
+        "caption": "بقايا سد مأرب القديم",
+        "page": "https://commons.wikimedia.org/wiki/File:Jemen1988-022_hg.jpg"
+      }
+    },
+    {
+      "id": "nabataea",
+      "type": "civilization",
+      "title": "مملكة الأنباط",
+      "subtitle": "مدن منحوتة في الصخر",
+      "startYear": -312,
+      "endYear": 106,
+      "period": "نحو 312 ق.م – 106 م",
+      "region": "شمال غرب الجزيرة العربية وجنوب الأردن",
+      "cityId": "petra",
+      "coordinates": [
+        35.4444,
+        30.3285
+      ],
+      "summary": "تجار رحّل صاروا بناة مدن منحوتة في الصخر. من البتراء في الأردن إلى الحِجر في العُلا، ترك الأنباط واجهات مقابر مذهلة ما زالت قائمة حتى اليوم.",
+      "sections": [
+        {
+          "title": "من البادية إلى البتراء",
+          "text": "كان الأنباط في بدايتهم قبائل رحّلًا في شمال الجزيرة العربية، ثم استقروا في جنوب الأردن. وبحلول سنة 312 ق.م كانت البتراء مركزهم، في ملتقى طرق القوافل التي تربط جنوب الجزيرة والهند بالبحر المتوسط. ومن تجارة القوافل جاءت ثروتهم.",
+          "sourceIds": [
+            "met-nabataea"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "الحِجر: البتراء الثانية في العُلا",
+          "text": "في الحِجر (مدائن صالح) قرب العُلا، نحت الأنباط 111 مقبرة ضخمة في الصخر، 94 منها مزخرفة الواجهات، وتعود إلى القرن الأول قبل الميلاد والقرن الأول الميلادي. وهي أكبر موقع محفوظ للأنباط جنوب البتراء، وأول موقع سعودي سُجل في قائمة التراث العالمي لليونسكو سنة 2008 م.",
+          "sourceIds": [
+            "unesco-hegra"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "نهاية المملكة",
+          "text": "بلغت المملكة ذروتها في عهد الحارث الرابع (9 ق.م – 40 م)، حين كان في البتراء أكثر من 25 ألف ساكن. ثم ضمها الإمبراطور الروماني تراجان سنة 106 م إلى ولاية رومانية جديدة سُميت «العربية»، فانتهت المملكة المستقلة، وبقيت مدنها مأهولة زمنًا بعد ذلك.",
+          "sourceIds": [
+            "met-nabataea"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        }
+      ],
+      "events": [
+        {
+          "id": "petra-312",
+          "title": "البتراء مركز الأنباط",
+          "year": -312,
+          "dateLabel": "نحو 312 ق.م",
+          "sourceIds": [
+            "met-nabataea"
+          ]
+        },
+        {
+          "id": "hegra-tombs",
+          "title": "مقابر الحِجر المنحوتة",
+          "year": -1,
+          "dateLabel": "القرن الأول ق.م – الأول م",
+          "sourceIds": [
+            "unesco-hegra"
+          ]
+        },
+        {
+          "id": "nabataea-annex",
+          "title": "روما تضم مملكة الأنباط",
+          "year": 106,
+          "dateLabel": "106 م",
+          "sourceIds": [
+            "met-nabataea"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "id": "aretas-iv",
+          "name": "الحارث الرابع",
+          "role": "ملك نبطي 9 ق.م – 40 م",
+          "sourceIds": [
+            "met-nabataea"
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "أين يقع أكبر موقع محفوظ للأنباط بعد البتراء؟",
+        "options": [
+          "في الحِجر (مدائن صالح) قرب العُلا",
+          "في الإسكندرية",
+          "في بغداد"
+        ],
+        "answer": 0,
+        "explanation": "الحِجر في العُلا أكبر موقع محفوظ للأنباط جنوب البتراء، وأول موقع سعودي في قائمة التراث العالمي."
+      },
+      "sourceIds": [
+        "met-nabataea",
+        "unesco-hegra"
+      ],
+      "certainty": "اطلع على درجة التوثيق في كل قسم",
+      "caveat": "لا نعرف بدقة متى بدأت مملكة الأنباط؛ 312 ق.م أقدم تاريخ يذكرهم فيه مؤرخون قدماء.",
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Qasr_al-Farid%2C_Hegra_%28Madain_Salih%29%2C_1st_cent._CE%2C_Saudi_Arabia_%2812%29.jpg/1280px-Qasr_al-Farid%2C_Hegra_%28Madain_Salih%29%2C_1st_cent._CE%2C_Saudi_Arabia_%2812%29.jpg",
+        "file": "Qasr al-Farid, Hegra (Madain Salih), 1st cent. CE, Saudi Arabia (12).jpg",
+        "author": "Prof. Mortel",
+        "license": "CC BY 2.0",
+        "caption": "قصر الفريد في الحِجر بالعُلا",
+        "page": "https://commons.wikimedia.org/wiki/File:Qasr_al-Farid,_Hegra_(Madain_Salih),_1st_cent._CE,_Saudi_Arabia_(12).jpg"
+      }
+    },
+    {
+      "id": "mamluks",
+      "type": "civilization",
+      "title": "دولة المماليك",
+      "subtitle": "جنود صاروا سلاطين",
+      "startYear": 1250,
+      "endYear": 1517,
+      "period": "1250–1517 م",
+      "region": "مصر والشام والحجاز",
+      "cityId": "cairo",
+      "coordinates": [
+        31.2599,
+        30.0287
+      ],
+      "summary": "جنود جُلبوا صغارًا وتربّوا على الفروسية، ثم حكموا مصر والشام أكثر من قرنين ونصف. أوقف المماليك زحف المغول في عين جالوت، وملؤوا القاهرة بمساجد ومدارس ما زالت من أجمل عمارتها.",
+      "sections": [
+        {
+          "title": "من ثكنات الجند إلى العرش",
+          "text": "كان المماليك جنودًا يُشترون صغارًا ويُربّون على الفروسية والقتال في خدمة السلاطين الأيوبيين. وفي سنة 1250 م انتقلت السلطة إليهم، فصاروا يحكمون مصر والشام، ولم يكن الحكم في الغالب وراثيًا، بل ينتقل بين كبار الأمراء.",
+          "sourceIds": [
+            "brit-baybars"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "عين جالوت",
+          "text": "في سنة 1260 م، بعد عامين من سقوط بغداد، التقى جيش المماليك بقيادة السلطان قطز بالمغول في عين جالوت بفلسطين، وانتصر انتصارًا حاسمًا. كان للقائد بيبرس دور كبير في المعركة، ثم صار سلطانًا. أوقف هذا النصر زحف المغول غربًا، وحمى مصر.",
+          "sourceIds": [
+            "brit-ainjalut",
+            "brit-baybars"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "القاهرة في عصرها الذهبي",
+          "text": "صارت القاهرة في عصر المماليك من أكبر مدن العالم، وامتلأت بالمساجد والمدارس والأسبلة والقباب. ومن أشهرها مسجد ومدرسة السلطان حسن، الذي بدأ بناؤه سنة 1356 م. وانتهت دولة المماليك حين دخل العثمانيون القاهرة سنة 1517 م.",
+          "sourceIds": [
+            "cairo-hasan",
+            "brit-selim"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        }
+      ],
+      "events": [
+        {
+          "id": "ain-jalut",
+          "title": "معركة عين جالوت",
+          "year": 1260,
+          "dateLabel": "1260 م",
+          "sourceIds": [
+            "brit-ainjalut"
+          ]
+        },
+        {
+          "id": "sultan-hasan",
+          "title": "بدء بناء مسجد ومدرسة السلطان حسن",
+          "year": 1356,
+          "dateLabel": "1356 م",
+          "sourceIds": [
+            "cairo-hasan"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "id": "qutuz",
+          "name": "سيف الدين قطز",
+          "role": "سلطان مملوكي قاد عين جالوت",
+          "sourceIds": [
+            "brit-ainjalut"
+          ]
+        },
+        {
+          "id": "baybars",
+          "name": "الظاهر بيبرس",
+          "role": "سلطان مملوكي 1260–1277 م",
+          "sourceIds": [
+            "brit-baybars"
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "ما أهمية معركة عين جالوت سنة 1260 م؟",
+        "options": [
+          "أوقفت زحف المغول غربًا وحمت مصر",
+          "أسست الدولة العباسية",
+          "أنهت الحروب في الأندلس"
+        ],
+        "answer": 0,
+        "explanation": "انتصر المماليك على المغول انتصارًا حاسمًا، فتوقف تقدمهم نحو مصر."
+      },
+      "sourceIds": [
+        "brit-baybars",
+        "brit-ainjalut",
+        "cairo-hasan"
+      ],
+      "certainty": "اطلع على درجة التوثيق في كل قسم",
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Flickr_-_archer10_%28Dennis%29_-_Egypt-13A-061_%28cropped%29.jpg/1280px-Flickr_-_archer10_%28Dennis%29_-_Egypt-13A-061_%28cropped%29.jpg",
+        "file": "Flickr - archer10 (Dennis) - Egypt-13A-061 (cropped).jpg",
+        "author": "Dennis G. Jarvis",
+        "license": "CC BY-SA 2.0",
+        "caption": "مسجد ومدرسة السلطان حسن في القاهرة",
+        "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_archer10_(Dennis)_-_Egypt-13A-061_(cropped).jpg"
+      }
+    },
+    {
+      "id": "mongols",
+      "type": "civilization",
+      "title": "إمبراطورية المغول",
+      "subtitle": "أوسع إمبراطورية برية في التاريخ",
+      "startYear": 1206,
+      "endYear": 1368,
+      "period": "1206–1368 م",
+      "region": "من الصين إلى العراق وشرق أوروبا",
+      "cityId": "karakorum",
+      "coordinates": [
+        102.83,
+        47.2
+      ],
+      "summary": "من سهوب منغوليا خرج جنكيز خان وأبناؤه وأحفاده، فبنوا أوسع إمبراطورية برية عرفها التاريخ، امتدت من الصين إلى العراق وأوروبا الشرقية. وكان لها وجهان: دمار هائل في الحروب، وطرق تجارة آمنة بعدها.",
+      "sections": [
+        {
+          "title": "من تيموجين إلى جنكيز خان",
+          "text": "وُلد تيموجين نحو سنة 1162 م في سهوب منغوليا، ووحّد قبائلها بعد حروب طويلة. وفي سنة 1206 م اجتمع زعماء المغول ولقّبوه «جنكيز خان». ثم انطلق جيشه، المعتمد على الفرسان والسرعة والتنظيم، نحو الصين وآسيا الوسطى. توفي سنة 1227 م أثناء حملة عسكرية.",
+          "sourceIds": [
+            "brit-genghis"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "قراقورم وتقسيم الإمبراطورية",
+          "text": "بنى ابنه أوقطاي عاصمة مسوّرة في قراقورم سنة 1235 م. ومع اتساع الإمبراطورية تقاسمها الأحفاد في دول كبرى: في الصين، وفي إيران والعراق (الإيلخانيون)، وفي سهوب روسيا (القبيلة الذهبية)، وفي آسيا الوسطى. وفي سنة 1258 م اجتاح هولاكو بغداد، ثم هُزم المغول أمام المماليك في عين جالوت سنة 1260 م.",
+          "sourceIds": [
+            "whe-karakorum",
+            "brit-ainjalut"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        },
+        {
+          "title": "قوبلاي والصين",
+          "text": "أسس قوبلاي خان، حفيد جنكيز، أسرة يوان في الصين سنة 1271 م، واتخذ دادو (بكين اليوم) عاصمة. وفي عهده زار الرحالة ماركو بولو الصين بحسب روايته. وطُرد المغول من الصين سنة 1368 م، بقيام أسرة مينغ.",
+          "sourceIds": [
+            "whe-kublai"
+          ],
+          "certainty": "حقائق مسندة مع صياغة سردية أصلية"
+        }
+      ],
+      "events": [
+        {
+          "id": "genghis-1206",
+          "title": "تيموجين يصبح جنكيز خان",
+          "year": 1206,
+          "dateLabel": "1206 م",
+          "sourceIds": [
+            "brit-genghis"
+          ]
+        },
+        {
+          "id": "yuan-1271",
+          "title": "قوبلاي يؤسس أسرة يوان",
+          "year": 1271,
+          "dateLabel": "1271 م",
+          "sourceIds": [
+            "whe-kublai"
+          ]
+        }
+      ],
+      "people": [
+        {
+          "id": "genghis",
+          "name": "جنكيز خان",
+          "role": "مؤسس إمبراطورية المغول",
+          "sourceIds": [
+            "brit-genghis"
+          ]
+        },
+        {
+          "id": "kublai",
+          "name": "قوبلاي خان",
+          "role": "مؤسس أسرة يوان في الصين",
+          "sourceIds": [
+            "whe-kublai"
+          ]
+        }
+      ],
+      "quiz": {
+        "question": "من هزم المغول في عين جالوت سنة 1260 م؟",
+        "options": [
+          "العثمانيون",
+          "المماليك",
+          "العباسيون"
+        ],
+        "answer": 1,
+        "explanation": "انتصر جيش المماليك بقيادة قطز، وبرز فيه بيبرس."
+      },
+      "sourceIds": [
+        "brit-genghis",
+        "whe-karakorum",
+        "whe-kublai"
+      ],
+      "certainty": "اطلع على درجة التوثيق في كل قسم",
+      "caveat": "نقطة قراقورم تمثل العاصمة المغولية الأولى؛ انتقل مركز الحكم لاحقًا إلى الصين، وتقاسم الأحفاد الإمبراطورية.",
+      "mapRepresentation": "city-points-only",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/YuanEmperorAlbumGenghisPortrait.jpg/1280px-YuanEmperorAlbumGenghisPortrait.jpg",
+        "file": "YuanEmperorAlbumGenghisPortrait.jpg",
+        "author": "مؤلف مجهول",
+        "license": "ملكية عامة",
+        "caption": "صورة جنكيز خان من ألبوم أباطرة يوان (رسمت بعد وفاته)",
+        "page": "https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumGenghisPortrait.jpg"
+      }
     }
   ],
   "entries": [
@@ -1139,7 +1639,15 @@
       "relatedIds": [
         "egypt"
       ],
-      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق"
+      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/1550_bis_1070_v._Chr._ca._wurde_der_Tempel_von_Luxor_erbaut._01.jpg/1280px-1550_bis_1070_v._Chr._ca._wurde_der_Tempel_von_Luxor_erbaut._01.jpg",
+        "file": "1550 bis 1070 v. Chr. ca. wurde der Tempel von Luxor erbaut. 01.jpg",
+        "author": "Holger Uwe Schmitt",
+        "license": "CC BY-SA 4.0",
+        "caption": "معبد الأقصر",
+        "page": "https://commons.wikimedia.org/wiki/File:1550_bis_1070_v._Chr._ca._wurde_der_Tempel_von_Luxor_erbaut._01.jpg"
+      }
     },
     {
       "id": "hatshepsut",
@@ -1305,7 +1813,15 @@
       "relatedIds": [
         "greece"
       ],
-      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق"
+      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg/1280px-1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg",
+        "file": "1029 Acropolis of Athens in Greece at night Photo by Giles Laurent.jpg",
+        "author": "Giles Laurent",
+        "license": "CC BY-SA 4.0",
+        "caption": "أكروبول أثينا ليلًا",
+        "page": "https://commons.wikimedia.org/wiki/File:1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg"
+      }
     },
     {
       "id": "pericles",
@@ -1384,7 +1900,15 @@
       "relatedIds": [
         "umayyad"
       ],
-      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق"
+      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Umayyad_Mosque%2C_Damascus.jpg/1280px-Umayyad_Mosque%2C_Damascus.jpg",
+        "file": "Umayyad Mosque, Damascus.jpg",
+        "author": "Bernard Gagnon",
+        "license": "CC BY-SA 3.0",
+        "caption": "الجامع الأموي في دمشق",
+        "page": "https://commons.wikimedia.org/wiki/File:Umayyad_Mosque,_Damascus.jpg"
+      }
     },
     {
       "id": "abd-al-malik",
@@ -1438,7 +1962,15 @@
       "coordinates": [
         35.2353,
         31.778
-      ]
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Jerusalem_DomeoftheRock_J65_%28cropped%29.JPG/1280px-Jerusalem_DomeoftheRock_J65_%28cropped%29.JPG",
+        "file": "Jerusalem DomeoftheRock J65 (cropped).JPG",
+        "author": "Ludvig14",
+        "license": "CC BY-SA 4.0",
+        "caption": "قبة الصخرة في القدس",
+        "page": "https://commons.wikimedia.org/wiki/File:Jerusalem_DomeoftheRock_J65_(cropped).JPG"
+      }
     },
     {
       "id": "baghdad",
@@ -1467,7 +1999,15 @@
       "relatedIds": [
         "abbasid"
       ],
-      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق"
+      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%B5%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF.jpg/1280px-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9_%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%B5%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF.jpg",
+        "file": "المدرسة المستنصرية في بغداد.jpg",
+        "author": "Mustafa Waad Saeed",
+        "license": "CC BY-SA 4.0",
+        "caption": "المدرسة المستنصرية في بغداد (القرن الثالث عشر)",
+        "page": "https://commons.wikimedia.org/wiki/File:المدرسة_المستنصرية_في_بغداد.jpg"
+      }
     },
     {
       "id": "al-mutasim",
@@ -1634,7 +2174,15 @@
       "relatedIds": [
         "first-saudi"
       ],
-      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق"
+      "certainty": "الموضع المرجعي تقريبي؛ ارتباط المدينة موثق",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/At-Turaif_District.jpg/1280px-At-Turaif_District.jpg",
+        "file": "At-Turaif District.jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "caption": "حي الطريف في الدرعية",
+        "page": "https://commons.wikimedia.org/wiki/File:At-Turaif_District.jpg"
+      }
     },
     {
       "id": "muhammad-saud",
@@ -1746,7 +2294,15 @@
         "changan"
       ],
       "period": "221 ق.م.–220 م: من تشين إلى هان",
-      "certainty": "موثق"
+      "certainty": "موثق",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/51714-Terracota-Army.jpg/1280px-51714-Terracota-Army.jpg",
+        "file": "51714-Terracota-Army.jpg",
+        "author": "xiquinhosilva",
+        "license": "CC BY 2.0",
+        "caption": "جيش الطين قرب شيآن",
+        "page": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg"
+      }
     },
     {
       "id": "qin-unification",
@@ -2538,7 +3094,15 @@
       "coordinates": [
         52.8906,
         29.9353
-      ]
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/2018-09-21_Iran%2C_Persepolis%2C_Tachara_%28from_the_southeast%29.jpg/1280px-2018-09-21_Iran%2C_Persepolis%2C_Tachara_%28from_the_southeast%29.jpg",
+        "file": "2018-09-21 Iran, Persepolis, Tachara (from the southeast).jpg",
+        "author": "Laurens R. Krol",
+        "license": "CC BY 4.0",
+        "caption": "قصر تَچَر في برسيبوليس",
+        "page": "https://commons.wikimedia.org/wiki/File:2018-09-21_Iran,_Persepolis,_Tachara_(from_the_southeast).jpg"
+      }
     },
     {
       "id": "cyrus",
@@ -2711,7 +3275,15 @@
       "coordinates": [
         28.9834,
         41.0115
-      ]
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Topkap%C4%B1_-_01.jpg/1280px-Topkap%C4%B1_-_01.jpg",
+        "file": "Topkapı - 01.jpg",
+        "author": "Carlos Delgado",
+        "license": "CC BY-SA 3.0",
+        "caption": "قصر طوب قابي",
+        "page": "https://commons.wikimedia.org/wiki/File:Topkapı_-_01.jpg"
+      }
     },
     {
       "id": "mehmed-ii",
@@ -2851,6 +3423,585 @@
       "coordinates": [
         28.964,
         41.0162
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/S%C3%BCleymaniyeMosqueIstanbul_%28cropped%29.jpg/1280px-S%C3%BCleymaniyeMosqueIstanbul_%28cropped%29.jpg",
+        "file": "SüleymaniyeMosqueIstanbul (cropped).jpg",
+        "author": "Hunanuk",
+        "license": "CC0",
+        "caption": "جامع السليمانية في إسطنبول",
+        "page": "https://commons.wikimedia.org/wiki/File:SüleymaniyeMosqueIstanbul_(cropped).jpg"
+      }
+    },
+    {
+      "id": "marib",
+      "type": "city",
+      "title": "مأرب",
+      "summary": "مأرب عاصمة مملكة سبأ في اليمن، قامت على أطراف الصحراء قرب سدها الشهير.",
+      "sections": [
+        {
+          "title": "الموقع ووظيفته",
+          "text": "كانت مأرب مركز الحكم والمعابد، ومنها معبد أوام المعروف بمحرم بلقيس. وحولها امتدت الحقول التي يرويها سد مأرب. ومعالمها اليوم ضمن مواقع مملكة سبأ المسجلة في التراث العالمي سنة 2023 م.",
+          "sourceIds": [
+            "unesco-saba",
+            "whe-saba"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "unesco-saba",
+        "whe-saba"
+      ],
+      "relatedIds": [
+        "saba"
+      ],
+      "certainty": "موثق",
+      "startYear": -800,
+      "endYear": 275,
+      "period": "نحو القرن الثامن ق.م – 275 م",
+      "coordinates": [
+        45.3236,
+        15.4271
+      ],
+      "image": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Awwam_Temple.jpg",
+        "file": "Awwam Temple.jpg",
+        "author": "Marib Governorate",
+        "license": "CC BY-SA 2.0",
+        "caption": "معبد أوام (محرم بلقيس) في مأرب",
+        "page": "https://commons.wikimedia.org/wiki/File:Awwam_Temple.jpg"
+      }
+    },
+    {
+      "id": "karibil-watar",
+      "type": "person",
+      "title": "كرب إيل وتر",
+      "summary": "كرب إيل وتر من أشهر ملوك سبأ، وسّع المملكة وسجل انتصاراته في نقوش بخط المسند.",
+      "sections": [
+        {
+          "title": "الشخصية في سياقها",
+          "text": "يُعرف من نقش طويل في صرواح يروي حملاته وتوسعه في جنوب الجزيرة. ويختلف الباحثون في تحديد زمنه، فيضعه بعضهم في القرن السابع وبعضهم في القرن السادس قبل الميلاد.",
+          "sourceIds": [
+            "whe-saba"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "whe-saba"
+      ],
+      "relatedIds": [
+        "saba",
+        "marib"
+      ],
+      "certainty": "موثق",
+      "period": "نحو القرن الثامن ق.م – 275 م"
+    },
+    {
+      "id": "marib-dam",
+      "type": "event",
+      "title": "بناء سد مأرب الكبير",
+      "summary": "نحو القرن الثامن قبل الميلاد بنى السبئيون سد مأرب الكبير، ليحجز مياه السيول ويوزعها على الحقول.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "صنع السد واحة زراعية واسعة وسط أرض جافة، وظل يُرمَّم ويُوسَّع قرونًا. ويرد في سورة سبأ ذكر الجنتين وسيل العرم. وتُنسب المراحل الأولى للبناء إلى زمن المكرّب يثع أمر وتر بحسب موسوعة تاريخ العالم. علامة الخريطة عند موقع السد التقريبي.",
+          "sourceIds": [
+            "whe-saba",
+            "unesco-saba"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "whe-saba",
+        "unesco-saba"
+      ],
+      "relatedIds": [
+        "saba",
+        "marib"
+      ],
+      "certainty": "موثق",
+      "year": -750,
+      "dateLabel": "نحو 760–740 ق.م",
+      "coordinates": [
+        45.27,
+        15.397
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Jemen1988-022_hg.jpg/1280px-Jemen1988-022_hg.jpg",
+        "file": "Jemen1988-022 hg.jpg",
+        "author": "H. Grobe",
+        "license": "CC BY-SA 3.0",
+        "caption": "بقايا سد مأرب القديم",
+        "page": "https://commons.wikimedia.org/wiki/File:Jemen1988-022_hg.jpg"
+      }
+    },
+    {
+      "id": "himyar-saba",
+      "type": "event",
+      "title": "حمير تضم سبأ",
+      "summary": "نحو سنة 275 م ضمت مملكة حمير مملكة سبأ، فانتهى استقلال سبأ بعد قرون طويلة.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "كانت حمير قد نشأت في جنوب اليمن وعاصمتها ظفار، ثم توسعت حتى حكمت معظم جنوب الجزيرة العربية. علامة الخريطة عند ظفار عاصمة حمير.",
+          "sourceIds": [
+            "whe-saba"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "whe-saba"
+      ],
+      "relatedIds": [
+        "saba",
+        "marib"
+      ],
+      "certainty": "موثق",
+      "year": 275,
+      "dateLabel": "نحو 275 م",
+      "coordinates": [
+        44.4019,
+        14.2122
+      ]
+    },
+    {
+      "id": "petra",
+      "type": "city",
+      "title": "البتراء",
+      "summary": "البتراء، المدينة الوردية المنحوتة في الصخر جنوب الأردن، كانت عاصمة مملكة الأنباط.",
+      "sections": [
+        {
+          "title": "الموقع ووظيفته",
+          "text": "تقع في وادٍ تحيط به الجبال، ويُدخل إليها من ممر صخري ضيق يسمى السيق. وأشهر واجهاتها «الخزنة». بنى الأنباط فيها نظامًا لجمع المياه وتخزينها، فعاشت مدينة كبيرة وسط بيئة جافة.",
+          "sourceIds": [
+            "met-nabataea"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "met-nabataea"
+      ],
+      "relatedIds": [
+        "nabataea"
+      ],
+      "certainty": "موثق",
+      "startYear": -312,
+      "endYear": 106,
+      "period": "نحو 312 ق.م – 106 م",
+      "coordinates": [
+        35.4444,
+        30.3285
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Al_khazneh.jpg/1280px-Al_khazneh.jpg",
+        "file": "Al khazneh.jpg",
+        "author": "Susanahajer",
+        "license": "CC BY-SA 3.0",
+        "caption": "الخزنة في البتراء",
+        "page": "https://commons.wikimedia.org/wiki/File:Al_khazneh.jpg"
+      }
+    },
+    {
+      "id": "aretas-iv",
+      "type": "person",
+      "title": "الحارث الرابع",
+      "summary": "الحارث الرابع أطول ملوك الأنباط حكمًا وأشهرهم، حكم من 9 ق.م حتى 40 م.",
+      "sections": [
+        {
+          "title": "الشخصية في سياقها",
+          "text": "في عهده بلغت البتراء ذروة ازدهارها، وصار فيها أكثر من 25 ألف ساكن. وتعود كثير من واجهات المقابر المؤرخة في الحِجر إلى القرن الأول الميلادي، أي إلى عهده وما بعده.",
+          "sourceIds": [
+            "met-nabataea",
+            "unesco-hegra"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "met-nabataea",
+        "unesco-hegra"
+      ],
+      "relatedIds": [
+        "nabataea",
+        "petra"
+      ],
+      "certainty": "موثق",
+      "period": "نحو 312 ق.م – 106 م"
+    },
+    {
+      "id": "petra-312",
+      "type": "event",
+      "title": "البتراء مركز الأنباط",
+      "summary": "بحلول سنة 312 ق.م كانت البتراء مركز الأنباط، وهو أقدم تاريخ يذكرهم فيه المؤرخون القدماء.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "كانت المدينة في ملتقى طرق القوافل، فصارت محطة لتجارة البخور والتوابل بين جنوب الجزيرة والبحر المتوسط. ومن هذه التجارة نمت ثروة الأنباط.",
+          "sourceIds": [
+            "met-nabataea"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "met-nabataea"
+      ],
+      "relatedIds": [
+        "nabataea",
+        "petra"
+      ],
+      "certainty": "موثق",
+      "year": -312,
+      "dateLabel": "نحو 312 ق.م",
+      "coordinates": [
+        35.4444,
+        30.3285
+      ]
+    },
+    {
+      "id": "hegra-tombs",
+      "type": "event",
+      "title": "مقابر الحِجر المنحوتة",
+      "summary": "في الحِجر (مدائن صالح) قرب العُلا، نحت الأنباط 111 مقبرة ضخمة في الصخر بين القرن الأول قبل الميلاد والقرن الأول الميلادي.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "تزين 94 مقبرة منها واجهات منحوتة، وعلى كثير منها نقوش نبطية تذكر أصحابها وتواريخها. والحِجر أول موقع سعودي يُسجل في قائمة التراث العالمي لليونسكو، سنة 2008 م.",
+          "sourceIds": [
+            "unesco-hegra"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "unesco-hegra"
+      ],
+      "relatedIds": [
+        "nabataea",
+        "petra"
+      ],
+      "certainty": "موثق",
+      "year": -1,
+      "dateLabel": "القرن الأول ق.م – الأول م",
+      "coordinates": [
+        37.95,
+        26.79
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Qasr_al-Farid%2C_Hegra_%28Madain_Salih%29%2C_1st_cent._CE%2C_Saudi_Arabia_%2812%29.jpg/1280px-Qasr_al-Farid%2C_Hegra_%28Madain_Salih%29%2C_1st_cent._CE%2C_Saudi_Arabia_%2812%29.jpg",
+        "file": "Qasr al-Farid, Hegra (Madain Salih), 1st cent. CE, Saudi Arabia (12).jpg",
+        "author": "Prof. Mortel",
+        "license": "CC BY 2.0",
+        "caption": "قصر الفريد في الحِجر بالعُلا",
+        "page": "https://commons.wikimedia.org/wiki/File:Qasr_al-Farid,_Hegra_(Madain_Salih),_1st_cent._CE,_Saudi_Arabia_(12).jpg"
+      }
+    },
+    {
+      "id": "nabataea-annex",
+      "type": "event",
+      "title": "روما تضم مملكة الأنباط",
+      "summary": "في سنة 106 م ضم الإمبراطور الروماني تراجان مملكة الأنباط، وجعلها ولاية رومانية باسم «العربية».",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "انتهت بذلك المملكة المستقلة، لكن مدنها وطرقها بقيت مستخدمة زمنًا بعد ذلك. وتراجان نفسه هو الإمبراطور الذي بلغت روما في عهده أوسع امتداد لها.",
+          "sourceIds": [
+            "met-nabataea"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "met-nabataea"
+      ],
+      "relatedIds": [
+        "nabataea",
+        "petra",
+        "trajan"
+      ],
+      "certainty": "موثق",
+      "year": 106,
+      "dateLabel": "106 م"
+    },
+    {
+      "id": "cairo",
+      "type": "city",
+      "title": "القاهرة",
+      "summary": "القاهرة كانت عاصمة دولة المماليك، ومن أكبر مدن العالم في القرنين الرابع عشر والخامس عشر.",
+      "sections": [
+        {
+          "title": "الموقع ووظيفته",
+          "text": "تشرف عليها القلعة مقر السلاطين، وتمتلئ القاهرة التاريخية بمساجد ومدارس وقباب مملوكية، أشهرها مسجد ومدرسة السلطان حسن. والقاهرة التاريخية مسجلة في قائمة التراث العالمي.",
+          "sourceIds": [
+            "cairo-hasan",
+            "brit-baybars"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "cairo-hasan",
+        "brit-baybars"
+      ],
+      "relatedIds": [
+        "mamluks"
+      ],
+      "certainty": "موثق",
+      "startYear": 1250,
+      "endYear": 1517,
+      "period": "1250–1517 م",
+      "coordinates": [
+        31.2599,
+        30.0287
+      ]
+    },
+    {
+      "id": "qutuz",
+      "type": "person",
+      "title": "سيف الدين قطز",
+      "summary": "قطز سلطان مملوكي قاد جيش المماليك إلى النصر على المغول في عين جالوت سنة 1260 م.",
+      "sections": [
+        {
+          "title": "الشخصية في سياقها",
+          "text": "تولى السلطنة في وقت عصيب، بعد سقوط بغداد وتقدم المغول في الشام. وبعد النصر بأسابيع قُتل في طريق عودته، فتولى بيبرس السلطنة.",
+          "sourceIds": [
+            "brit-ainjalut"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "brit-ainjalut"
+      ],
+      "relatedIds": [
+        "mamluks",
+        "cairo"
+      ],
+      "certainty": "موثق",
+      "period": "1250–1517 م"
+    },
+    {
+      "id": "baybars",
+      "type": "person",
+      "title": "الظاهر بيبرس",
+      "summary": "بيبرس من أشهر سلاطين المماليك، حكم مصر والشام من 1260 حتى 1277 م.",
+      "sections": [
+        {
+          "title": "الشخصية في سياقها",
+          "text": "برز قائدًا في معركة عين جالوت، ثم صار سلطانًا. قاد حملات ضد المغول والصليبيين، ونظّم الإدارة والبريد. وتوفي في دمشق سنة 1277 م.",
+          "sourceIds": [
+            "brit-baybars"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "brit-baybars"
+      ],
+      "relatedIds": [
+        "mamluks",
+        "cairo"
+      ],
+      "certainty": "موثق",
+      "period": "1250–1517 م"
+    },
+    {
+      "id": "ain-jalut",
+      "type": "event",
+      "title": "معركة عين جالوت",
+      "summary": "في 3 سبتمبر 1260 م انتصر جيش المماليك بقيادة قطز على المغول في عين جالوت بفلسطين.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "جاءت المعركة بعد عامين من سقوط بغداد، حين كان المغول يتقدمون في الشام. أوقف النصر زحفهم غربًا وحمى مصر، وصار بيبرس، أحد قادتها، سلطانًا بعدها.",
+          "sourceIds": [
+            "brit-ainjalut"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "brit-ainjalut"
+      ],
+      "relatedIds": [
+        "mamluks",
+        "cairo",
+        "mongols"
+      ],
+      "certainty": "موثق",
+      "year": 1260,
+      "dateLabel": "1260 م",
+      "coordinates": [
+        35.355,
+        32.55
+      ]
+    },
+    {
+      "id": "sultan-hasan",
+      "type": "event",
+      "title": "بدء بناء مسجد ومدرسة السلطان حسن",
+      "summary": "في سنة 1356 م بدأ بناء مسجد ومدرسة السلطان حسن في القاهرة، أحد أضخم مباني العمارة المملوكية.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "جمع المبنى مسجدًا ومدارس للمذاهب الأربعة، بإيوانات عالية حول صحن مكشوف وبوابة شاهقة. ويقع أسفل القلعة، ولا يزال من أبرز معالم القاهرة.",
+          "sourceIds": [
+            "cairo-hasan"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "cairo-hasan"
+      ],
+      "relatedIds": [
+        "mamluks",
+        "cairo"
+      ],
+      "certainty": "موثق",
+      "year": 1356,
+      "dateLabel": "1356 م",
+      "coordinates": [
+        31.2566,
+        30.0322
+      ],
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Flickr_-_archer10_%28Dennis%29_-_Egypt-13A-061_%28cropped%29.jpg/1280px-Flickr_-_archer10_%28Dennis%29_-_Egypt-13A-061_%28cropped%29.jpg",
+        "file": "Flickr - archer10 (Dennis) - Egypt-13A-061 (cropped).jpg",
+        "author": "Dennis G. Jarvis",
+        "license": "CC BY-SA 2.0",
+        "caption": "مسجد ومدرسة السلطان حسن في القاهرة",
+        "page": "https://commons.wikimedia.org/wiki/File:Flickr_-_archer10_(Dennis)_-_Egypt-13A-061_(cropped).jpg"
+      }
+    },
+    {
+      "id": "karakorum",
+      "type": "city",
+      "title": "قراقورم",
+      "summary": "قراقورم كانت العاصمة الأولى لإمبراطورية المغول، في وادي أورخون بمنغوليا.",
+      "sections": [
+        {
+          "title": "الموقع ووظيفته",
+          "text": "أمر أوقطاي ببنائها مدينة مسوّرة سنة 1235 م، فصارت مقصد السفراء والتجار من الصين وأوروبا والعالم الإسلامي. ثم انتقل مركز الحكم إلى الصين في عهد قوبلاي، فتراجعت المدينة.",
+          "sourceIds": [
+            "whe-karakorum"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "whe-karakorum"
+      ],
+      "relatedIds": [
+        "mongols"
+      ],
+      "certainty": "موثق",
+      "startYear": 1235,
+      "endYear": 1368,
+      "period": "1206–1368 م",
+      "coordinates": [
+        102.83,
+        47.2
+      ]
+    },
+    {
+      "id": "genghis",
+      "type": "person",
+      "title": "جنكيز خان",
+      "summary": "جنكيز خان مؤسس إمبراطورية المغول، اسمه تيموجين، وُلد نحو 1162 م وتوفي سنة 1227 م.",
+      "sections": [
+        {
+          "title": "الشخصية في سياقها",
+          "text": "وحّد قبائل المغول، ولُقب «جنكيز خان» سنة 1206 م. بنى جيشًا من الفرسان سريع الحركة، وانطلق نحو الصين وآسيا الوسطى. وبعد وفاته واصل أبناؤه وأحفاده التوسع.",
+          "sourceIds": [
+            "brit-genghis"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "brit-genghis"
+      ],
+      "relatedIds": [
+        "mongols",
+        "karakorum"
+      ],
+      "certainty": "موثق",
+      "period": "1206–1368 م",
+      "image": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/YuanEmperorAlbumGenghisPortrait.jpg/1280px-YuanEmperorAlbumGenghisPortrait.jpg",
+        "file": "YuanEmperorAlbumGenghisPortrait.jpg",
+        "author": "مؤلف مجهول",
+        "license": "ملكية عامة",
+        "caption": "صورة جنكيز خان من ألبوم أباطرة يوان (رسمت بعد وفاته)",
+        "page": "https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumGenghisPortrait.jpg"
+      }
+    },
+    {
+      "id": "kublai",
+      "type": "person",
+      "title": "قوبلاي خان",
+      "summary": "قوبلاي خان حفيد جنكيز خان، أسس أسرة يوان في الصين سنة 1271 م.",
+      "sections": [
+        {
+          "title": "الشخصية في سياقها",
+          "text": "اتخذ دادو (بكين اليوم) عاصمة، وحكم الصين ومنغوليا. وفي عهده زار ماركو بولو الصين بحسب روايته. توفي سنة 1294 م.",
+          "sourceIds": [
+            "whe-kublai"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "whe-kublai"
+      ],
+      "relatedIds": [
+        "mongols",
+        "karakorum"
+      ],
+      "certainty": "موثق",
+      "period": "1206–1368 م"
+    },
+    {
+      "id": "genghis-1206",
+      "type": "event",
+      "title": "تيموجين يصبح جنكيز خان",
+      "summary": "في سنة 1206 م اجتمع زعماء قبائل المغول ولقّبوا تيموجين «جنكيز خان»، فبدأت إمبراطورية المغول.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "كان تيموجين قد وحّد القبائل بعد سنوات من الحروب. ومن هذا الاجتماع انطلقت حملات غيّرت تاريخ آسيا والعالم الإسلامي وأوروبا الشرقية.",
+          "sourceIds": [
+            "brit-genghis"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "brit-genghis"
+      ],
+      "relatedIds": [
+        "mongols",
+        "genghis"
+      ],
+      "certainty": "موثق",
+      "year": 1206,
+      "dateLabel": "1206 م"
+    },
+    {
+      "id": "yuan-1271",
+      "type": "event",
+      "title": "قوبلاي يؤسس أسرة يوان",
+      "summary": "في سنة 1271 م أعلن قوبلاي خان قيام أسرة يوان في الصين، واتخذ دادو (بكين اليوم) عاصمة.",
+      "sections": [
+        {
+          "title": "السياق والأثر",
+          "text": "حكمت أسرة يوان الصين نحو قرن، حتى طُردت سنة 1368 م بقيام أسرة مينغ. علامة الخريطة عند بكين.",
+          "sourceIds": [
+            "whe-kublai"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "whe-kublai"
+      ],
+      "relatedIds": [
+        "mongols",
+        "kublai"
+      ],
+      "certainty": "موثق",
+      "year": 1271,
+      "dateLabel": "1271 م",
+      "coordinates": [
+        116.397,
+        39.908
       ]
     }
   ],
@@ -3352,6 +4503,86 @@
       "accessed": "2026-10-12",
       "type": "مرجع رسمي",
       "verification": "روجعت الصفحة أو نتيجة البحث في 12 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "unesco-saba",
+      "title": "معالم مملكة سبأ القديمة في مأرب — اليونسكو",
+      "url": "https://whc.unesco.org/en/news/2517",
+      "accessed": "2026-10-13",
+      "type": "مرجع رسمي",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "whe-saba",
+      "title": "مملكة سبأ — موسوعة تاريخ العالم",
+      "url": "https://worldhistory.org/timeline/Kingdom_of_Saba",
+      "accessed": "2026-10-13",
+      "type": "موسوعة تعليمية",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "unesco-hegra",
+      "title": "موقع الحِجر الأثري (مدائن صالح) — اليونسكو",
+      "url": "https://whc.unesco.org/en/list/1293",
+      "accessed": "2026-10-13",
+      "type": "مرجع رسمي",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "met-nabataea",
+      "title": "مملكة الأنباط والبتراء — متحف المتروبوليتان",
+      "url": "https://www.metmuseum.org/en/essays/nabataean-kingdom-and-petra",
+      "accessed": "2026-10-13",
+      "type": "متحف",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "brit-ainjalut",
+      "title": "معركة عين جالوت — بريتانيكا",
+      "url": "https://www.britannica.com/print/article/46548",
+      "accessed": "2026-10-13",
+      "type": "موسوعة مرجعية",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "brit-baybars",
+      "title": "بيبرس الأول — بريتانيكا",
+      "url": "https://www.britannica.com/biography/Baybars-I",
+      "accessed": "2026-10-13",
+      "type": "موسوعة مرجعية",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "cairo-hasan",
+      "title": "مسجد ومدرسة السلطان حسن",
+      "url": "https://en.wikipedia.org/wiki/Mosque-Madrasa_of_Sultan_Hasan",
+      "accessed": "2026-10-13",
+      "type": "موسوعة مفتوحة",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "whe-karakorum",
+      "title": "قراقورم — موسوعة تاريخ العالم",
+      "url": "https://www.worldhistory.org/Karakorum/",
+      "accessed": "2026-10-13",
+      "type": "موسوعة تعليمية",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "brit-genghis",
+      "title": "جنكيز خان — بريتانيكا",
+      "url": "https://www.britannica.com/summary/Genghis-Khan",
+      "accessed": "2026-10-13",
+      "type": "موسوعة مرجعية",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
+    },
+    {
+      "id": "whe-kublai",
+      "title": "قوبلاي خان — موسوعة تاريخ العالم",
+      "url": "https://www.worldhistory.org/trans/Fr/1-17878/kubilai-khan/",
+      "accessed": "2026-10-13",
+      "type": "موسوعة تعليمية",
+      "verification": "روجعت الصفحة أو نتيجة البحث في 13 أكتوبر 2026؛ لا يعني ذلك تدقيقًا أكاديميًا شاملًا"
     }
   ],
   "methodology": {
