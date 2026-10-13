@@ -1,4 +1,4 @@
-export const FRAMES=[-1400,-400,-100,117,700,850,1000,1300,1750];
+export const FRAMES=[-1400,-400,-100,117,650,700,850,1000,1300,1750];
 export const dateLabel=y=>y<0?`${Math.abs(y)} ق.م`:`${y} م`;
 export const ordinal=y=>y<0?y+1:y;
 export function duration(a,b){if(!a||!b)throw new Error('No year zero');return ordinal(b)-ordinal(a)}

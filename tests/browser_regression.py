@@ -14,13 +14,13 @@ with sync_playwright() as p:
   land=pg.evaluate("()=>{const m=document.querySelector('#map');return m&&m.querySelector('canvas').width>0}")
   ok('canvas sized',land)
   counts=[]
-  for i in range(9):
+  for i in range(10):
     pg.click(f'[data-frame="{i}"]'); pg.wait_for_timeout(300)
     counts.append(pg.locator('.map-point').count())
   ok('every frame has markers', all(c>0 for c in counts), str(counts))
   pg.check('#layer-event'); pg.wait_for_timeout(300)
   ev=pg.locator('.map-point.event').count(); ok('events layer at 1750', ev>0, str(ev))
-  pg.click('[data-frame="5"]'); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
+  pg.click('[data-frame="6"]'); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
   
   try:
     pg.locator('.map-point:not(.event)').first.click(timeout=3000); ok('city marker clickable with events on',True)
@@ -35,7 +35,7 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==26, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==30, str(pg.locator('.result-card').count()))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
@@ -103,7 +103,7 @@ with sync_playwright() as p:
   m=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); mp=m.new_page()
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
-  for i in range(9):
+  for i in range(10):
     mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(3200)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)
@@ -124,4 +124,21 @@ with sync_playwright() as p:
   t=pg.inner_text('main'); print(('PASS' if 'من 10' in t and 'نتيجتك' in t else 'FAIL'),'owner game completes')
   g=pg.evaluate("localStorage.getItem('atlas-games')"); s=pg.evaluate("localStorage.getItem('atlas-v1')"); print(('PASS' if g else 'FAIL'),'scores saved separately',g)
   print(('PASS' if not errs else 'FAIL'),'game no errors',errs[:2])
+  b.close()
+# V2.4: new topics + share
+with sync_playwright() as p:
+  b=p.chromium.launch(); ctx=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); ctx.grant_permissions(['clipboard-read','clipboard-write'],origin=B.rstrip('/')); pg=ctx.new_page(); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
+  for tid in ['rashidun','medina','abu-bakr','umar','uthman','ali','yarmuk','hijri-calendar','rashidun-start','khwarizmi-algebra','ibn-haytham-optics','zahrawi-surgery','paper-baghdad']:
+    pg.goto(B+'#/topic/'+tid); pg.wait_for_timeout(250)
+    print(('PASS' if pg.locator('h1').count()==1 and 'غير موجود' not in pg.inner_text('main') and pg.locator('#share-topic').count()==1 else 'FAIL'),'topic',tid)
+  pg.goto(B+'#/topic/umar'); pg.wait_for_timeout(300); pg.evaluate("()=>{try{delete Navigator.prototype.share}catch(e){}}")
+  pg.click('#share-topic'); pg.wait_for_timeout(400)
+  clip=pg.evaluate("navigator.clipboard.readText()")
+  print(('PASS' if clip.endswith('/t/umar/') else 'FAIL'),'share copies static url',clip)
+  pg.goto(B+'#/atlas?frame=4'); pg.wait_for_timeout(2500)
+  print(('PASS' if 'المدينة' in pg.inner_text('#map-topic-list') else 'FAIL'),'frame 650 shows Medina', pg.inner_text('#year-label'))
+  pg.goto(B+'#/'); pg.wait_for_timeout(500)
+  hrefs=pg.eval_on_selector_all('.era',"e=>e.map(a=>a.getAttribute('href'))"); print(('PASS' if hrefs==['#/atlas?frame=0','#/atlas?frame=2','#/atlas?frame=4','#/atlas?frame=8','#/atlas?frame=9'] else 'FAIL'),'era links',hrefs)
+  pg.goto(B+'#/timeline'); pg.wait_for_timeout(500); print(('PASS' if 'الخلافة الراشدة' in pg.inner_text('main') else 'FAIL'),'timeline has rashidun')
+  print(('PASS' if not errs else 'FAIL'),'v2.4 no errors',errs[:3])
   b.close()
