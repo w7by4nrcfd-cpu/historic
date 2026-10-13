@@ -1,0 +1,10 @@
+[
+  {
+    "id": "persia",
+    "quote": "ومنها حملة خشايارشا التي انتهت بهزيمة بحرية في سلاميس سنة 480 ق.م.",
+    "problem": "Xerxes' invasion did not end at Salamis; Xerxes withdrew but left Mardonius' army in Greece, which was decisively defeated at Plataea in 479 BC. Salamis was the turning point, not the end.",
+    "fix": "ومنها حملة خشايارشا التي تحولت بهزيمة بحرية في سلاميس سنة 480 ق.م، ثم انتهت بهزيمة برية في بلاتيا سنة 479 ق.م.",
+    "severity": "overstatement",
+    "source": "https://www.britannica.com/event/Battle-of-Plataea"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "andalus",
+    "quote": "أعلن حفيده عبدالرحمن الثالث نفسه خليفة سنة 929 م",
+    "problem": "Abd al-Rahman III was not the grandson of Abd al-Rahman I but a distant descendant (seven generations later); his grandfather was Emir Abdallah (r. 888-912).",
+    "fix": "أعلن أحد أحفاده، عبدالرحمن الثالث، نفسه خليفة سنة 929 م",
+    "severity": "error",
+    "source": "https://www.worldhistory.org/Abd_al-Rahman_III/"
+  },
+  {
+    "id": "abd-rahman-i",
+    "quote": "أما لقب الخليفة فأعلنه حفيده عبدالرحمن الثالث سنة 929 م",
+    "problem": "Same genealogy error: Abd al-Rahman III was a later descendant, not the grandson, of Abd al-Rahman I (his grandfather was Emir Abdallah).",
+    "fix": "أما لقب الخليفة فأعلنه أحد أحفاده، عبدالرحمن الثالث، سنة 929 م",
+    "severity": "error",
+    "source": "https://www.worldhistory.org/Abd_al-Rahman_III/"
+  },
+  {
+    "id": "mamluks",
+    "quote": "وفي سنة 1250 م انتقلت السلطة إليهم، فصاروا يحكمون مصر والشام",
+    "problem": "In 1250 the Mamluks took power in Egypt only; Syria remained under the Ayyubid an-Nasir Yusuf and then the Mongols, coming under Mamluk rule only after Ain Jalut (1260).",
+    "fix": "وفي سنة 1250 م انتقلت السلطة إليهم في مصر، ثم ضموا الشام بعد عين جالوت سنة 1260 م",
+    "severity": "error",
+    "source": "https://en.wikipedia.org/wiki/Qutuz"
+  },
+  {
+    "id": "andalus-emirate",
+    "quote": "مستقلة سياسيًا عن الخلافة العباسية في بغداد",
+    "problem": "Anachronism: in 756 Baghdad did not yet exist (founded 762, as the site's own [baghdad-found] entry states), so the emirate's founding cannot be described as independent of a caliphate 'in Baghdad'.",
+    "fix": "مستقلة سياسيًا عن الخلافة العباسية",
+    "severity": "contradiction",
+    "source": "https://www.britannica.com/place/Baghdad"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "muhammad-saud",
+    "quote": "الإمام محمد بن سعود (1727–1818 م)",
+    "problem": "Entry date span is the First Saudi State's span, not the imam's; the same entry says he ruled until his death in 1765 (Saudipedia: reign 1139–1179 AH / 1727–1765).",
+    "fix": "الإمام محمد بن سعود (حكم 1727–1765 م)",
+    "severity": "contradiction",
+    "source": "https://saudipedia.com/قائمة-أئمة-الدولة-السعودية-الأولى"
+  },
+  {
+    "id": "abdulaziz-muhammad",
+    "quote": "الإمام عبدالعزيز بن محمد (1727–1818 م)",
+    "problem": "Entry date span is the state's span; the text itself says he took power in 1765 and was assassinated in 1803 (Saudipedia: reign 1179–1218 AH / 1765–1803).",
+    "fix": "الإمام عبدالعزيز بن محمد (حكم 1765–1803 م)",
+    "severity": "contradiction",
+    "source": "https://saudipedia.com/قائمة-أئمة-الدولة-السعودية-الأولى"
+  },
+  {
+    "id": "abdulaziz-muhammad",
+    "quote": "ضم الرياض سنة 1773 م فتوحدت نجد",
+    "problem": "Taking Riyadh in 1773 did not by itself complete the unification of Najd; Saudipedia notes other parts of Najd joined later (e.g., Unayzah about 20 years after Buraydah's 1768 accession, i.e. c. 1788).",
+    "fix": "ضم الرياض سنة 1773 م، ثم أتم توحيد نجد",
+    "severity": "overstatement",
+    "source": "https://saudipedia.com/fr/article/282/histoire/le-premier-etat-saoudien/premier-etat-saoudien"
+  },
+  {
+    "id": "abdulaziz-rule",
+    "quote": "شهد عهده توحيد نجد بضم الرياض سنة 1773 م",
+    "problem": "Same issue: implies Najd was unified by the annexation of Riyadh in 1773; other Najdi towns (e.g., Unayzah c. 1788) joined later.",
+    "fix": "شهد عهده ضم الرياض سنة 1773 م ثم استكمال توحيد نجد",
+    "severity": "overstatement",
+    "source": "https://saudipedia.com/fr/article/282/histoire/le-premier-etat-saoudien/premier-etat-saoudien"
+  },
+  {
+    "id": "saba",
+    "quote": "صنع هذا النظام أكبر واحة من صنع الإنسان في العالم القديم",
+    "problem": "UNESCO describes it, with hedging, as 'said to be the largest artificial oasis in ancient Arabia', not in the whole ancient world.",
+    "fix": "صنع هذا النظام ما يُعد أكبر واحة من صنع الإنسان في جزيرة العرب القديمة",
+    "severity": "overstatement",
+    "source": "https://whc.unesco.org/en/list/1700"
+  },
+  {
+    "id": "karibil-watar",
+    "quote": "كرب إيل وتر (نحو القرن الثامن ق.م – 275 م)",
+    "problem": "Entry span is the kingdom's span; the entry's own text places the king in the 7th or 6th century BC.",
+    "fix": "كرب إيل وتر (نحو القرن السابع ق.م)",
+    "severity": "contradiction",
+    "source": "https://en.wikipedia.org/wiki/Karib%27il_Watar"
+  },
+  {
+    "id": "aretas-iv",
+    "quote": "الحارث الرابع (نحو 312 ق.م – 106 م)",
+    "problem": "Entry span is the Nabataean kingdom's span; the summary itself gives his reign as 9 BC–40 AD.",
+    "fix": "الحارث الرابع (9 ق.م – 40 م)",
+    "severity": "contradiction",
+    "source": "https://www.metmuseum.org/en/essays/nabataean-kingdom-and-petra"
+  }
+]
