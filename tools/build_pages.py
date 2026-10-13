@@ -1,0 +1,114 @@
+"""يولّد صفحة HTML ثابتة لكل موضوع (لمحركات البحث ومعاينة المشاركة) + فهرس + sitemap.
+التشغيل: python3 tools/build_pages.py  (يُشغَّل تلقائيًا في GitHub Actions قبل النشر)
+"""
+import json, html, os, re, shutil, datetime
+
+ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'dist')
+BASE_URL = 'https://w7by4nrcfd-cpu.github.io/historic/'
+TYPES = {'civilization': 'حضارة ودولة', 'city': 'مدينة', 'person': 'شخصية', 'event': 'حدث', 'science': 'علوم واكتشافات'}
+esc = lambda s: html.escape(str(s or ''), quote=True)
+
+d = json.load(open(os.path.join(ROOT, 'content.json'), encoding='utf-8'))
+civs = d['civilizations']
+items = civs + d['entries']
+byid = {x['id']: x for x in items}
+shell = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
+
+
+def civ_of(x):
+    if x['type'] == 'civilization':
+        return x
+    for c in civs:
+        if c['cityId'] == x['id'] or any(p['id'] == x['id'] for p in c['people']) or any(e['id'] == x['id'] for e in c['events']):
+            return c
+    for c in civs:
+        if c['id'] in (x.get('relatedIds') or []):
+            return c
+    return None
+
+
+def period(x):
+    return x.get('period') or x.get('dateLabel') or ''
+
+
+def page(x):
+    c = civ_of(x)
+    url = f"{BASE_URL}t/{x['id']}/"
+    title = f"{x['title']} | أطلس"
+    desc = x['summary'][:300]
+    img = (x.get('image') or (c or {}).get('image') or {}).get('src') or BASE_URL + 'assets/og.jpg'
+    related = [byid[r] for r in (x.get('relatedIds') or ([x['cityId']] if x['type'] == 'civilization' else [])) if r in byid]
+    if x['type'] == 'civilization':
+        related += [byid[e['id']] for e in x['events'] if e['id'] in byid] + [byid[p['id']] for p in x['people'] if p['id'] in byid]
+    if c and c['id'] != x['id']:
+        related.insert(0, c)
+    seen, rel = set(), []
+    for r in related:
+        if r['id'] not in seen and r['id'] != x['id']:
+            seen.add(r['id']); rel.append(r)
+    body = [f'<div class="container page-head"><div class="breadcrumb"><a href="#/">الرئيسية</a> / {esc(x["title"])}</div>',
+            f'<div class="eyebrow">{esc(TYPES.get(x["type"], ""))}</div><h1>{esc(x["title"])}</h1><p>{esc(x["summary"])}</p></div>',
+            '<div class="container section" style="padding-top:0"><article class="article-text">']
+    if x.get('image'):
+        body.append(f'<figure class="photo"><img src="{esc(x["image"]["src"])}" alt="{esc(x["image"]["caption"])}" loading="lazy"><figcaption>{esc(x["image"]["caption"])} · {esc(x["image"]["author"])} / {esc(x["image"]["license"])}</figcaption></figure>')
+    for s in x.get('sections', []):
+        if s['text'] != x['summary']:
+            body.append(f'<section><h2>{esc(s["title"])}</h2><p>{esc(s["text"])}</p></section>')
+    if period(x):
+        body.append(f'<p class="note-small">الفترة: {esc(period(x))}</p>')
+    if rel:
+        body.append('<section><h2>اقرأ أيضًا</h2><ul>' + ''.join(f'<li><a href="t/{esc(r["id"])}/">{esc(r["title"])}</a></li>' for r in rel[:8]) + '</ul></section>')
+    body.append('<p><a class="primary" href="#/topic/' + esc(x['id']) + '">افتح الموضوع في أطلس ←</a> <a class="text-link" href="t/">فهرس كل الموضوعات</a></p></article></div>')
+    ld = {'@context': 'https://schema.org', '@type': 'Article', 'headline': x['title'], 'description': desc, 'inLanguage': 'ar',
+          'image': img, 'url': url, 'isPartOf': {'@type': 'WebSite', 'name': 'أطلس', 'url': BASE_URL},
+          'about': {'@type': 'Thing', 'name': x['title']}}
+    head = (f'<base href="../../"><link rel="canonical" href="{url}">'
+            f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
+            f'<script>window.__TOPIC={json.dumps(x["id"])}</script>')
+    return render(title, desc, url, img, head, ''.join(body))
+
+
+def render(title, desc, url, img, extra_head, main_html):
+    h = re.sub(r'<link rel="canonical"[^>]*>', '', shell)
+    h = re.sub(r'<title>.*?</title>', f'<title>{esc(title)}</title>', h, count=1)
+    h = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{esc(desc)}">', h, count=1)
+    h = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{esc(title)}">', h, count=1)
+    h = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{esc(desc)}">', h, count=1)
+    h = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{esc(url)}">', h, count=1)
+    h = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{esc(img)}">', h, count=1)
+    h = h.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + extra_head, 1)
+    h = re.sub(r'<main id="main" tabindex="-1">.*?</main>', f'<main id="main" tabindex="-1">{main_html}</main>', h, count=1, flags=re.S)
+    return h
+
+
+out = os.path.join(ROOT, 't')
+if os.path.isdir(out):
+    shutil.rmtree(out)
+os.makedirs(out)
+for x in items:
+    p = os.path.join(out, x['id'])
+    os.makedirs(p)
+    open(os.path.join(p, 'index.html'), 'w', encoding='utf-8').write(page(x))
+
+# فهرس الموضوعات
+groups = []
+for c in civs:
+    members = [c] + [e for e in d['entries'] if (civ_of(e) or {}).get('id') == c['id']]
+    groups.append(f'<section><h2><a href="t/{esc(c["id"])}/">{esc(c["title"])}</a></h2><ul>' + ''.join(
+        f'<li><a href="t/{esc(m["id"])}/">{esc(m["title"])}</a> <small>{esc(TYPES.get(m["type"], ""))}</small></li>' for m in members[1:]) + '</ul></section>')
+others = [e for e in d['entries'] if not civ_of(e)]
+if others:
+    groups.append('<section><h2>موضوعات أخرى</h2><ul>' + ''.join(f'<li><a href="t/{esc(m["id"])}/">{esc(m["title"])}</a></li>' for m in others) + '</ul></section>')
+idx_main = ('<div class="container page-head"><div class="breadcrumb"><a href="#/">الرئيسية</a> / الفهرس</div><h1>فهرس موضوعات أطلس</h1>'
+            f'<p>{len(items)} موضوعًا عن {len(civs)} حضارة: مدن وشخصيات وأحداث.</p></div><div class="container section article-text" style="padding-top:0">' + ''.join(groups) + '</div>')
+open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(
+    render('فهرس الموضوعات | أطلس', 'فهرس كل موضوعات أطلس التاريخ التفاعلي.', BASE_URL + 't/', BASE_URL + 'assets/og.jpg',
+           f'<base href="../"><link rel="canonical" href="{BASE_URL}t/"><script>window.__INDEX=true</script>', idx_main))
+
+today = datetime.date.today().isoformat()
+urls = [BASE_URL, BASE_URL + 't/'] + [f'{BASE_URL}t/{x["id"]}/' for x in items]
+open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    ''.join(f'  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n' for u in urls) + '</urlset>\n')
+open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}sitemap.xml\n')
+print('pages', len(items), '+ index; sitemap urls', len(urls))

@@ -3,3 +3,6 @@ node_modules/
 .env.*
 *.tar.gz
 *.zip
+dist/t/
+dist/sitemap.xml
+dist/robots.txt
