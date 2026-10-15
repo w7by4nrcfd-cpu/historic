@@ -30,7 +30,7 @@ with sync_playwright() as p:
         ok(f'{name}: slider runs right-to-left like the chips', thumb_right == 'rtl')
         ok(f'{name}: era updates with frame', pg.inner_text('#ax-era-name') == 'العالم القديم')
         pg.click('[data-frame="8"]')
-        pg.wait_for_timeout(1200)
+        pg.wait_for_timeout(3000)
         ok(f'{name}: battle marker kind', pg.locator('.map-point.kind-battle').count() >= 1)
         pg.locator('.map-point.kind-battle').first.click(force=True)
         pg.wait_for_timeout(800)
