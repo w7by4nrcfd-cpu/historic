@@ -74,3 +74,16 @@
 .where-pin span{position:absolute;top:-24px;right:50%;transform:translateX(50%);white-space:nowrap;font-size:12px;color:#f5f0e6;text-shadow:0 1px 3px #000}
 .border-label.collide{visibility:hidden}
 .ax-tag{display:block;font-size:11px;color:#c5a46d;opacity:.85;margin-top:2px}
+.ax-styles{display:flex;gap:0;border:1px solid #ffffff22;border-radius:20px;overflow:hidden;background:#080d16cc}
+.ax-styles button{font-size:11px;padding:5px 11px;border:0;border-radius:0;background:transparent;color:#98a6b9;min-height:30px}
+.ax-styles button.active{background:#c5a46d33;color:#e3c48e}
+#map.theme-parch .geo-label{color:#4a3a28;text-shadow:0 0 3px #f3ead5,0 0 8px #f3ead5cc}
+#map.theme-parch .geo-label.geo-w{color:#3f6470}
+#map.theme-parch .border-label{color:#3b2c1c;text-shadow:0 0 3px #f3ead5,0 0 9px #f3ead5}
+#map.theme-terrain .border-label{text-shadow:0 1px 3px #000,0 0 10px #000}
+.ax-cmp{display:flex;align-items:center;gap:6px;background:#080d16cc;border:1px solid #ffffff22;border-radius:20px;padding:3px 4px 3px 10px;font-size:11px;color:#98a6b9}
+.ax-cmp select{background:transparent;color:#e3c48e;border:0;font:inherit;font-size:12px;padding:4px 2px;min-height:28px}
+.ax-cmp select option{background:#0b1220;color:#f5f0e6}
+.sel-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13px;margin:12px 0}
+.sel-facts dt{color:#98a6b9}.sel-facts dd{margin:0}
+@media (max-width:700px){.ax-cmp span{display:none}.ax-styles button{padding:5px 9px}}

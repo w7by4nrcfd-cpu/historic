@@ -14,7 +14,7 @@ with sync_playwright() as p:
   land=pg.evaluate("()=>{const m=document.querySelector('#map');return m&&m.querySelector('canvas').width>0}")
   ok('canvas sized',land)
   counts=[]
-  for i in range(12):
+  for i in range(14):
     pg.click(f'[data-frame="{i}"]'); pg.wait_for_timeout(300)
     counts.append(pg.locator('.map-point').count())
   ok('every frame has markers', all(c>0 for c in counts), str(counts))
@@ -35,7 +35,7 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==44, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==47, str(pg.locator('.result-card').count()))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
@@ -103,7 +103,7 @@ with sync_playwright() as p:
   m=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); mp=m.new_page()
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
-  for i in range(12):
+  for i in range(14):
     mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(4500)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)
@@ -158,7 +158,7 @@ with sync_playwright() as p:
   pg.click('[data-frame="2"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500)
   lab=pg.inner_text('#year-label'); print(('PASS' if '117' in lab else 'FAIL'),'play advances',lab)
   pg.click('#map-play'); lab=pg.inner_text('#year-label'); pg.wait_for_timeout(3200); lab2=pg.inner_text('#year-label'); print(('PASS' if lab2==lab and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play stops',lab2)
-  pg.click('[data-frame="10"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1750' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
+  pg.click('[data-frame="12"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1932' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
   pg.goto(B+'#/topic/yarmuk'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'في الفترة نفسها' in t else 'FAIL'),'same-time event')
   pg.goto(B+'#/topic/abbasid'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'حضارات عاصرتها' in t else 'FAIL'),'same-time civ')
   pg.goto(B+'#/play/where'); pg.wait_for_timeout(4500)
@@ -170,4 +170,30 @@ with sync_playwright() as p:
   print(('PASS' if 'من 500' in t and '"where"' in (g or '') else 'FAIL'),'where game completes',g)
   pg.goto(B+'#/'); pg.wait_for_timeout(3500); pg.locator('#map').scroll_into_view_if_needed(); pg.wait_for_timeout(2500)
   print(('PASS' if not errs else 'FAIL'),'v2.5 no errors',errs[:3])
+  b.close()
+# V3.3: themes, relief, compare, polygon info, Saudi frames
+with sync_playwright() as p:
+  b=p.chromium.launch(args=['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'])
+  pg=b.new_page(viewport={'width':1280,'height':820}); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
+  pg.goto(B+'#/atlas?frame=6'); pg.wait_for_timeout(6000)
+  print(('PASS' if pg.evaluate("()=>!!window.maplibregl&&document.querySelector('#map').classList.contains('theme-dark')") else 'FAIL'),'default dark theme')
+  pg.click('[data-theme="parch"]'); pg.wait_for_timeout(800)
+  ok1=pg.evaluate("()=>document.querySelector('#map').classList.contains('theme-parch')&&localStorage.getItem('atlas-map-theme')==='parch'")
+  print(('PASS' if ok1 else 'FAIL'),'parchment theme applied and saved')
+  pg.reload(); pg.wait_for_timeout(6000)
+  print(('PASS' if pg.evaluate("()=>document.querySelector('#map').classList.contains('theme-parch')") else 'FAIL'),'theme persists after reload')
+  pg.click('[data-theme="terrain"]'); pg.wait_for_timeout(2500)
+  dem=pg.evaluate("()=>performance.getEntriesByType('resource').filter(r=>r.name.includes('/assets/dem/')).length")
+  print(('PASS' if dem>0 else 'FAIL'),'relief tiles load',dem)
+  pg.click('[data-theme="dark"]'); pg.wait_for_timeout(500)
+  pg.select_option('#cmp-year','1000'); pg.wait_for_timeout(1500)
+  print(('PASS' if '1000' in pg.inner_text('#cmp-note') else 'FAIL'),'compare overlay note')
+  pg.select_option('#cmp-year',''); pg.wait_for_timeout(500)
+  print(('PASS' if pg.locator('#cmp-note').count()==0 else 'FAIL'),'compare cleared')
+  box=pg.locator('#map').bounding_box(); pg.mouse.click(box['x']+box['width']*0.80, box['y']+box['height']*0.70); pg.wait_for_timeout(800)
+  print(('PASS' if 'دولة على الخريطة' in pg.inner_text('#map-selection') else 'FAIL'),'polygon click shows info')
+  pg.click('[data-frame="13"]'); pg.wait_for_timeout(2500)
+  t=pg.inner_text('#map-topic-list'); print(('PASS' if 'الرياض' in t and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'1932 frame shows Riyadh, no borders')
+  pg.goto(B+'#/topic/saudi-kingdom'); pg.wait_for_timeout(400); print(('PASS' if '1932' in pg.inner_text('main') else 'FAIL'),'kingdom page')
+  print(('PASS' if not errs else 'FAIL'),'v3.3 no errors',errs[:3])
   b.close()

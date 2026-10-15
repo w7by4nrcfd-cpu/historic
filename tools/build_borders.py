@@ -119,7 +119,9 @@ for frame, (fname, dyear) in FRAMES.items():
                 elif k == 0:
                     break
             if rings:
-                groups.setdefault(TR[n], {'src': n, 'polys': []})['polys'].append(rings)
+                gr = groups.setdefault(TR[n], {'src': n, 'polys': [], 'bp': 1})
+                gr['polys'].append(rings)
+                gr['bp'] = max(gr['bp'], int((ft['properties'] or {}).get('BORDERPRECISION') or 1))
     feats, labels = [], []
     for i, (ar, gr) in enumerate(sorted(groups.items(), key=lambda kv: -sum(ring_area(p[0]) for p in kv[1]['polys']))):
         color = None
@@ -130,7 +132,7 @@ for frame, (fname, dyear) in FRAMES.items():
         tot = sum(ring_area(p[0]) for p in polys)
         big = max(polys, key=lambda p: ring_area(p[0]))
         lp = label_point([tuple(x) for x in big[0]])
-        feats.append({'type': 'Feature', 'properties': {'n': ar, 'c': color, **({'civ': civ} if civ else {})},
+        feats.append({'type': 'Feature', 'properties': {'n': ar, 'c': color, 'bp': gr['bp'], **({'civ': civ} if civ else {})},
                       'geometry': {'type': 'MultiPolygon', 'coordinates': polys}})
         z = 0 if tot > 120 else 1 if tot > 20 else 2
         labels.append({'n': ar, 'p': [round(lp[0], 2), round(lp[1], 2)], 'z': z, **({'civ': civ} if civ else {})})
