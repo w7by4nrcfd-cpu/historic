@@ -36,7 +36,7 @@ SKIP = {'bc100': {'Kushan Empire'}}
 CIV = {'Achaemenid Empire': 'persia', 'Roman Republic': 'rome', 'Roman Empire': 'rome', 'Han Empire': 'china', 'Han': 'china',
        'Abbasid Caliphate': 'abbasid', 'Emirate of Córdoba': 'andalus', 'Caliphate of Córdoba': 'andalus', 'Nabatean Kingdom': 'nabataea',
        'Saba': 'saba', 'Mamluke Sultanate': 'mamluks', 'Ilkhanate': 'mongols', 'Khanate of the Golden Horde': 'mongols', 'Mongol Empire': 'mongols', 'Great Khanate': 'mongols', 'Chagatai Khanate': 'mongols',
-       'Ottoman Empire': 'ottoman', 'Byzantine Empire': 'byzantine', 'Fatimid Caliphate': 'fatimids', 'Seljuk Caliphate': 'seljuks', 'Safavid Empire': 'safavids', 'Mughal Empire': 'mughals'}
+       'Ottoman Empire': 'ottoman', 'Byzantine Empire': 'byzantine', 'Fatimid Caliphate': 'fatimids', 'Seljuk Caliphate': 'seljuks', 'Safavid Empire': 'safavids', 'Mughal Empire': 'mughals', 'Parthia': 'parthians', 'Parthian Empire': 'parthians', 'Mali': 'mali', 'Ming Chinese Empire': 'ming'}
 PAL = ['#8c7a5b', '#6f8f8a', '#9a6f6f', '#7d7aa3', '#a08c5a', '#6c8f6a', '#9c7aa0', '#5f8aa3', '#a3866f', '#7a9a5f']
 
 

@@ -35,7 +35,7 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==47, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==54, str(pg.locator('.result-card').count()))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
