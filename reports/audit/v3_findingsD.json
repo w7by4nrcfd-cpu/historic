@@ -1,0 +1,42 @@
+[
+  {
+    "id": "umayyad",
+    "quote": "في عهد عبدالملك بن مروان (685–705 م) صارت العربية لغة الدواوين بدل اليونانية والفارسية",
+    "issue": "Overstatement. Abd al-Malik began the Arabization of the diwans (Iraq c. 697 under al-Hajjaj, Syria c. 700), but it was not finished in his reign: Egypt's administration switched to Arabic under al-Walid (governor Abdallah ibn Abd al-Malik, 705–706), and Khurasan only under Hisham (c. 742).",
+    "fix": "في عهد عبدالملك بن مروان (685–705 م) بدأ تعريب الدواوين، فحلّت العربية تدريجيًا محل اليونانية والفارسية، واكتمل ذلك في بعض الأقاليم بعد عهده",
+    "severity": "medium",
+    "source": "https://en.wikipedia.org/wiki/Abdallah_ibn_Abd_al-Malik ; Encyclopaedia of Islam, 'Dīwān'"
+  },
+  {
+    "id": "egypt",
+    "quote": "من طيبة حكم الملوك",
+    "issue": "Oversimplification. In the New Kingdom, Thebes was the religious centre and royal burial site, but Memphis was usually the main administrative capital. The court also moved to Amarna under Akhenaten and to Pi-Ramesses in the 19th Dynasty.",
+    "fix": "من طيبة وممفيس حكم الملوك",
+    "severity": "low",
+    "source": "https://www.worldhistory.org/Thebes_(Egypt)/ ; Britannica, 'Memphis' and 'ancient Egypt: The New Kingdom'"
+  },
+  {
+    "id": "egypt",
+    "quote": "معركة مجدو في فلسطين",
+    "issue": "Anachronistic and politically loaded. In Thutmose III's time the region was Canaan. A neutral historical name is better.",
+    "fix": "معركة مجدو في بلاد كنعان",
+    "severity": "low",
+    "source": "https://www.britannica.com/event/Battle-of-Megiddo-Egyptian-history-15th-century-BCE"
+  },
+  {
+    "id": "abbasid",
+    "quote": "فبقي الخليفة رمزًا دينيًا جامعًا بينما صارت السلطة الفعلية لغيره",
+    "issue": "Stated too absolutely for the whole period up to 1258. As Seljuk power declined, caliphs regained real political and military power in Iraq. The clearest case is al-Nasir li-Din Allah (1180–1225).",
+    "fix": "فصار الخليفة في الغالب رمزًا دينيًا جامعًا بينما انتقلت السلطة الفعلية لغيره، قبل أن يستعيد بعض الخلفاء المتأخرين، كالناصر لدين الله، شيئًا من نفوذهم في العراق",
+    "severity": "low",
+    "source": "https://www.britannica.com/biography/al-Nasir ; https://en.wikipedia.org/wiki/Al-Nasir_li-Din_Allah"
+  },
+  {
+    "id": "rashidun",
+    "quote": "بينما يختلف المسلمون في تقييم بعض أحداثه، خاصة الفتنة في عهدي عثمان وعلي",
+    "issue": "Neutrality and completeness. The main Sunni–Shia disagreement is over the succession itself after the Prophet: Shia Muslims hold that Ali was the designated successor. Naming only the fitna understates the disagreement and frames the Sunni view as the default.",
+    "fix": "بينما يختلف المسلمون في تقييم بعض أحداثه، كمسألة الخلافة بعد وفاة النبي ﷺ، والفتنة في عهدي عثمان وعلي",
+    "severity": "low",
+    "source": "https://www.britannica.com/topic/Shiʿi ; https://en.wikipedia.org/wiki/Succession_to_Muhammad"
+  }
+]

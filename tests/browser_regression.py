@@ -35,13 +35,14 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==54, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.inner_text('#result-count').startswith('54'), pg.inner_text('#result-count'))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
   # all topics render
   ids=pg.evaluate("()=>[...document.querySelectorAll('a')].length")
   pg.goto(B+'#/encyclopedia'); pg.wait_for_timeout(500)
+  while pg.locator('#more-results').count(): pg.click('#more-results'); pg.wait_for_timeout(100)
   hrefs=pg.eval_on_selector_all('.result-card','els=>els.map(e=>e.getAttribute("href"))')
   bad=[]
   for h in hrefs:
@@ -196,4 +197,18 @@ with sync_playwright() as p:
   t=pg.inner_text('#map-topic-list'); print(('PASS' if 'الرياض' in t and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'1932 frame shows Riyadh, no borders')
   pg.goto(B+'#/topic/saudi-kingdom'); pg.wait_for_timeout(400); print(('PASS' if '1932' in pg.inner_text('main') else 'FAIL'),'kingdom page')
   print(('PASS' if not errs else 'FAIL'),'v3.3 no errors',errs[:3])
+  b.close()
+# V3.6: polish
+with sync_playwright() as p:
+  b=p.chromium.launch(); pg=b.new_page(viewport={'width':390,'height':844},is_mobile=True); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
+  pg.goto(B+'#/'); pg.wait_for_timeout(800)
+  print(('PASS' if pg.locator('.civ-grid .civ-card').count()==8 and pg.locator('a[href="#/encyclopedia?type=civilization"]').count()>=1 else 'FAIL'),'home shows 8 featured civs')
+  pg.goto(B+'#/encyclopedia'); pg.wait_for_timeout(600)
+  n1=pg.locator('.result-card').count(); pg.click('#more-results'); pg.wait_for_timeout(300); n2=pg.locator('.result-card').count()
+  print(('PASS' if n1==24 and n2==48 else 'FAIL'),'encyclopedia pagination',n1,n2)
+  pg.fill('#search','بغداد'); pg.wait_for_timeout(300); print(('PASS' if pg.locator('#more-results').count()==0 and pg.locator('.result-card').count()>0 else 'FAIL'),'search resets pagination')
+  pg.goto(B+'#/topic/saladin'); pg.wait_for_timeout(500)
+  y1=pg.evaluate("document.querySelector('.article-aside').getBoundingClientRect().top"); y2=pg.evaluate("document.querySelector('.article-text').getBoundingClientRect().top")
+  print(('PASS' if y1<y2 else 'FAIL'),'mobile facts box above article')
+  print(('PASS' if not errs else 'FAIL'),'v3.6 no errors',errs[:2])
   b.close()
