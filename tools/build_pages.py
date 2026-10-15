@@ -43,6 +43,8 @@ def page(x):
         cut = desc[:158]
         i = max(cut.rfind('. '), cut.rfind('، '))
         desc = cut[:i + 1] if i > 90 else cut[:cut.rfind(' ')] + '…'
+        if desc.endswith('،'):
+            desc = desc[:-1] + '…'
     img = (x.get('image') or (c or {}).get('image') or {}).get('src') or BASE_URL + 'assets/og.jpg'
     related = [byid[r] for r in (x.get('relatedIds') or ([x['cityId']] if x['type'] == 'civilization' else [])) if r in byid]
     if x['type'] == 'civilization':
