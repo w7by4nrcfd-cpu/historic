@@ -14,7 +14,7 @@ with sync_playwright() as p:
   land=pg.evaluate("()=>{const m=document.querySelector('#map');return m&&m.querySelector('canvas').width>0}")
   ok('canvas sized',land)
   counts=[]
-  for i in range(10):
+  for i in range(12):
     pg.click(f'[data-frame="{i}"]'); pg.wait_for_timeout(300)
     counts.append(pg.locator('.map-point').count())
   ok('every frame has markers', all(c>0 for c in counts), str(counts))
@@ -35,7 +35,7 @@ with sync_playwright() as p:
   pg.fill('#search','الأندلس'); pg.wait_for_timeout(200); n1=pg.locator('.result-card').count()
   pg.fill('#search','الاندلس'); pg.wait_for_timeout(200); n2=pg.locator('.result-card').count()
   ok('hamza-insensitive search', n1==n2 and n1>0, f'{n1} {n2}')
-  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==30, str(pg.locator('.result-card').count()))
+  pg.fill('#search',''); pg.click('[data-type="person"]'); ok('filter person', pg.locator('.result-card').count()==44, str(pg.locator('.result-card').count()))
   pg.fill('#search','zzzz'); ok('empty state', pg.locator('.empty').count()==1)
   # header search link
   pg.goto(B+'#/'); pg.wait_for_timeout(800); pg.click('.search-link'); pg.wait_for_timeout(500); ok('header search route', pg.locator('#search').count()==1)
@@ -103,7 +103,7 @@ with sync_playwright() as p:
   m=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); mp=m.new_page()
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
-  for i in range(10):
+  for i in range(12):
     mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(4500)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)
@@ -138,7 +138,7 @@ with sync_playwright() as p:
   pg.goto(B+'#/atlas?frame=4'); pg.wait_for_timeout(2500)
   print(('PASS' if 'المدينة' in pg.inner_text('#map-topic-list') else 'FAIL'),'frame 650 shows Medina', pg.inner_text('#year-label'))
   pg.goto(B+'#/'); pg.wait_for_timeout(500)
-  hrefs=pg.eval_on_selector_all('.era',"e=>e.map(a=>a.getAttribute('href'))"); print(('PASS' if hrefs==['#/atlas?frame=0','#/atlas?frame=2','#/atlas?frame=4','#/atlas?frame=8','#/atlas?frame=9'] else 'FAIL'),'era links',hrefs)
+  hrefs=pg.eval_on_selector_all('.era',"e=>e.map(a=>a.getAttribute('href'))"); print(('PASS' if hrefs==['#/atlas?frame=0','#/atlas?frame=2','#/atlas?frame=4','#/atlas?frame=9','#/atlas?frame=11'] else 'FAIL'),'era links',hrefs)
   pg.goto(B+'#/timeline'); pg.wait_for_timeout(500); print(('PASS' if 'الخلافة الراشدة' in pg.inner_text('main') else 'FAIL'),'timeline has rashidun')
   print(('PASS' if not errs else 'FAIL'),'v2.4 no errors',errs[:3])
   b.close()
@@ -158,7 +158,7 @@ with sync_playwright() as p:
   pg.click('[data-frame="2"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500)
   lab=pg.inner_text('#year-label'); print(('PASS' if '117' in lab else 'FAIL'),'play advances',lab)
   pg.click('#map-play'); lab=pg.inner_text('#year-label'); pg.wait_for_timeout(3200); lab2=pg.inner_text('#year-label'); print(('PASS' if lab2==lab and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play stops',lab2)
-  pg.click('[data-frame="8"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1750' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
+  pg.click('[data-frame="10"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1750' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
   pg.goto(B+'#/topic/yarmuk'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'في الفترة نفسها' in t else 'FAIL'),'same-time event')
   pg.goto(B+'#/topic/abbasid'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'حضارات عاصرتها' in t else 'FAIL'),'same-time civ')
   pg.goto(B+'#/play/where'); pg.wait_for_timeout(4500)

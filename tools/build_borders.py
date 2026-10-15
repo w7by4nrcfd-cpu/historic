@@ -8,7 +8,7 @@ SRC = sys.argv[1]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'dist', 'assets', 'borders')
 # سنة اللقطة في أطلس -> ملف البيانات وسنته المعروضة
 FRAMES = {-400: ('bc400', -400), -100: ('bc100', -100), 117: ('100', 100), 850: ('800', 800),
-          1000: ('1000', 1000), 1300: ('1300', 1300), 1750: ('1715', 1715)}
+          1000: ('1000', 1000), 1300: ('1300', 1300), 1600: ('1600', 1600), 1750: ('1715', 1715)}
 TR = {
  'Achaemenid Empire': 'الإمبراطورية الأخمينية', 'Carthaginian Empire': 'قرطاج', 'Greek city-states': 'المدن اليونانية', 'Kush': 'مملكة كوش',
  'Seleucid Kingdom': 'المملكة السلوقية', 'Roman Republic': 'الجمهورية الرومانية', 'Ptolemaic Kingdom': 'مملكة البطالمة', 'Meroe': 'مملكة مروي',
@@ -29,14 +29,14 @@ TR = {
  'Ottoman Empire': 'الدولة العثمانية', 'Safavid Empire': 'الدولة الصفوية', 'Quazaq Khanate': 'خانية القازاق', 'Khiva Khanate': 'خانية خيوة',
  'Egypt': 'مصر (إيالة عثمانية)', 'Austrian Empire': 'النمسا', 'Spain': 'إسبانيا', 'Algiers': 'إيالة الجزائر', 'Tunis': 'إيالة تونس',
  'Tripolitania': 'طرابلس الغرب', 'Mughal Empire': 'الدولة المغولية في الهند', 'Manchu Empire': 'إمبراطورية تشينغ', 'Tsardom of Muscovy': 'روسيا القيصرية',
- 'Polish–Lithuanian Commonwealth': 'بولندا وليتوانيا', 'Venice': 'البندقية', 'Darfur': 'سلطنة دارفور',
+ 'Polish–Lithuanian Commonwealth': 'بولندا وليتوانيا', 'Poland-Lithuania': 'بولندا وليتوانيا', 'Ming Chinese Empire': 'الصين (أسرة مينغ)', 'Watassid Morocco': 'المغرب', 'Crimean Khanate': 'خانية القرم', 'Adal': 'سلطنة عدل', 'England and Ireland': 'إنجلترا', 'Sweden': 'السويد', 'Vijayanagara': 'فيجاياناغارا', 'Venice': 'البندقية', 'Darfur': 'سلطنة دارفور',
 }
 # أسماء تخالف التسلسل التاريخي في نسخة معينة من البيانات، فنستبعدها
 SKIP = {'bc100': {'Kushan Empire'}}
 CIV = {'Achaemenid Empire': 'persia', 'Roman Republic': 'rome', 'Roman Empire': 'rome', 'Han Empire': 'china', 'Han': 'china',
        'Abbasid Caliphate': 'abbasid', 'Emirate of Córdoba': 'andalus', 'Caliphate of Córdoba': 'andalus', 'Nabatean Kingdom': 'nabataea',
        'Saba': 'saba', 'Mamluke Sultanate': 'mamluks', 'Ilkhanate': 'mongols', 'Khanate of the Golden Horde': 'mongols', 'Mongol Empire': 'mongols', 'Great Khanate': 'mongols', 'Chagatai Khanate': 'mongols',
-       'Ottoman Empire': 'ottoman'}
+       'Ottoman Empire': 'ottoman', 'Byzantine Empire': 'byzantine', 'Fatimid Caliphate': 'fatimids', 'Seljuk Caliphate': 'seljuks', 'Safavid Empire': 'safavids', 'Mughal Empire': 'mughals'}
 PAL = ['#8c7a5b', '#6f8f8a', '#9a6f6f', '#7d7aa3', '#a08c5a', '#6c8f6a', '#9c7aa0', '#5f8aa3', '#a3866f', '#7a9a5f']
 
 
