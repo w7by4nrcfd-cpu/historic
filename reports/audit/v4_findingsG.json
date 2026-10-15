@@ -1,0 +1,23 @@
+[
+  {
+    "civ": "andalus",
+    "section": "المنصور بن أبي عامر ونهاية الخلافة",
+    "quote": "وبعد وفاته سنة 1002 م دخلت قرطبة بعد سنوات فتنة طويلة",
+    "fix": "وبعد وفاته سنة 1002 م بسنوات قليلة دخلت قرطبة في فتنة طويلة",
+    "reason": "Merge left an ungrammatical phrase ('entered after years a long fitna'). Also the fitna began in 1009, after his son Abd al-Malik's rule (1002-1008), not right at his death. https://en.wikipedia.org/wiki/Fitna_of_al-Andalus"
+  },
+  {
+    "civ": "mamluks",
+    "section": "من ثكنات الجند إلى العرش",
+    "quote": "سنة 1260 م، ولم يكن الحكم",
+    "fix": "سنة 1260 م. ولم يكن الحكم",
+    "reason": "Comma splice from merge joins two unrelated ideas (annexing Syria / non-hereditary rule); split into a new sentence."
+  },
+  {
+    "civ": "mongols",
+    "section": "قراقورم وتقسيم الإمبراطورية",
+    "quote": "بنى ابنه أوقطاي",
+    "fix": "بنى أوقطاي بن جنكيز خان",
+    "reason": "Section opens with a pronoun ('his son') whose antecedent is not in this section after the merge. Karakorum walls 1235 is correct. https://en.wikipedia.org/wiki/Karakorum"
+  }
+]
