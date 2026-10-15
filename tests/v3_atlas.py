@@ -29,7 +29,7 @@ with sync_playwright() as p:
         thumb_right = pg.evaluate("(()=>{const s=document.getElementById('year-slider');return getComputedStyle(s).direction})()")
         ok(f'{name}: slider runs right-to-left like the chips', thumb_right == 'rtl')
         ok(f'{name}: era updates with frame', pg.inner_text('#ax-era-name') == 'العالم القديم')
-        pg.click('[data-frame="8"]')
+        pg.click('[data-frame="9"]')
         pg.wait_for_timeout(3000)
         ok(f'{name}: battle marker kind', pg.locator('.map-point.kind-battle').count() >= 1)
         pg.locator('.map-point.kind-battle').first.click(force=True)
