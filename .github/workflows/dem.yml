@@ -1,0 +1,19 @@
+name: بناء بلاطات التضاريس
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [tools/build_dem.py]
+permissions:
+  contents: read
+jobs:
+  dem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install numpy pillow
+      - run: python3 tools/build_dem.py out/dem
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dem
+          path: out/dem
