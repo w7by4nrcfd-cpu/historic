@@ -1,0 +1,9 @@
+[
+  {
+    "civ": "parthians",
+    "section": "بين اليونان وإيران",
+    "quote": "بعد قرون من حكم السلوقيين",
+    "fix": "بعد نحو قرنين من الحكم المقدوني والسلوقي",
+    "reason": "Overstated: Seleucid rule over Iran/Mesopotamia lasted roughly 312-141 BC (well under two centuries; in Parthia itself only until c. 247 BC), not 'centuries'. https://en.wikipedia.org/wiki/Seleucid_Empire"
+  }
+]
