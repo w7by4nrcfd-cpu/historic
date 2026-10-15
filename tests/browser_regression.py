@@ -104,7 +104,7 @@ with sync_playwright() as p:
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
   for i in range(10):
-    mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(3200)
+    mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(4500)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)
   mp.goto(B+'#/'); mp.wait_for_timeout(2500); mp.locator('#map').scroll_into_view_if_needed(); mp.wait_for_timeout(800)
@@ -113,7 +113,7 @@ with sync_playwright() as p:
 # games
 with sync_playwright() as p:
   b=p.chromium.launch(); pg=b.new_page(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
-  pg.goto(B+'#/play'); pg.wait_for_timeout(800); print(('PASS' if pg.locator('.game-card').count()==2 else 'FAIL'),'play hub')
+  pg.goto(B+'#/play'); pg.wait_for_timeout(800); print(('PASS' if pg.locator('.game-card').count()==3 else 'FAIL'),'play hub')
   pg.goto(B+'#/play/order'); pg.wait_for_timeout(800)
   for k in range(4): pg.locator('[data-pick]').first.click(); pg.wait_for_timeout(100)
   print(('PASS' if pg.locator('.game-result').count()==1 and pg.locator('.slot.good,.slot.bad').count()==4 else 'FAIL'),'order game completes')
@@ -141,4 +141,33 @@ with sync_playwright() as p:
   hrefs=pg.eval_on_selector_all('.era',"e=>e.map(a=>a.getAttribute('href'))"); print(('PASS' if hrefs==['#/atlas?frame=0','#/atlas?frame=2','#/atlas?frame=4','#/atlas?frame=8','#/atlas?frame=9'] else 'FAIL'),'era links',hrefs)
   pg.goto(B+'#/timeline'); pg.wait_for_timeout(500); print(('PASS' if 'الخلافة الراشدة' in pg.inner_text('main') else 'FAIL'),'timeline has rashidun')
   print(('PASS' if not errs else 'FAIL'),'v2.4 no errors',errs[:3])
+  b.close()
+# V2.5: borders, play, same-time, where game
+with sync_playwright() as p:
+  b=p.chromium.launch(args=['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'])
+  pg=b.new_page(viewport={'width':1280,'height':900}); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
+  pg.goto(B+'#/atlas?frame=6'); pg.wait_for_timeout(4000)
+  n=pg.evaluate("()=>document.querySelectorAll('.border-label').length"); tag=pg.inner_text('#map-tag')
+  print(('PASS' if n>5 and '800' in tag else 'FAIL'),'borders 850 labels',n,tag)
+  feats=pg.evaluate("()=>{const m=document.querySelector('#map');return m.classList.contains('has-borders')}")
+  print(('PASS' if feats else 'FAIL'),'borders class on')
+  pg.uncheck('#layer-borders'); pg.wait_for_timeout(600)
+  print(('PASS' if pg.locator('.border-label').count()==0 else 'FAIL'),'borders toggle off')
+  pg.check('#layer-borders'); pg.click('[data-frame="4"]'); pg.wait_for_timeout(1200)
+  print(('PASS' if pg.locator('.border-label').count()==0 and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'no borders at 650', pg.inner_text('#map-tag'))
+  pg.click('[data-frame="2"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500)
+  lab=pg.inner_text('#year-label'); print(('PASS' if '117' in lab else 'FAIL'),'play advances',lab)
+  pg.click('#map-play'); pg.wait_for_timeout(3200); lab2=pg.inner_text('#year-label'); print(('PASS' if lab2==lab and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play stops',lab2)
+  pg.click('[data-frame="8"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1750' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
+  pg.goto(B+'#/topic/yarmuk'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'في الفترة نفسها' in t else 'FAIL'),'same-time event')
+  pg.goto(B+'#/topic/abbasid'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'حضارات عاصرتها' in t else 'FAIL'),'same-time civ')
+  pg.goto(B+'#/play/where'); pg.wait_for_timeout(4500)
+  q=pg.inner_text('#where-q'); print(('PASS' if 'أين تقع' in q else 'FAIL'),'where question',q)
+  for k in range(5):
+    box=pg.locator('#map').bounding_box(); pg.mouse.click(box['x']+box['width']*0.5,box['y']+box['height']*0.5); pg.wait_for_timeout(900)
+    pg.click('[data-next]'); pg.wait_for_timeout(900)
+  t=pg.inner_text('main'); g=pg.evaluate("localStorage.getItem('atlas-games')")
+  print(('PASS' if 'من 500' in t and '"where"' in (g or '') else 'FAIL'),'where game completes',g)
+  pg.goto(B+'#/'); pg.wait_for_timeout(3500); pg.locator('#map').scroll_into_view_if_needed(); pg.wait_for_timeout(2500)
+  print(('PASS' if not errs else 'FAIL'),'v2.5 no errors',errs[:3])
   b.close()

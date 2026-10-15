@@ -1,0 +1,5 @@
+Derived from historical-basemaps by André Ourednik and contributors
+https://github.com/aourednik/historical-basemaps
+License: GNU GPL v3.0 — https://www.gnu.org/licenses/gpl-3.0.html
+Changes: clipped to the ATLAS region, simplified (RDP 0.12°), filtered to named polities, Arabic names added.
+The source project is work in progress; borders are approximate.

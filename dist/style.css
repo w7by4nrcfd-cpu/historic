@@ -58,3 +58,19 @@
 }
 @media(prefers-reduced-motion:reduce){.ax .map-point{animation:none}.ax-side{transition:none}}
 .timeline-line input{direction:rtl}
+.border-label{pointer-events:none;direction:rtl;white-space:nowrap;font-size:12px;font-weight:600;color:#f5f0e6;opacity:.78;letter-spacing:.3px;text-shadow:0 1px 3px #000,0 0 10px #000c;border-bottom:2px solid var(--c,transparent);padding-bottom:1px;z-index:0}
+.maplibregl-marker:has(.border-label){z-index:0}
+.map-play{min-width:44px;color:#c5a46d}
+.same-time{display:grid;gap:8px}
+.same-time a{display:flex;gap:12px;align-items:baseline;padding:10px 14px;border:1px solid #ffffff14;border-radius:6px;background:#ffffff05;text-decoration:none;color:inherit}
+.same-time a:hover{border-color:#c5a46d66}
+.same-time b{color:#c5a46d;min-width:78px;font-weight:600;font-size:14px}
+.same-time small{color:#98a6b9;margin-inline-start:auto;font-size:12px}
+.where-hud{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.where-q{font-size:22px;margin:0}
+.where-map{height:min(62vh,520px);border-radius:8px;overflow:hidden;border:1px solid #ffffff16}
+.where-pin{width:16px;height:16px;border-radius:50%;background:#c5a46d;border:2px solid #080d16;box-shadow:0 0 0 3px #c5a46d55}
+.where-pin.guess{background:#ff6b6b;box-shadow:0 0 0 3px #ff6b6b55}
+.where-pin span{position:absolute;top:-24px;right:50%;transform:translateX(50%);white-space:nowrap;font-size:12px;color:#f5f0e6;text-shadow:0 1px 3px #000}
+.border-label.collide{visibility:hidden}
+.ax-tag{display:block;font-size:11px;color:#c5a46d;opacity:.85;margin-top:2px}
