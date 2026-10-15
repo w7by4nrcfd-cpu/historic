@@ -102,3 +102,16 @@
 .same-time b{min-width:0;font-size:12px}
 .same-time small{margin:0}
 }
+/* V3.9 — mobile quality: stable layout + touch targets */
+main#main{min-height:100vh;min-height:100svh}
+@media (pointer:coarse){
+.search-link,.saved-link{min-width:44px;min-height:44px;justify-content:center;display:inline-flex;align-items:center}
+.section-head .text-link,.actions .text-link,.breadcrumb a,footer .footer-top a{display:inline-flex;align-items:center;min-height:44px}
+footer .footer-top div{row-gap:0}
+.frame-list button{min-height:40px;min-width:44px;padding:4px 10px}
+.timeline-line input[type=range]{min-height:40px}
+.ax-styles button,.ax-cmp select{min-height:40px;min-width:40px}
+#map .maplibregl-ctrl-group button{width:40px;height:40px}
+.map-point::after{content:'';position:absolute;inset:-15px;border-radius:50%}
+.fact-next,.actions button{min-height:44px}
+}

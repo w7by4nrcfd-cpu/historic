@@ -35,7 +35,14 @@ def page(x):
     c = civ_of(x)
     url = f"{BASE_URL}t/{x['id']}/"
     title = f"{x['title']} | أطلس"
-    desc = x['summary'][:300]
+    desc = x['summary']
+    if len(desc) < 70:
+        extra = next((s['text'] for s in x.get('sections', []) if s['text'] != desc), '')
+        desc = (desc + ' ' + extra).strip()
+    if len(desc) > 160:
+        cut = desc[:158]
+        i = max(cut.rfind('. '), cut.rfind('، '))
+        desc = cut[:i + 1] if i > 90 else cut[:cut.rfind(' ')] + '…'
     img = (x.get('image') or (c or {}).get('image') or {}).get('src') or BASE_URL + 'assets/og.jpg'
     related = [byid[r] for r in (x.get('relatedIds') or ([x['cityId']] if x['type'] == 'civilization' else [])) if r in byid]
     if x['type'] == 'civilization':

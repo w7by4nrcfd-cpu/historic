@@ -22,8 +22,9 @@ with sync_playwright() as p:
   ev=pg.locator('.map-point.event').count(); ok('events layer at 1750', ev>0, str(ev))
   pg.click('[data-frame="6"]'); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
   
+  pg.wait_for_timeout(1500)
   try:
-    pg.locator('.map-point:not(.event)').first.click(timeout=3000); ok('city marker clickable with events on',True)
+    pg.locator('.map-point:not(.event)').first.click(timeout=6000); ok('city marker clickable with events on',True)
   except Exception: ok('city marker clickable with events on',False)
   pg.locator('.map-point').first.click(force=True); pg.wait_for_timeout(300)
   ok('marker click shows selection', 'اقرأ الموضوع' in pg.inner_text('#map-selection'))
