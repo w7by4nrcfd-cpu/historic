@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fatimids",
+    "quote": "لكن غالبية سكان مصر في عصرهم بقوا على المذهب السني.",
+    "issue": "Implies Sunni Muslims were the majority of Egypt's whole population under the Fatimids. When Muslims became Egypt's majority is disputed: some scholars place it by the 10th century, while others place it in the 13th-14th centuries, and Christians (Copts) were a very large share of the population in Fatimid times. The safe claim is that most Muslims in Egypt stayed Sunni.",
+    "fix": "لكن غالبية المسلمين في مصر في عصرهم بقوا على المذهب السني، إلى جانب أعداد كبيرة من المسيحيين الأقباط.",
+    "severity": "medium",
+    "source": "https://en.wikipedia.org/wiki/Islamization_of_Egypt ; https://www.medievalists.net/2012/10/coptic-conversion-and-the-islamization-of-egypt/"
+  },
+  {
+    "id": "byzantine",
+    "quote": "وفي سنة 1054 م وقع الانشقاق الكبير بين كنيسة روما وكنيسة القسطنطينية، فصارت الأولى كاثوليكية والثانية أرثوذكسية.",
+    "issue": "Overstatement. The 1054 mutual excommunications are a symbolic date. Historians treat the East-West schism as a gradual process that hardened later, especially after the sack of Constantinople in 1204. The two churches did not 'become' Catholic and Orthodox in that single year.",
+    "fix": "وفي سنة 1054 م تبادل ممثلو كنيسة روما وكنيسة القسطنطينية الحرمان، وهي سنة رمزية لانشقاق تعمّق تدريجيًا بعدها، فتميزت الكنيسة الكاثوليكية في الغرب عن الأرثوذكسية في الشرق.",
+    "severity": "medium",
+    "source": "https://www.britannica.com/event/Schism-of-1054 ; https://en.wikipedia.org/wiki/History_of_the_East%E2%80%93West_Schism"
+  },
+  {
+    "id": "byzantine",
+    "quote": "وإلى أوروبا الغربية بعد سقوط القسطنطينية.",
+    "issue": "Implies that Greek texts reached Western Europe only after 1453. Transmission began earlier, through 12th-century translations, after 1204, and through Byzantine scholars in Italy from the 1390s (Manuel Chrysoloras, the Council of Florence 1438-39). The 1453 exodus only sped it up.",
+    "fix": "وإلى أوروبا الغربية، خاصة مع العلماء البيزنطيين الذين انتقلوا إلى إيطاليا قبيل سقوط القسطنطينية وبعده.",
+    "severity": "low",
+    "source": "https://www.britannica.com/topic/Byzantine-Empire (Byzantine scholars in Renaissance Italy); https://en.wikipedia.org/wiki/Greek_scholars_in_the_Renaissance"
+  },
+  {
+    "id": "fatimids",
+    "quote": "وهي آلاف الأوراق المحفوظة في كنيس بالفسطاط",
+    "issue": "Understated. The Cairo Geniza (Ben Ezra Synagogue, Fustat) holds roughly 300,000-400,000 manuscript fragments, not 'thousands'.",
+    "fix": "وهي مئات الآلاف من الأوراق والقصاصات المحفوظة في كنيس بالفسطاط",
+    "severity": "low",
+    "source": "https://en.wikipedia.org/wiki/Cairo_Geniza ; https://www.library.manchester.ac.uk/rylands/special-collections/exploring/guide-to-special-collections/genizah-collection"
+  },
+  {
+    "id": "fatimids",
+    "quote": "تحكم الفاطميون في تجارة البحر الأحمر والبحر المتوسط",
+    "issue": "Overstatement. The Fatimids were a major commercial power and dominated Red Sea routes to Egypt, but Mediterranean trade was shared with the Byzantines, Italian city-states and others. They did not control it.",
+    "fix": "أدّى الفاطميون دورًا كبيرًا في تجارة البحر الأحمر والبحر المتوسط",
+    "severity": "low",
+    "source": "https://www.britannica.com/topic/Fatimid-dynasty"
+  }
+]
