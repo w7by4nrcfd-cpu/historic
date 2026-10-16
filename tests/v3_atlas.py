@@ -44,7 +44,7 @@ with sync_playwright() as p:
             pg.click('.ax-handle')
             pg.wait_for_timeout(500)
             ok('mobile: handle collapses sheet', 'open' not in pg.get_attribute('#map-side', 'class'))
-        pg.click('.ax-layers label:has(#layer-event)')
+        pg.click('#ax-layers-btn'); pg.wait_for_timeout(300); pg.click('label:has(#layer-event)')
         pg.wait_for_timeout(500)
         ok(f'{name}: events layer toggle', pg.locator('.map-point.event').count() == 0)
         ok(f'{name}: no page errors', not errs, str(errs))
