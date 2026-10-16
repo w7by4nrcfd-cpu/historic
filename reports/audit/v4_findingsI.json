@@ -1,0 +1,10 @@
+[
+  {"id": "maurya", "quote": "اشتهر حفيدها أشوكا", "fix": "اشتهر حفيد مؤسسها أشوكا", "reason": "Ashoka was the founder's grandson; 'حفيدها' grammatically refers to the empire. https://en.wikipedia.org/wiki/Ashoka"},
+  {"id": "maurya", "quote": "تنازل فيه سلوقس عن أقاليم في أفغانستان اليوم", "fix": "تنازل فيه سلوقس عن أقاليم تقع اليوم في أفغانستان وباكستان", "reason": "Ceded lands (Arachosia, Gedrosia, Paropamisadae, Indus region) span modern Afghanistan and Pakistan (Gedrosia = Balochistan). https://en.wikipedia.org/wiki/Seleucid%E2%80%93Mauryan_war"},
+  {"id": "maurya", "quote": "أما بوابتها المنحوتة فأُضيفت بعده", "fix": "أما بواباتها الأربع المنحوتة فأُضيفت بعده بنحو قرنين", "reason": "Great Stupa has four toranas, added under the Satavahanas c. 1st century BC. https://en.wikipedia.org/wiki/Sanchi"},
+  {"id": "timurids", "quote": "وُلد تيمور نحو سنة 1336 م", "fix": "وُلد تيمور نحو سنة 1336 م بحسب الرواية المشهورة، وقد يكون مولده قبل ذلك ببضع سنوات", "reason": "1336 is the later Timurid court date; contemporary sources point to the late 1320s. https://en.wikipedia.org/wiki/Timur"},
+  {"id": "timurids", "quote": "الذي يضم مواقع أكثر من ألف نجم", "fix": "الذي يضم مواقع نحو ألف نجم", "reason": "Star count given as 994 or 1018 depending on source; 'about 1000' is safe. https://en.wikipedia.org/wiki/Ulugh_Beg"},
+  {"id": "timurids", "quote": "بمواقع أكثر من ألف نجم", "fix": "بمواقع نحو ألف نجم", "reason": "Quiz explanation: catalogue count is 994 (Wikipedia) or 1018 (other sources). https://en.wikipedia.org/wiki/Ulugh_Beg"},
+  {"id": "zij-sultani", "quote": "وفيها مواقع أكثر من ألف نجم", "fix": "وفيها مواقع نحو ألف نجم", "reason": "Same star-count discrepancy (994 vs 1018); entry caveat already notes it. https://en.wikipedia.org/wiki/Ulugh_Beg"},
+  {"id": "samarkand", "quote": "وما زالت مجمعات شاه زنده", "fix": "وما زالت مجموعة أضرحة شاه زنده", "reason": "Shah-i-Zinda is a single necropolis complex of mausoleums, not multiple complexes. https://whc.unesco.org/en/list/603"}
+]

@@ -7,9 +7,10 @@ sys.setrecursionlimit(100000)
 SRC = sys.argv[1]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'dist', 'assets', 'borders')
 # سنة اللقطة في أطلس -> ملف البيانات وسنته المعروضة
-FRAMES = {-400: ('bc400', -400), -100: ('bc100', -100), 117: ('100', 100), 850: ('800', 800),
+FRAMES = {-400: ('bc400', -400), -300: ('bc300', -300), -100: ('bc100', -100), 1400: ('1400', 1400), 117: ('100', 100), 850: ('800', 800),
           1000: ('1000', 1000), 1300: ('1300', 1300), 1600: ('1600', 1600), 1750: ('1715', 1715)}
 TR = {
+ 'Mauryan Empire': 'الإمبراطورية الماورية', 'Qin': 'دولة تشين', 'Timurid Empire': 'الدولة التيمورية', 'Bactria': 'باختريا',
  'Achaemenid Empire': 'الإمبراطورية الأخمينية', 'Carthaginian Empire': 'قرطاج', 'Greek city-states': 'المدن اليونانية', 'Kush': 'مملكة كوش',
  'Seleucid Kingdom': 'المملكة السلوقية', 'Roman Republic': 'الجمهورية الرومانية', 'Ptolemaic Kingdom': 'مملكة البطالمة', 'Meroe': 'مملكة مروي',
  'Parthia': 'الفرثيون', 'Numidia': 'نوميديا', 'Mauretania': 'موريطنية', 'Qataban': 'قتبان', 'Maan': 'معين', 'Nabatean Kingdom': 'مملكة الأنباط',
@@ -32,8 +33,8 @@ TR = {
  'Polish–Lithuanian Commonwealth': 'بولندا وليتوانيا', 'Poland-Lithuania': 'بولندا وليتوانيا', 'Ming Chinese Empire': 'الصين (أسرة مينغ)', 'Watassid Morocco': 'المغرب', 'Crimean Khanate': 'خانية القرم', 'Adal': 'سلطنة عدل', 'England and Ireland': 'إنجلترا', 'Sweden': 'السويد', 'Vijayanagara': 'فيجاياناغارا', 'Venice': 'البندقية', 'Darfur': 'سلطنة دارفور',
 }
 # أسماء تخالف التسلسل التاريخي في نسخة معينة من البيانات، فنستبعدها
-SKIP = {'bc100': {'Kushan Empire'}}
-CIV = {'Achaemenid Empire': 'persia', 'Roman Republic': 'rome', 'Roman Empire': 'rome', 'Han Empire': 'china', 'Han': 'china',
+SKIP = {'bc100': {'Kushan Empire', 'Mauryan Empire'}, '1400': {'Great Khanate', 'Seljuk Caliphate', 'Chola Empire'}}
+CIV = {'Mauryan Empire': 'maurya', 'Timurid Empire': 'timurids', 'Achaemenid Empire': 'persia', 'Roman Republic': 'rome', 'Roman Empire': 'rome', 'Han Empire': 'china', 'Han': 'china',
        'Abbasid Caliphate': 'abbasid', 'Emirate of Córdoba': 'andalus', 'Caliphate of Córdoba': 'andalus', 'Nabatean Kingdom': 'nabataea',
        'Saba': 'saba', 'Mamluke Sultanate': 'mamluks', 'Ilkhanate': 'mongols', 'Khanate of the Golden Horde': 'mongols', 'Mongol Empire': 'mongols', 'Great Khanate': 'mongols', 'Chagatai Khanate': 'mongols',
        'Ottoman Empire': 'ottoman', 'Byzantine Empire': 'byzantine', 'Fatimid Caliphate': 'fatimids', 'Seljuk Caliphate': 'seljuks', 'Safavid Empire': 'safavids', 'Mughal Empire': 'mughals', 'Parthia': 'parthians', 'Parthian Empire': 'parthians', 'Mali': 'mali', 'Ming Chinese Empire': 'ming'}

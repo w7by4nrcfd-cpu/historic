@@ -1,3 +1,5 @@
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from frames import FRAMES, fsel
 import sys, json
 from playwright.sync_api import sync_playwright
 R=[]
@@ -14,13 +16,13 @@ with sync_playwright() as p:
   land=pg.evaluate("()=>{const m=document.querySelector('#map');return m&&m.querySelector('canvas').width>0}")
   ok('canvas sized',land)
   counts=[]
-  for i in range(15):
+  for i in range(len(FRAMES)):
     pg.click(f'[data-frame="{i}"]'); pg.wait_for_timeout(300)
     counts.append(pg.locator('.map-point').count())
   ok('every frame has markers', all(c>0 for c in counts), str(counts))
   pg.check('#layer-event'); pg.wait_for_timeout(300)
   ev=pg.locator('.map-point.event').count(); ok('events layer at 1750', ev>0, str(ev))
-  pg.click('[data-frame="7"]'); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
+  pg.click(fsel(850)); pg.wait_for_timeout(300); ok('events layer 850', pg.locator('.map-point.event').count()>0, str(pg.locator('.map-point.event').count()))
   
   pg.wait_for_timeout(1500)
   try:
@@ -105,7 +107,7 @@ with sync_playwright() as p:
   m=b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True); mp=m.new_page()
   mp.goto(B+'#/atlas'); mp.wait_for_timeout(2500)
   res=[]
-  for i in range(15):
+  for i in range(len(FRAMES)):
     mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(4500)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
   print(('PASS' if all(res) else 'FAIL'),'mobile markers inside map every frame',res)
@@ -155,12 +157,12 @@ with sync_playwright() as p:
   print(('PASS' if feats else 'FAIL'),'borders class on')
   pg.click('label:has(#layer-borders)'); pg.wait_for_timeout(600)
   print(('PASS' if pg.locator('.border-label').count()==0 else 'FAIL'),'borders toggle off')
-  pg.click('label:has(#layer-borders)'); pg.click('[data-frame="5"]'); pg.wait_for_timeout(1200)
+  pg.click('label:has(#layer-borders)'); pg.click(fsel(650)); pg.wait_for_timeout(1200)
   print(('PASS' if pg.locator('.border-label').count()==0 and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'no borders at 650', pg.inner_text('#map-tag'))
-  pg.click('[data-frame="3"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500)
+  pg.click(fsel(-100)); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500)
   lab=pg.inner_text('#year-label'); print(('PASS' if '117' in lab else 'FAIL'),'play advances',lab)
   pg.click('#map-play'); lab=pg.inner_text('#year-label'); pg.wait_for_timeout(3200); lab2=pg.inner_text('#year-label'); print(('PASS' if lab2==lab and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play stops',lab2)
-  pg.click('[data-frame="13"]'); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1932' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
+  pg.click(fsel(1850)); pg.wait_for_timeout(300); pg.click('#map-play'); pg.wait_for_timeout(1500); print(('PASS' if '1932' in pg.inner_text('#year-label') and pg.inner_text('#map-play')=='▶' else 'FAIL'),'play auto-stops at end')
   pg.goto(B+'#/topic/yarmuk'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'في الفترة نفسها' in t else 'FAIL'),'same-time event')
   pg.goto(B+'#/topic/abbasid'); pg.wait_for_timeout(500); t=pg.inner_text('main'); print(('PASS' if 'حضارات عاصرتها' in t else 'FAIL'),'same-time civ')
   pg.goto(B+'#/play/where'); pg.wait_for_timeout(4500)
@@ -194,7 +196,7 @@ with sync_playwright() as p:
   print(('PASS' if pg.locator('#cmp-note').count()==0 else 'FAIL'),'compare cleared')
   box=pg.locator('#map').bounding_box(); pg.mouse.click(box['x']+box['width']*0.80, box['y']+box['height']*0.70); pg.wait_for_timeout(800)
   print(('PASS' if 'دولة على الخريطة' in pg.inner_text('#map-selection') else 'FAIL'),'polygon click shows info')
-  pg.click('[data-frame="14"]'); pg.wait_for_timeout(2500)
+  pg.click(fsel(1932)); pg.wait_for_timeout(2500)
   t=pg.inner_text('#map-topic-list'); print(('PASS' if 'الرياض' in t and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'1932 frame shows Riyadh, no borders')
   pg.goto(B+'#/topic/saudi-kingdom'); pg.wait_for_timeout(400); print(('PASS' if '1932' in pg.inner_text('main') else 'FAIL'),'kingdom page')
   print(('PASS' if not errs else 'FAIL'),'v3.3 no errors',errs[:3])
@@ -207,7 +209,7 @@ with sync_playwright() as p:
   pg.goto(B+'#/encyclopedia'); pg.wait_for_timeout(600)
   n1=pg.locator('.result-card').count(); pg.click('#more-results'); pg.wait_for_timeout(300); n2=pg.locator('.result-card').count()
   print(('PASS' if n1==24 and n2==48 else 'FAIL'),'encyclopedia pagination',n1,n2)
-  pg.fill('#search','بغداد'); pg.wait_for_timeout(300); print(('PASS' if pg.locator('#more-results').count()==0 and pg.locator('.result-card').count()>0 else 'FAIL'),'search resets pagination')
+  pg.fill('#search','بغداد'); pg.wait_for_timeout(300); print(('PASS' if 0<pg.locator('.result-card').count()<=24 else 'FAIL'),'search resets pagination',pg.locator('.result-card').count())
   pg.goto(B+'#/topic/saladin'); pg.wait_for_timeout(500)
   y1=pg.evaluate("document.querySelector('.article-aside').getBoundingClientRect().top"); y2=pg.evaluate("document.querySelector('.article-text').getBoundingClientRect().top")
   print(('PASS' if y1<y2 else 'FAIL'),'mobile facts box above article')

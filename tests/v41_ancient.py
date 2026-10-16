@@ -1,3 +1,5 @@
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from frames import FRAMES, fsel
 """V4.1: 1750 BC frame, legacy frame links, Mesopotamia + Phoenicia content."""
 import os, json
 from playwright.sync_api import sync_playwright
@@ -18,10 +20,10 @@ with sync_playwright() as p:
     ok('1750 BC frame label', '1750 ق.م' in pg.inner_text('#year-label'))
     t = pg.inner_text('#map-topic-list')
     ok('1750 BC shows Babylon and Hammurabi', 'بابل' in t and 'حمورابي' in t, t[:120])
-    pg.click('[data-frame="1"]'); pg.wait_for_timeout(1500)
+    pg.click(fsel(-1400)); pg.wait_for_timeout(1500)
     t = pg.inner_text('#map-topic-list'); ok('1400 BC shows Tyre and Babylon', 'صور' in t and 'بابل' in t, t[:120])
     ok('1750 BC markers', pg.locator('.map-point').count() >= 3, str(pg.locator('.map-point').count()))
-    pg.click('[data-frame="2"]'); pg.wait_for_timeout(1500)
+    pg.click(fsel(-400)); pg.wait_for_timeout(1500)
     ok('400 BC shows Carthage', 'قرطاج' in pg.inner_text('#map-topic-list'))
     pg.goto(B + '#/topic/mesopotamia'); pg.wait_for_timeout(800)
     m = pg.inner_text('main')

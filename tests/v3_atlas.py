@@ -1,3 +1,5 @@
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from frames import FRAMES, fsel
 """اختبارات V3 للخريطة الرئيسية. التشغيل: python3 -m http.server 8080 --directory dist ثم python3 tests/v3_atlas.py"""
 import os
 from playwright.sync_api import sync_playwright
@@ -29,7 +31,7 @@ with sync_playwright() as p:
         thumb_right = pg.evaluate("(()=>{const s=document.getElementById('year-slider');return getComputedStyle(s).direction})()")
         ok(f'{name}: slider runs right-to-left like the chips', thumb_right == 'rtl')
         ok(f'{name}: era updates with frame', pg.inner_text('#ax-era-name') == 'العالم القديم')
-        pg.click('[data-frame="9"]')
+        pg.click(fsel(1200))
         pg.wait_for_timeout(3000)
         ok(f'{name}: battle marker kind', pg.locator('.map-point.kind-battle').count() >= 1)
         pg.locator('.map-point.kind-battle').first.click(force=True)
