@@ -53,8 +53,11 @@ with sync_playwright() as p:
         mid = pg.evaluate("()=>{const m=window.__atlasMap;return [m.getPaintProperty('border-fill','fill-opacity')[1], m.getSource('borders-prev')._data?.features?.length||0]}")
         ok(f'{name}: borders fade in (opacity factor below 1 mid-transition)', mid[0] < 1, str(mid))
         ok(f'{name}: previous borders kept during the fade', mid[1] > 0, str(mid))
-        pg.wait_for_timeout(1500)
-        end = pg.evaluate("()=>{const m=window.__atlasMap;return [m.getPaintProperty('border-fill','fill-opacity')[1], m.getSource('borders-prev')._data?.features?.length||0]}")
+        for _ in range(16):  # البيئة بطيئة الرسم: ننتظر حتى 4 ثوانٍ
+            pg.wait_for_timeout(250)
+            end = pg.evaluate("()=>{const m=window.__atlasMap;return [m.getPaintProperty('border-fill','fill-opacity')[1], m.getSource('borders-prev')._data?.features?.length||0]}")
+            if end[0] == 1 and end[1] == 0:
+                break
         ok(f'{name}: fade completes and old borders cleared', end[0] == 1 and end[1] == 0, str(end))
 
         # فتح مسار من لوحة الطبقات: ينتقل إلى زمنه ويرسمه

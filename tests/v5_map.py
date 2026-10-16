@@ -113,6 +113,22 @@ with sync_playwright() as p:
         ok(f"{vp['width']}px: co-located items show a count badge", pg.locator('.map-point[data-stack] .stk').count() >= 1)
         ctx.close()
 
+    # الثبات لا يعتمد على ترتيب ملفات التنسيق (في المعاينة يأتي style.css بعد maplibre-gl.css فيغلب position:relative)
+    ctx = b.new_context(viewport={'width': 393, 'height': 852})
+    pg = ctx.new_page()
+    pg.goto(B + '#/atlas?year=850')
+    pg.wait_for_timeout(4500)
+    pg.evaluate("()=>{const l=[...document.querySelectorAll('link[rel=stylesheet]')].find(x=>x.href.endsWith('style.css'));document.body.appendChild(l)}")
+    pg.wait_for_timeout(1200)
+    res = []
+    for z in [1.5, 3, 4.5]:
+        pg.evaluate(f"()=>window.__atlasMap.jumpTo({{zoom:{z},center:[35,35]}})")
+        pg.wait_for_timeout(1000)
+        res.append(pg.evaluate(DRIFT)[0])
+    ok('markers stay put even when style.css loads after maplibre-gl.css', all(r <= 2 for r in res), str(res))
+    ok('map rotation is locked (two-finger twist cannot rotate)', pg.evaluate("()=>!window.__atlasMap.dragRotate.isEnabled()&&window.__atlasMap.getMaxPitch()===0"))
+    ctx.close()
+
     # النمط الورقي يغيّر ألوان اللوحات العائمة
     ctx = b.new_context(viewport={'width': 1440, 'height': 900})
     pg = ctx.new_page()

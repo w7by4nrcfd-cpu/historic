@@ -315,3 +315,8 @@ footer .footer-top div{row-gap:0}
 .ax.route-mode .border-label{opacity:.35}
 .ax.route-mode .geo-label{opacity:.3}
 .ax.route-mode .map-point span{visibility:hidden!important}
+/* V5.3 — العلامة داخل غلاف بلا أبعاد: موضع الإرساء لا يتأثر بأي محتوى داخل العلامة على أي متصفح */
+.mk{width:0;height:0;display:flex;align-items:center;justify-content:center;overflow:visible;pointer-events:none}
+.mk>.map-point{flex:none;pointer-events:auto;margin:0}
+.maplibregl-marker:has(.map-point:hover),.maplibregl-marker:has(.map-point:focus-visible){z-index:6}
+.maplibregl-marker:has(.map-point.is-sel){z-index:8}
