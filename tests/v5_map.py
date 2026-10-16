@@ -63,7 +63,7 @@ with sync_playwright() as p:
         # هرمية الوسوم
         ev_hidden = pg.evaluate("()=>[...document.querySelectorAll('.map-point.event span')].every(s=>getComputedStyle(s).display==='none')")
         ok(f'{name}: event titles hidden until hover/select', ev_hidden)
-        pg.locator('.map-point.kind-battle').first.click(force=True)
+        pg.locator('.map-point.kind-battle:not(.stack-under)').first.click(force=True)
         pg.wait_for_timeout(900)
         ok(f'{name}: selected event shows its title', pg.evaluate("()=>{const s=document.querySelector('.map-point.is-sel span');return !!s&&getComputedStyle(s).display!=='none'}"))
         ok(f'{name}: event timing sentence', 'قبل هذه اللقطة بنحو' in pg.inner_text('#map-selection'))
@@ -91,6 +91,26 @@ with sync_playwright() as p:
             ok('mobile: zoom buttons hidden (pinch instead)', not pg.locator('.maplibregl-ctrl-zoom-in').is_visible())
         ok(f'{name}: no horizontal scroll', not pg.evaluate('document.documentElement.scrollWidth>innerWidth+1'))
         ok(f'{name}: no page errors', not errs, str(errs))
+        ctx.close()
+
+
+    # العلامات ثابتة على إحداثياتها الحقيقية عند التكبير والتصغير
+    DRIFT = """async()=>{const m=window.__atlasMap,box=document.getElementById('map').getBoundingClientRect();const d=await (await fetch('content.json')).json();const P={};for(const c of d.civilizations)P[c.cityId]=P[c.cityId]||c.coordinates;for(const e of d.entries)if(e.type==='event'&&e.coordinates)P[e.id]=e.coordinates;const bl=await (await fetch('assets/borders/1300.json')).json(),L={};for(const l of bl.labels)L[l.n]=l.p;const c=(r)=>[r.left+r.width/2-box.left,r.top+r.height/2-box.top];let worst=0;for(const el of document.querySelectorAll('.map-point')){const q=P[el.dataset.id];if(!q)continue;const p=m.project(q),[x,y]=c(el.getBoundingClientRect());worst=Math.max(worst,Math.hypot(p.x-x,p.y-y))}let wl=0;for(const el of document.querySelectorAll('.border-label')){const q=L[el.textContent];if(!q||getComputedStyle(el).display==='none')continue;const p=m.project(q),[x,y]=c(el.getBoundingClientRect());wl=Math.max(wl,Math.hypot(p.x-x,p.y-y))}return [Math.round(worst),Math.round(wl)]}"""
+    for vp in [{'width': 390, 'height': 844}, {'width': 1440, 'height': 900}]:
+        ctx = b.new_context(viewport=vp)
+        pg = ctx.new_page()
+        pg.goto(B + '#/atlas?year=1300')
+        pg.wait_for_timeout(4500)
+        res = []
+        for z in [1.3, 2.4, 3.6, 5]:
+            pg.evaluate(f"()=>window.__atlasMap.jumpTo({{zoom:{z},center:[35,35]}})")
+            pg.wait_for_timeout(1200)
+            res.append(pg.evaluate(DRIFT))
+        ok(f"{vp['width']}px: markers stay on their coordinates at every zoom", all(r[0] <= 2 for r in res), str(res))
+        ok(f"{vp['width']}px: state names stay on their coordinates at every zoom", all(r[1] <= 2 for r in res), str(res))
+        stk = pg.evaluate("()=>{window.__atlasMap.jumpTo({zoom:1.6,center:[35,35]});return 1}")
+        pg.wait_for_timeout(1200)
+        ok(f"{vp['width']}px: co-located items show a count badge", pg.locator('.map-point[data-stack] .stk').count() >= 1)
         ctx.close()
 
     # النمط الورقي يغيّر ألوان اللوحات العائمة

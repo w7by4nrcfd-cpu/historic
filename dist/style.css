@@ -270,3 +270,13 @@ footer .footer-top div{row-gap:0}
 .ax .ax-dock .era-seg{display:block;text-align:center;padding:0 4px;font-size:10.5px;line-height:20px;height:20px;border-radius:4px;background:var(--ax-chip);color:var(--ax-muted);min-width:0}
 .ax .ax-dock .era-seg.active{background:color-mix(in srgb,var(--ax-gold) 22%,transparent);color:var(--ax-ink);font-weight:600}
 @media(max-width:700px){.ax .ax-dock .era-seg{height:6px;line-height:6px;padding:0;border-radius:3px;pointer-events:none}}
+/* V5.1 — العلامات ثابتة على إحداثياتها؛ المتطابقة تُكدّس برقم بدل إزاحتها */
+.map-point .stk{position:absolute;top:-11px;left:-11px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#ecd29c;color:#0b1220;font:700 10px/16px var(--font,inherit);text-align:center;box-shadow:0 0 0 2px #08111b;pointer-events:none;z-index:2;transform:none}
+.map-point.kind-battle .stk{transform:none}
+.maplibregl-marker:has(.map-point[data-stack]){z-index:4}
+.maplibregl-marker:has(.stack-under){z-index:1}
+.same-spot{display:flex;flex-direction:column;gap:6px;margin-top:14px;padding-top:12px;border-top:1px solid #ffffff14}
+.same-spot>small{color:#98a6b9;font-size:11.5px}
+.same-spot button{text-align:right;padding:9px 12px;border-radius:8px;border:1px solid #ffffff1c;background:#ffffff06;color:#f2ead9;font-size:13px;min-height:40px}
+.same-spot button small{color:#98a6b9;font-size:11px}
+.same-spot button:hover{border-color:#c5a46d}

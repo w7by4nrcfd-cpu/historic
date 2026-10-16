@@ -34,7 +34,7 @@ with sync_playwright() as p:
         pg.click(fsel(1200))
         pg.wait_for_timeout(3000)
         ok(f'{name}: battle marker kind', pg.locator('.map-point.kind-battle').count() >= 1)
-        pg.locator('.map-point.kind-battle').first.click(force=True)
+        pg.locator('.map-point.kind-battle:not(.stack-under)').first.click(force=True)
         pg.wait_for_timeout(800)
         sel = pg.inner_text('#map-selection')
         ok(f'{name}: selection shows kind and certainty', 'معركة أو حصار' in sel and 'موثق بالمصادر' in sel, sel[:60])
