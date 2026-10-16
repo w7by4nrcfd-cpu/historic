@@ -41,7 +41,7 @@ with sync_playwright() as p:
         pg.click('#ax-layers-btn')
         ok(f'{name}: layers panel opens', pg.locator('#ax-panel').is_visible() and pg.get_attribute('#ax-layers-btn', 'aria-expanded') == 'true')
         ok(f'{name}: legend lists civilizations of the frame', pg.locator('#map-legend a').count() >= 3, str(pg.locator('#map-legend a').count()))
-        ok(f'{name}: symbol key present', pg.locator('.ax-key span').count() == 6)
+        ok(f'{name}: symbol key present', pg.locator('.ax-key span').count() == 7)
         pg.keyboard.press('Escape')
         ok(f'{name}: Escape closes panel', not pg.locator('#ax-panel').is_visible())
 
