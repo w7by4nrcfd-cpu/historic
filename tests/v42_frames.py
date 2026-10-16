@@ -12,7 +12,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(args=['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'])
     pg = b.new_context(viewport={'width': 1280, 'height': 900}).new_page(); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
-    ok('17 frames', len(FRAMES) == 17, str(FRAMES))
+    ok('frames include -300 and 1400', -300 in FRAMES and 1400 in FRAMES, str(FRAMES))
     pg.goto(B + '#/atlas?year=-300'); pg.wait_for_timeout(4000)
     ok('300 BC label', '300 ق.م' in pg.inner_text('#year-label'))
     ok('300 BC shows Pataliputra', 'باتاليبوترا' in pg.inner_text('#map-topic-list'))

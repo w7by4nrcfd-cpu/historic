@@ -1,0 +1,5 @@
+[
+  {"id": "aztecs", "quote": "الحقول العائمة والسوق الكبير", "fix": "حقول البحيرة والسوق الكبير", "reason": "Chinampas were not actually floating; 'floating gardens' is only a nickname for artificial islands staked into the shallow lake bed (the body text itself describes them correctly). https://en.wikipedia.org/wiki/Chinampa"},
+  {"id": "atahualpa", "quote": "بأن يملأ غرفة ذهبًا وغرفتين فضة", "fix": "بأن يملأ غرفة ذهبًا مرة، ويملأها فضةً مرتين", "reason": "The ransom offer was to fill one room once with gold and twice with silver, not two separate rooms. https://en.wikipedia.org/wiki/Atahualpa"},
+  {"id": "inca", "quote": "- أكبر دولة في الأمريكتين:", "fix": "- أكبر دولة في الأمريكتين قبل الأوروبيين:", "reason": "The section heading lacks the qualifier; the Inca state was the largest in pre-Columbian America only. https://en.wikipedia.org/wiki/Inca_Empire"}
+]

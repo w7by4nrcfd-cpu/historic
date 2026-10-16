@@ -7,9 +7,11 @@ sys.setrecursionlimit(100000)
 SRC = sys.argv[1]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'dist', 'assets', 'borders')
 # سنة اللقطة في أطلس -> ملف البيانات وسنته المعروضة
-FRAMES = {-400: ('bc400', -400), -300: ('bc300', -300), -100: ('bc100', -100), 1400: ('1400', 1400), 117: ('100', 100), 850: ('800', 800),
+FRAMES = {-400: ('bc400', -400), -300: ('bc300', -300), -100: ('bc100', -100), 1400: ('1400', 1400), 1500: ('1500', 1500), 117: ('100', 100), 850: ('800', 800),
           1000: ('1000', 1000), 1300: ('1300', 1300), 1600: ('1600', 1600), 1750: ('1715', 1715)}
 TR = {
+ 'Aztec Empire': 'إمبراطورية الأزتك', 'Inca Empire': 'إمبراطورية الإنكا', 'Timurid Emirates': 'الإمارات التيمورية', 'Emirate of the White Sheep Turks': 'آق قويونلو',
+ 'Songhai': 'إمبراطورية سنغاي', 'Wattasid Caliphate': 'الدولة الوطاسية', 'Zayyanid Caliphate': 'الدولة الزيانية', 'Vijayanagara': 'إمبراطورية فيجاياناغارا', 'Bahmani Kingdom': 'السلطنة البهمنية', 'Grand Duchy of Moscow': 'دوقية موسكو الكبرى', 'Castille': 'قشتالة',
  'Mauryan Empire': 'الإمبراطورية الماورية', 'Qin': 'دولة تشين', 'Timurid Empire': 'الدولة التيمورية', 'Bactria': 'باختريا',
  'Achaemenid Empire': 'الإمبراطورية الأخمينية', 'Carthaginian Empire': 'قرطاج', 'Greek city-states': 'المدن اليونانية', 'Kush': 'مملكة كوش',
  'Seleucid Kingdom': 'المملكة السلوقية', 'Roman Republic': 'الجمهورية الرومانية', 'Ptolemaic Kingdom': 'مملكة البطالمة', 'Meroe': 'مملكة مروي',
@@ -33,8 +35,9 @@ TR = {
  'Polish–Lithuanian Commonwealth': 'بولندا وليتوانيا', 'Poland-Lithuania': 'بولندا وليتوانيا', 'Ming Chinese Empire': 'الصين (أسرة مينغ)', 'Watassid Morocco': 'المغرب', 'Crimean Khanate': 'خانية القرم', 'Adal': 'سلطنة عدل', 'England and Ireland': 'إنجلترا', 'Sweden': 'السويد', 'Vijayanagara': 'فيجاياناغارا', 'Venice': 'البندقية', 'Darfur': 'سلطنة دارفور',
 }
 # أسماء تخالف التسلسل التاريخي في نسخة معينة من البيانات، فنستبعدها
-SKIP = {'bc100': {'Kushan Empire', 'Mauryan Empire'}, '1400': {'Great Khanate', 'Seljuk Caliphate', 'Chola Empire'}}
-CIV = {'Mauryan Empire': 'maurya', 'Timurid Empire': 'timurids', 'Achaemenid Empire': 'persia', 'Roman Republic': 'rome', 'Roman Empire': 'rome', 'Han Empire': 'china', 'Han': 'china',
+SKIP = {'bc100': {'Kushan Empire', 'Mauryan Empire'}, '1400': {'Great Khanate', 'Seljuk Caliphate', 'Chola Empire'},
+        '1300': {'Grand Duchy of Moscow'}, '1600': {'Inca Empire', 'Songhai'}, '1715': {'Songhai'}}
+CIV = {'Aztec Empire': 'aztecs', 'Inca Empire': 'inca', 'Timurid Emirates': 'timurids', 'Mauryan Empire': 'maurya', 'Timurid Empire': 'timurids', 'Achaemenid Empire': 'persia', 'Roman Republic': 'rome', 'Roman Empire': 'rome', 'Han Empire': 'china', 'Han': 'china',
        'Abbasid Caliphate': 'abbasid', 'Emirate of Córdoba': 'andalus', 'Caliphate of Córdoba': 'andalus', 'Nabatean Kingdom': 'nabataea',
        'Saba': 'saba', 'Mamluke Sultanate': 'mamluks', 'Ilkhanate': 'mongols', 'Khanate of the Golden Horde': 'mongols', 'Mongol Empire': 'mongols', 'Great Khanate': 'mongols', 'Chagatai Khanate': 'mongols',
        'Ottoman Empire': 'ottoman', 'Byzantine Empire': 'byzantine', 'Fatimid Caliphate': 'fatimids', 'Seljuk Caliphate': 'seljuks', 'Safavid Empire': 'safavids', 'Mughal Empire': 'mughals', 'Parthia': 'parthians', 'Parthian Empire': 'parthians', 'Mali': 'mali', 'Ming Chinese Empire': 'ming'}
@@ -92,6 +95,9 @@ def label_point(ring):
     return best or ring[0]
 
 
+AMERICAS = {'Aztec Empire', 'Inca Empire'}
+
+
 def in_region(ring):
     xs = [x for x, _ in ring]; ys = [y for _, y in ring]
     cx, cy = sum(xs) / len(xs), sum(ys) / len(ys)
@@ -110,7 +116,7 @@ for frame, (fname, dyear) in FRAMES.items():
         polys = g['coordinates'] if g['type'] == 'MultiPolygon' else [g['coordinates']]
         for poly in polys:
             outer = poly[0]
-            if not in_region(outer):
+            if not in_region(outer) and n not in AMERICAS:
                 continue
             rings = []
             for k, r in enumerate(poly):
