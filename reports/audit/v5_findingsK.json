@@ -1,0 +1,256 @@
+{
+ "reviewed": 30,
+ "method": "Read all 30 entries; checked key dates/claims against Britannica, Met Heilbrunn essays/timelines, UNESCO WHC pages, World History Encyclopedia and Wikipedia (via WebFetch/Firecrawl; direct curl blocked by proxy, so URL status reflects successful tool fetches).",
+ "findings": [
+  {
+   "id": "ibn-battuta",
+   "severity": "medium",
+   "claim": "(1304–1368 أو 1369 م) ... وتوفي في المغرب سنة 1368 أو 1369 م",
+   "problem": "Death date is presented as settled between 1368/1369, but the entry's own cited source (Britannica) gives '1368/69 or 1377'. The date is genuinely uncertain and should be flagged as disputed.",
+   "fix": "وتوفي في المغرب نحو سنة 1368 أو 1369 م، وفي بعض المصادر 1377 م، ولا يُعرف تاريخ وفاته على وجه اليقين.",
+   "evidence": "Britannica, Ibn Battuta (Died: 1368/69 or 1377) https://www.britannica.com/biography/Ibn-Battuta",
+   "status": "applied"
+  },
+  {
+   "id": "mansa-musa-hajj",
+   "severity": "low",
+   "claim": "كانت مالي ... من أغنى دول العالم، لسيطرتها على مناجم الذهب وطرق التجارة عبر الصحراء.",
+   "problem": "Mali's gold wealth came mainly from tribute and trade with the gold-producing regions (Bambuk, Bure etc.), not primarily from direct control of the mines; 'control of the gold mines' overstates it.",
+   "fix": "كانت مالي في عهد منسا موسى من أغنى دول العالم، لتحكمها في تجارة الذهب القادم من مناطق إنتاجه وفي طرق التجارة عبر الصحراء.",
+   "evidence": "Wikipedia, Mali Empire ('Mali's wealth in gold did not primarily come from direct rule of gold-producing regions, but rather from tribute and trade') https://en.wikipedia.org/wiki/Mali_Empire",
+   "status": "applied"
+  },
+  {
+   "id": "zubaydah",
+   "severity": "low",
+   "claim": "تُنسب إليها قناة تجلب الماء إلى مكة من وادي نعمان، عُرفت بعين زبيدة",
+   "problem": "Incomplete: the Zubaydah waterworks drew on the springs of Hunayn (east of Mecca) as well as Wadi Nu'man (the Arafat branch). The cited Wikipedia source names Hunayn specifically; naming only Wadi Nu'man is partial.",
+   "fix": "تُنسب إليها قناة تجلب الماء إلى مكة من عيون حُنين ووادي نعمان، عُرفت بعين زبيدة، وجُددت مرات كثيرة بعدها.",
+   "evidence": "Wikipedia, Zubaidah bint Ja'far ('aqueduct from the spring of Hunayn, 95 kilometers to the east') https://en.wikipedia.org/wiki/Zubaidah_bint_Ja%27far",
+   "status": "applied"
+  },
+  {
+   "id": "hulagu",
+   "severity": "low",
+   "claim": "كلّفه أخوه الخان الأعظم منكو سنة 1253 م بقيادة حملة إلى الغرب.",
+   "problem": "Möngke's decision/appointment is usually placed at the 1251–1252 quriltai; 1253 is the year the army was assembled and set out. Stating the commission itself as 1253 is slightly off.",
+   "fix": "كلّفه أخوه الخان الأعظم منكو بقيادة حملة إلى الغرب، فخرج بجيشه سنة 1253 م.",
+   "evidence": "Wikipedia, Hulegu Khan ('two-tenths of the empire's fighting men were gathered for Hulegu's army in 1253') https://en.wikipedia.org/wiki/Hulagu_Khan",
+   "status": "applied"
+  },
+  {
+   "id": "petra-312",
+   "severity": "low",
+   "claim": "بحلول سنة 312 ق.م كانت البتراء مركزهم ... حين صدّوا حملة أرسلها أنتيغونوس",
+   "problem": "Matches the cited Met essay, but the identification of the 'rock' in Diodorus's account of 312 BC with Petra itself is debated by scholars (some propose al-Sela or another stronghold), and Petra's monumental urban phase is later. A short caveat would be accurate.",
+   "fix": "أضف: «ويرى بعض الباحثين أن «الصخرة» التي ذكرها المؤرخ ديودوروس في هذه الحادثة قد لا تكون البتراء نفسها.»",
+   "evidence": "Met, The Nabataean Kingdom and Petra https://www.metmuseum.org/en/essays/nabataean-kingdom-and-petra ; Wikipedia, Petra / Nabataean Kingdom (discussion of Diodorus' 'rock')",
+   "status": "applied"
+  },
+  {
+   "id": "samarkand",
+   "severity": "low",
+   "claim": "اتخذها تيمور عاصمة لدولته سنة 1370 م، فبُني فيها جامع بيبي خانم وضريح كور أمير ومدرسة أولوغ بيك ومرصده.",
+   "problem": "The sentence implies all were built under Timur; the Ulugh Beg madrasa (1417–1420) and observatory (1420s) date from Ulugh Beg's governorship after Timur's death (1405).",
+   "fix": "اتخذها تيمور عاصمة لدولته سنة 1370 م، فبُني فيها جامع بيبي خانم وضريح كور أمير، ثم بنى حفيده أولوغ بيك فيها مدرسته ومرصده.",
+   "evidence": "Wikipedia, Timurid Empire (Ulugh Beg Madrasa 1417–1420) https://en.wikipedia.org/wiki/Timurid_Empire",
+   "status": "applied"
+  },
+  {
+   "id": "al-mamun",
+   "severity": "low",
+   "claim": "وبقياس طول درجة من خط الطول",
+   "problem": "Ambiguous: the Ma'munid survey measured the length of one degree of latitude along a meridian (to compute Earth's circumference). 'درجة من خط الطول' is easily read as 'a degree of longitude'.",
+   "fix": "وبقياس طول درجة واحدة على امتداد خط الزوال لتقدير محيط الأرض.",
+   "evidence": "Wikipedia, Al-Ma'mun / Arc measurement of al-Ma'mun (degree of meridian arc measured in the Sinjar plain and near Palmyra)",
+   "status": "applied"
+  },
+  {
+   "id": "ibn-battuta",
+   "severity": "low",
+   "claim": "وعبر الصحراء إلى مالي سنة 1352 م",
+   "problem": "The text (1352) agrees with standard scholarship (Dunn), but the cited ORIAS page dates the 'Journey to Mali' 1350–1351, so the cited source contradicts the text. Either cite a source that supports 1352 (e.g. Britannica section) or note the source's range.",
+   "fix": "لا يلزم تغيير النص؛ يُستحسن استبدال المصدر أو إضافة مصدر يؤيد سنة 1352 م (خرج من سجلماسة في فبراير 1352 م).",
+   "evidence": "ORIAS, The Travels of Ibn Battuta https://orias.berkeley.edu/resources-teachers/travels-ibn-battuta",
+   "status": "applied"
+  }
+ ],
+ "url_checks": [
+  {
+   "url": "https://www.britannica.com/biography/al-Mansur-Abbasid-caliph",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/essays/the-art-of-the-abbasid-period-750-1258",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Harun-al-Rashid",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/al-Mamun",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/al-Khwarizmi",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Zubaidah_bint_Ja%27far",
+   "status": "ok"
+  },
+  {
+   "url": "https://whc.unesco.org/en/tentativelists/6577/",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Khalid-ibn-al-Walid",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/print/article/652084",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Sa%27d_ibn_Abi_Waqqas",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/event/Battle-of-al-Qadisiyyah",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Amr-ibn-al-As",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/topic/Rashidun",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/print/article/583587",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Hulegu",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/print/article/46548",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Ibn-Battuta",
+   "status": "ok"
+  },
+  {
+   "url": "https://orias.berkeley.edu/resources-teachers/travels-ibn-battuta",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+   "status": "ok"
+  },
+  {
+   "url": "https://brill.com/display/book/9789004513372/front-1.pdf",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/essays/the-art-of-the-ilkhanid-period-1256-1353",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.worldhistory.org/timeline/Mehmed_II",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/event/Fall-of-Constantinople-1453",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/toah/ht/06/eusi.html",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/essays/the-art-of-the-umayyad-period-in-spain-711-1031",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/essays/the-art-of-the-umayyad-period-661-750",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/topic/Islamic-calendar",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Mali_Empire",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Musa-I-of-Mali",
+   "status": "ok"
+  },
+  {
+   "url": "https://worldhistory.org/timeline/Kingdom_of_Saba",
+   "status": "ok"
+  },
+  {
+   "url": "https://whc.unesco.org/en/news/2517",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/en/essays/nabataean-kingdom-and-petra",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.metmuseum.org/toah/ht/04/eusb.html",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.worldhistory.org/article/2366/death-of-alexander-the-great/",
+   "status": "ok"
+  },
+  {
+   "url": "https://whc.unesco.org/en/list/313/",
+   "status": "ok"
+  },
+  {
+   "url": "https://whc.unesco.org/en/list/20/",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/place/Medina-Saudi-Arabia",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/biography/Baybars-I",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Mosque-Madrasa_of_Sultan_Hasan",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Cairo_Citadel",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
+   "status": "ok"
+  },
+  {
+   "url": "https://www.britannica.com/place/Cairo",
+   "status": "ok"
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Timurid_Empire",
+   "status": "ok"
+  },
+  {
+   "url": "https://whc.unesco.org/en/list/603",
+   "status": "ok"
+  }
+ ]
+}
