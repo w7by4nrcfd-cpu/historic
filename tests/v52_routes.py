@@ -16,7 +16,7 @@ def ok(name, cond, extra=''):
 
 # سلامة بيانات المسارات
 routes = json.load(open(os.path.join(ROOT, 'assets', 'routes.json'), encoding='utf-8'))['routes']
-ok('routes file has 3 routes', len(routes) == 3, str([r['id'] for r in routes]))
+ok('routes file has 10 routes', len(routes) == 10, str([r['id'] for r in routes]))
 for r in routes:
     st = r['stations']
     ok(f"{r['id']}: every station has valid lon/lat", all(-180 <= s['p'][0] <= 180 and -90 <= s['p'][1] <= 90 for s in st))
@@ -42,7 +42,7 @@ with sync_playwright() as p:
 
         # المسارات في 850 م: طريق الحرير ودرب زبيدة
         shown = pg.evaluate('window.__routesShown')
-        ok(f'{name}: 850 shows silk road and Darb Zubaydah', sorted(shown or []) == ['darb-zubaydah', 'silk-road'], str(shown))
+        ok(f'{name}: 850 shows silk road, Darb Zubaydah and the Andalus conquest', sorted(shown or []) == ['darb-zubaydah', 'silk-road', 'tariq-andalus'], str(shown))
         n_lines = pg.evaluate("()=>window.__atlasMap.querySourceFeatures('routes').length")
         ok(f'{name}: route lines drawn', n_lines >= 2, str(n_lines))
         ok(f'{name}: summary counts routes', 'مسارات' in pg.inner_text('#map-selection'))
@@ -63,7 +63,7 @@ with sync_playwright() as p:
         # فتح مسار من لوحة الطبقات: ينتقل إلى زمنه ويرسمه
         pg.click('#ax-layers-btn')
         pg.wait_for_timeout(300)
-        ok(f'{name}: route list in layers panel', pg.locator('#route-list [data-route]').count() == 3)
+        ok(f'{name}: route list in layers panel', pg.locator('#route-list [data-route]').count() == 10)
         pg.click('[data-route="alexander-route"]')
         pg.wait_for_timeout(1500)
         ok(f'{name}: opening Alexander jumps to 300 BC', '300 ق.م' in pg.inner_text('#year-label'), pg.inner_text('#year-label'))
