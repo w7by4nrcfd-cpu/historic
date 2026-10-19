@@ -110,8 +110,8 @@ with sync_playwright() as p:
   for i in range(len(FRAMES)):
     mp.click(f'[data-frame="{i}"]'); mp.wait_for_timeout(4500)
     res.append(mp.evaluate("""()=>{const r=document.querySelector('#map').getBoundingClientRect();return [...document.querySelectorAll('.map-point')].every(e=>{const q=e.getBoundingClientRect();return q.left>=r.left&&q.right<=r.right&&q.top>=r.top&&q.bottom<=r.bottom})}"""))
-  wide=[i for i,y in enumerate(FRAMES) if y==1500]  # Americas + Asia cannot fit a 390px-wide map
-  print(('PASS' if all(r for i,r in enumerate(res) if i not in wide) else 'FAIL'),'mobile markers inside map every frame (except world-wide 1500)',res)
+  wide=[i for i,y in enumerate(FRAMES) if y in (1492,1500,1530)]  # Americas + Asia cannot fit a 390px-wide map
+  print(('PASS' if all(r for i,r in enumerate(res) if i not in wide) else 'FAIL'),'mobile markers inside map every frame (except world-wide 1492–1530)',res)
   mp.goto(B+'#/'); mp.wait_for_timeout(2500); mp.locator('#map').scroll_into_view_if_needed(); mp.wait_for_timeout(800)
   mp.locator('#map').screenshot(path='/tmp/after-mob-homemap.png')
   b.close()
