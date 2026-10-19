@@ -12,7 +12,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(args=['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'])
     pg = b.new_context(viewport={'width': 1280, 'height': 900}).new_page(); errs = []
     pg.on('pageerror', lambda e: errs.append(str(e)))
-    ok('18 frames incl. 1500', len(FRAMES) == 18 and 1500 in FRAMES, str(FRAMES))
+    ok('36 frames incl. 1492 and 1500', len(FRAMES) == 36 and 1492 in FRAMES and 1500 in FRAMES, str(FRAMES))
     pg.goto(B + '#/atlas?year=1500'); pg.wait_for_timeout(4500)
     t = pg.inner_text('#map-topic-list')
     ok('1500 shows Tenochtitlan, Cusco, Samarkand', all(k in t for k in ['تينوتشتيتلان', 'كوسكو', 'سمرقند']), t[:150])
@@ -26,7 +26,7 @@ with sync_playwright() as p:
     pg.goto(B + '#/topic/aztecs'); pg.wait_for_timeout(800)
     m = pg.inner_text('main')
     ok('aztecs article', 'تينوتشتيتلان' in m and 'كورتيس' in m)
-    ok('aztecs map link', pg.locator('a[href*="topic=aztecs&year=1500"]').count() >= 1)
+    ok('aztecs map link', pg.locator('a[href*="topic=aztecs&year=1492"]').count() >= 1)
     pg.goto(B + '#/topic/inca'); pg.wait_for_timeout(800)
     m = pg.inner_text('main')
     ok('inca article', 'ماتشو بيتشو' in m and 'الكيبو' in m)
