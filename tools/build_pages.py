@@ -121,3 +121,18 @@ open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(
     ''.join(f'  <url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write(f'User-agent: *\nAllow: /\nSitemap: {BASE_URL}sitemap.xml\n')
 print('pages', len(items), '+ index; sitemap urls', len(urls))
+
+# تقسيم المحتوى لتسريع أول تحميل: نص الأقسام (ثلثا الحجم) في ملف يُحمّل بعد ظهور الصفحة
+def _words(x):
+    return len(' '.join([x.get('summary', '')] + [s['text'] for s in x.get('sections', [])]).split())
+
+
+core = json.loads(json.dumps(d))
+text = {}
+for x in core['civilizations'] + core['entries']:
+    x['mins'] = max(1, round(_words(x) / 180))
+    text[x['id']] = x.pop('sections', [])
+    x['sections'] = []
+json.dump(core, open(os.path.join(ROOT, 'content-core.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+json.dump(text, open(os.path.join(ROOT, 'content-text.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+print('content-core', os.path.getsize(os.path.join(ROOT, 'content-core.json')) // 1024, 'KB; content-text', os.path.getsize(os.path.join(ROOT, 'content-text.json')) // 1024, 'KB')
