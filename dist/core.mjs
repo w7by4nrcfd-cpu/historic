@@ -1,5 +1,5 @@
 export const LEGACY_FRAMES=[-1400,-400,-100,117,650,700,850,1000,1200,1300,1600,1750,1850,1932];
-export const FRAMES=[-1750,-1400,-400,-300,-100,117,650,700,850,1000,1200,1300,1400,1500,1600,1750,1850,1932];
+export const FRAMES=[-1750,-1400,-500,-400,-323,-300,-200,-100,117,200,300,400,500,600,650,700,850,900,1000,1100,1200,1279,1300,1400,1492,1500,1530,1600,1650,1700,1750,1800,1850,1880,1914,1932];
 export const dateLabel=y=>y<0?`${Math.abs(y)} ق.م`:`${y} م`;
 export const ordinal=y=>y<0?y+1:y;
 export function duration(a,b){if(!a||!b)throw new Error('No year zero');return ordinal(b)-ordinal(a)}

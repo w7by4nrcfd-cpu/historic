@@ -7,8 +7,12 @@ sys.setrecursionlimit(100000)
 SRC = sys.argv[1]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'dist', 'assets', 'borders')
 # سنة اللقطة في أطلس -> ملف البيانات وسنته المعروضة
-FRAMES = {-400: ('bc400', -400), -300: ('bc300', -300), -100: ('bc100', -100), 1400: ('1400', 1400), 1500: ('1500', 1500), 117: ('100', 100), 850: ('800', 800),
-          1000: ('1000', 1000), 1300: ('1300', 1300), 1600: ('1600', 1600), 1750: ('1715', 1715)}
+FRAMES = {-500: ('bc500', -500), -400: ('bc400', -400), -323: ('bc323', -323), -300: ('bc300', -300), -200: ('bc200', -200), -100: ('bc100', -100),
+          117: ('100', 100), 200: ('200', 200), 300: ('300', 300), 400: ('400', 400), 500: ('500', 500), 600: ('600', 600), 700: ('700', 700),
+          850: ('800', 800), 900: ('900', 900), 1000: ('1000', 1000), 1100: ('1100', 1100), 1279: ('1279', 1279), 1300: ('1300', 1300),
+          1400: ('1400', 1400), 1492: ('1492', 1492), 1500: ('1500', 1500), 1530: ('1530', 1530), 1600: ('1600', 1600), 1650: ('1650', 1650),
+          1700: ('1700', 1700), 1750: ('1715', 1715), 1800: ('1800', 1800), 1880: ('1880', 1880), 1914: ('1914', 1914)}
+# لم نستعمل ملفات قبل 500 ق.م ولا ملفي 1200 و1930: فيها دول في غير زمنها (الحيثيون ومملكة داود سنة 700 ق.م، والفاطميون والبويهيون سنة 1200)
 TR = {
  'Aztec Empire': 'إمبراطورية الأزتك', 'Inca Empire': 'إمبراطورية الإنكا', 'Timurid Emirates': 'الإمارات التيمورية', 'Emirate of the White Sheep Turks': 'آق قويونلو',
  'Songhai': 'إمبراطورية سنغاي', 'Wattasid Caliphate': 'الدولة الوطاسية', 'Zayyanid Caliphate': 'الدولة الزيانية', 'Vijayanagara': 'إمبراطورية فيجاياناغارا', 'Bahmani Kingdom': 'السلطنة البهمنية', 'Grand Duchy of Moscow': 'دوقية موسكو الكبرى', 'Castille': 'قشتالة',
@@ -41,6 +45,47 @@ CIV = {'Aztec Empire': 'aztecs', 'Inca Empire': 'inca', 'Timurid Emirates': 'tim
        'Abbasid Caliphate': 'abbasid', 'Emirate of Córdoba': 'andalus', 'Caliphate of Córdoba': 'andalus', 'Nabatean Kingdom': 'nabataea',
        'Saba': 'saba', 'Mamluke Sultanate': 'mamluks', 'Ilkhanate': 'mongols', 'Khanate of the Golden Horde': 'mongols', 'Mongol Empire': 'mongols', 'Great Khanate': 'mongols', 'Chagatai Khanate': 'mongols',
        'Ottoman Empire': 'ottoman', 'Byzantine Empire': 'byzantine', 'Fatimid Caliphate': 'fatimids', 'Seljuk Caliphate': 'seljuks', 'Safavid Empire': 'safavids', 'Mughal Empire': 'mughals', 'Parthia': 'parthians', 'Parthian Empire': 'parthians', 'Mali': 'mali', 'Ming Chinese Empire': 'ming'}
+
+TR.update({
+ 'Empire of Alexander': 'إمبراطورية الإسكندر', 'Magadha': 'مملكة مگدها', 'Zhou states': 'ممالك تشو', 'Cappadocia': 'قبادوقيا', 'Atropatene': 'أتروباتين',
+ 'Bosporan Kingdom': 'مملكة البوسفور', 'Rome': 'الجمهورية الرومانية', 'Carthage': 'قرطاج', 'Xiongnu': 'الشيونغنو', 'Macedon and Hellenic League': 'مقدونيا',
+ 'Kingdom of Syphax': 'مملكة سيفاكس', 'Saka Kingdom': 'مملكة الساكا', 'Satavahanihara': 'دولة الساتافاهانا', 'Jin': 'إمبراطورية جين',
+ 'Rome (Maximian)': 'الإمبراطورية الرومانية', 'Rome (Diocletianus)': 'الإمبراطورية الرومانية', 'Rome (Constantinus)': 'الإمبراطورية الرومانية',
+ 'Rome (Galerius)': 'الإمبراطورية الرومانية', 'Western Roman Empire': 'الإمبراطورية الرومانية الغربية', 'Eastern Roman Empire': 'الإمبراطورية الرومانية الشرقية',
+ 'Persia': 'الدولة الساسانية', 'Sasanian Empire': 'الدولة الساسانية', 'Gupta Empire': 'إمبراطورية غوبتا', 'Hunnic Empire': 'إمبراطورية الهون',
+ 'Ruanruan': 'خانية الروران', 'Ostrogoths': 'القوط الشرقيون', 'Visigoths': 'القوط الغربيون', 'Visigothic Kingdom': 'مملكة القوط الغربيين',
+ 'Vandals': 'الوندال', 'Franks': 'الفرنجة', 'Frankish Kingdom': 'مملكة الفرنجة', 'Toba Wei': 'دولة وي الشمالية',
+ 'Göktürks': 'الخاقانية التركية', 'Sui Empire': 'إمبراطورية سوي', 'Avars': 'الآفار', 'Hejaz': 'الحجاز', 'Lombard principalities': 'إمارات اللومبارديين',
+ 'Umayyad Caliphate': 'الدولة الأموية', 'Tufan Empire': 'الإمبراطورية التبتية', 'Kingdom of Sind': 'مملكة السند', 'Bulgars': 'البلغار',
+ 'Samanid Empire': 'الدولة السامانية', 'Saffarids': 'الصفاريون', 'East Francia': 'فرنجة الشرقية', 'West Francia': 'فرنجة الغربية', 'Volga Bulgars': 'بلغار الفولغا',
+ 'Seljuk Empire': 'الدولة السلجوقية', 'Almoravid dynasty': 'دولة المرابطين', 'Kievan Rus': 'روس كييف', 'Karkhanids': 'القراخانيون',
+ 'Merinides': 'الدولة المرينية', 'Abdelouadides': 'الدولة الزيانية', 'Kanem-Bornu': 'سلطنة كانم وبرنو',
+ 'Ming Empire': 'الصين (أسرة مينغ)', 'Golden Horde': 'القبيلة الذهبية', 'White Horde': 'القبيلة البيضاء', 'Bengal': 'سلطنة البنغال', 'Gujarat': 'سلطنة كجرات',
+ 'Funj': 'سلطنة الفونج', 'Nogai Horde': 'قبيلة النوغاي', 'Kazan Khanate': 'خانية قازان', 'Bukara Khanate': 'خانية بخارى', 'Astrakhan Khanate': 'خانية أستراخان',
+ 'Mahra': 'سلطنة المهرة', 'Russian Empire': 'الإمبراطورية الروسية', 'Qing Empire': 'إمبراطورية تشينغ', 'Afghanistan': 'أفغانستان',
+ 'Maratha Confederacy': 'اتحاد المراثا', 'Nejd': 'الدولة السعودية الأولى', 'Prussia': 'بروسيا', 'British Raj': 'الهند البريطانية',
+ 'Austria Hungary': 'النمسا والمجر', 'Austro-Hungarian Empire': 'النمسا والمجر', 'Germany': 'ألمانيا', 'German Empire': 'ألمانيا',
+ 'Algeria (FR)': 'الجزائر (فرنسية)', 'Algeria': 'الجزائر (فرنسية)', 'Italy': 'إيطاليا', 'Kingdom of Italy': 'إيطاليا', 'Sultanate of Zanzibar': 'سلطنة زنجبار',
+ 'Bokhara Khanate': 'إمارة بخارى', 'Greece': 'اليونان', 'Romania': 'رومانيا', 'Sokoto Caliphate': 'خلافة سوكوتو', 'Arabia (Nejd)': 'إمارة نجد (آل سعود)',
+ 'Anglo-Egyptian Sudan': 'السودان الإنجليزي المصري', 'Libya': 'ليبيا (إيطالية)', 'Abyssinia': 'الحبشة', 'Tunisia': 'تونس (فرنسية)', 'Bulgaria': 'بلغاريا',
+ 'Serbia': 'صربيا', 'Mongolia': 'منغوليا',
+})
+# أسماء تختلف بحسب السنة
+YTR = {'300': {'Parthian Empire': 'الدولة الساسانية'}, '1800': {'Persia': 'إيران (القاجاريون)'}, '1880': {'Persia': 'إيران (القاجاريون)', 'Egypt': 'مصر (الخديوية)'},
+       '1914': {'Persia': 'إيران (القاجاريون)', 'Egypt': 'مصر', 'Eastern Roman Empire': 'الإمبراطورية البيزنطية'},
+       '700': {'Eastern Roman Empire': 'الإمبراطورية البيزنطية'}, '600': {'Eastern Roman Empire': 'الإمبراطورية البيزنطية'}}
+SKIP.update({
+ 'bc500': {'Hindu kingdoms'}, '300': {'Gupta Empire', 'Satavahanihara', 'Suren Kingdom', 'Hadramaut'},
+ '400': {'Meroe', 'Hadramaut', 'Jin'}, '500': {'Meroe', 'Hadramaut', 'Western Roman Empire', 'Jin Empire'},
+ '700': {'Sasanian Empire', 'Sui Empire', 'Hejaz', 'Western Gokturk Khaganate'}, '900': {'Carolingian Empire', 'Tibetan Empire'},
+ '1914': {'Manchu Empire'},
+})
+CIV.update({'Rome': 'rome', 'Rome (Maximian)': 'rome', 'Rome (Diocletianus)': 'rome', 'Rome (Constantinus)': 'rome', 'Rome (Galerius)': 'rome', 'Umayyad Caliphate': 'umayyad', 'Sasanian Empire': 'sasanian', 'Persia': 'sasanian', 'Seljuk Empire': 'seljuks', 'Eastern Roman Empire': 'byzantine',
+            'Nejd': 'first-saudi', 'Arabia (Nejd)': 'saudi-kingdom', 'Empire of Alexander': 'greece', 'Ming Empire': 'ming', 'Golden Horde': 'mongols'})
+for k, v in {'bc400': {'Xiongnu'}, 'bc200': {'Kingdom of Syphax'}, '400': {'Satavahanihara'}, '600': {'Ostrogoths'}, '800': {'Avars'},
+             '900': {'Avars'}, '1650': {'Vijayanagara', 'Songhai'}, '1700': {'Vijayanagara', 'Songhai'}, '1800': {'Songhai'}, '1914': {'Georgia', 'Armenia'}}.items():
+    SKIP[k] = set(SKIP.get(k, set())) | v
+YCIV = {'300': {'Parthian Empire': 'sasanian'}, '1800': {'Persia': None}, '1880': {'Persia': None}, '1914': {'Persia': None}}
 PAL = ['#8c7a5b', '#6f8f8a', '#9a6f6f', '#7d7aa3', '#a08c5a', '#6c8f6a', '#9c7aa0', '#5f8aa3', '#a3866f', '#7a9a5f']
 
 
@@ -113,6 +158,7 @@ for frame, (fname, dyear) in FRAMES.items():
         n = (ft['properties'] or {}).get('NAME')
         if not g or n not in TR or n in SKIP.get(fname, ()):
             continue
+        ar_name = YTR.get(fname, {}).get(n, TR[n])
         polys = g['coordinates'] if g['type'] == 'MultiPolygon' else [g['coordinates']]
         for poly in polys:
             outer = poly[0]
@@ -126,13 +172,13 @@ for frame, (fname, dyear) in FRAMES.items():
                 elif k == 0:
                     break
             if rings:
-                gr = groups.setdefault(TR[n], {'src': n, 'polys': [], 'bp': 1})
+                gr = groups.setdefault(ar_name, {'src': n, 'polys': [], 'bp': 1})
                 gr['polys'].append(rings)
                 gr['bp'] = max(gr['bp'], int((ft['properties'] or {}).get('BORDERPRECISION') or 1))
     feats, labels = [], []
     for i, (ar, gr) in enumerate(sorted(groups.items(), key=lambda kv: -sum(ring_area(p[0]) for p in kv[1]['polys']))):
         color = None
-        civ = CIV.get(gr['src'])
+        civ = YCIV.get(fname, {}).get(gr['src'], CIV.get(gr['src']))
         h = sum(map(ord, gr['src']))
         color = PAL[h % len(PAL)]
         polys = gr['polys']

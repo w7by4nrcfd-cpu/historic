@@ -66,7 +66,7 @@ with sync_playwright() as p:
         ok(f'{name}: route list in layers panel', pg.locator('#route-list [data-route]').count() == 10)
         pg.click('[data-route="alexander-route"]')
         pg.wait_for_timeout(1500)
-        ok(f'{name}: opening Alexander jumps to 300 BC', '300 ق.م' in pg.inner_text('#year-label'), pg.inner_text('#year-label'))
+        ok(f'{name}: opening Alexander jumps to 323 BC (end of the campaign)', '323 ق.م' in pg.inner_text('#year-label'), pg.inner_text('#year-label'))
         sel = pg.inner_text('#map-selection')
         ok(f'{name}: route info panel', 'حملة الإسكندر' in sel and 'مسار تقريبي' in sel and 'غوغميلا' in sel)
         ok(f'{name}: approximate stations flagged', pg.locator('.route-stations b i').count() >= 3)

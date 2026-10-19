@@ -21,7 +21,7 @@ known = {x['id'] for x in content['civilizations'] + content['entries']}
 
 EXPECT = {  # المسار ← اللقطة التي يُفتح فيها
     'hijra': '650 م', 'conquest-sham': '650 م', 'conquest-iraq': '650 م', 'tariq-andalus': '850 م',
-    'hulagu': '1300 م', 'incense-route': '117 م', 'ibn-battuta': '1400 م',
+    'hulagu': '1279 م', 'incense-route': '117 م', 'ibn-battuta': '1400 م',
 }
 for rid in EXPECT:
     r = routes[rid]
