@@ -1,0 +1,29 @@
+{
+  "checked_pages": 35,
+  "urls": [
+    {"id": "brit-qin-shi-huang", "url": "https://www.britannica.com/biography/Shihuangdi", "ok": true, "note": "يعيد التوجيه إلى /biography/Qin-Shi-Huang (200)، المقالة الصحيحة"},
+    {"id": "brit-han", "url": "https://www.britannica.com/topic/Han-dynasty", "ok": true, "note": "مقالة أسرة هان"},
+    {"id": "brit-ming", "url": "https://www.britannica.com/topic/Ming-dynasty-Chinese-history", "ok": true, "note": "مقالة أسرة مينغ"},
+    {"id": "brit-zheng-he", "url": "https://www.britannica.com/biography/Zheng-He", "ok": true, "note": "مقالة تشنغ خه"},
+    {"id": "brit-yongle", "url": "https://www.britannica.com/biography/Yongle", "ok": true, "note": "مقالة يونغلي"},
+    {"id": "unesco-forbidden-city", "url": "https://whc.unesco.org/en/list/439", "ok": true, "note": "Imperial Palaces of the Ming and Qing Dynasties in Beijing and Shenyang"},
+    {"id": "brit-ashoka", "url": "https://www.britannica.com/biography/Ashoka", "ok": true, "note": "مقالة أشوكا (تؤرخ حكمه بنحو 265–238 أو 273–232 ق.م)"},
+    {"id": "brit-chandragupta", "url": "https://www.britannica.com/biography/Chandragupta", "ok": true, "note": "مقالة تشاندراغوبتا ماوريا مؤسس الماوريين (لا غوبتا)"},
+    {"id": "brit-pataliputra", "url": "https://www.britannica.com/place/Pataliputra", "ok": false, "note": "404 (يحوَّل إلى error404). البديل العامل: https://www.britannica.com/place/Patna (مقالة باتنا، وفيها Pāṭaliputra اسمًا بديلًا وتاريخ المدينة القديمة)"},
+    {"id": "unesco-agra-fort", "url": "https://whc.unesco.org/en/list/251", "ok": true, "note": "Agra Fort، سُجل 1983"},
+    {"id": "brit-moctezuma", "url": "https://www.britannica.com/biography/Montezuma-II", "ok": true, "note": "مقالة موكتيزوما الثاني"},
+    {"id": "brit-tenochtitlan", "url": "https://www.britannica.com/place/Tenochtitlan", "ok": true, "note": "مقالة تينوتشتيتلان"},
+    {"id": "brit-pachacuti", "url": "https://www.britannica.com/biography/Pachacuti-Inca-Yupanqui", "ok": true, "note": "مقالة باتشاكوتي (1438–1471)"},
+    {"id": "brit-atahualpa", "url": "https://www.britannica.com/biography/Atahuallpa", "ok": true, "note": "مقالة أتاوالبا"},
+    {"id": "unesco-cusco", "url": "https://whc.unesco.org/en/list/273", "ok": true, "note": "City of Cuzco، سُجلت 1983، الارتفاع 3400 م"}
+  ],
+  "findings": [
+    {"page": "pataliputra", "section": "المصادر", "severity": "high", "claim": "brit-pataliputra → https://www.britannica.com/place/Pataliputra", "issue": "الرابط يعيد 404، فالمصدر الجديد للصفحة معطّل.", "suggested_fix_arabic": "استبدال رابط المصدر بـ https://www.britannica.com/place/Patna مع تعديل العنوان إلى «باتنا (باتاليبوترا) — بريتانيكا».", "reference_url": "https://www.britannica.com/place/Patna"},
+    {"page": "panipat-1526", "section": "ما حدث", "severity": "medium", "claim": "ربط عرباته بالسلاسل", "issue": "يذكر بابر في مذكراته أنه ربط العربات على الطريقة العثمانية لكن بحبال من الجلد الخام بدل السلاسل؛ فذكر السلاسل عكس ما في المصدر الأصلي.", "suggested_fix_arabic": "لكنه ربط عرباته بحبال من الجلد بدل السلاسل، كما يذكر في مذكراته، وبينها المدافع والبنادق، وطوّق خصمه بفرسان آسيا الوسطى، وقُتل إبراهيم لودي.", "reference_url": "https://archive.org/stream/baburnamainengli02babuuoft/baburnamainengli02babuuoft_djvu.txt"},
+    {"page": "mughal-1857", "section": "النتائج", "severity": "medium", "claim": "حوكم بهادر شاه ونُفي إلى رانغون... وتوفي فيها سنة 1862 م، فانتهت الدولة المغولية. وانتقل حكم الهند... سنة 1858 م", "issue": "ترتيب السبب والنتيجة مضلل: الدولة المغولية انتهت بأسره وخلعه سنة 1857 ومحاكمته ونفيه سنة 1858، لا بوفاته سنة 1862. وصياغة «فانتهت» بعد ذكر 1862 توحي بعكس ذلك وتتعارض مع ملخص الصفحة.", "suggested_fix_arabic": "أسره البريطانيون في سبتمبر 1857 م، ثم حوكم سنة 1858 م ونُفي إلى رانغون في بورما، فانتهت الدولة المغولية. وفي السنة نفسها انتقل حكم الهند من الشركة إلى التاج البريطاني. وتوفي بهادر شاه في منفاه سنة 1862 م. علامة الخريطة عند دلهي.", "reference_url": "https://en.wikipedia.org/wiki/Bahadur_Shah_Zafar"},
+    {"page": "quipu", "section": "اللغز", "severity": "medium", "claim": "بقي نحو ألف كيبو في المتاحف اليوم", "issue": "الرقم غير مسند: تقدير أورتون (2003) نحو 600، وحصر حديث (2021) لمجموعات المتاحف والمجموعات الخاصة يقارب 1400، والعدد الدقيق غير معروف.", "suggested_fix_arabic": "بقي منه في المتاحف والمجموعات الخاصة ما يقارب ألفًا وأربعمئة كيبو بحسب حصر حديث، والعدد الدقيق غير معروف.", "reference_url": "https://en.wikipedia.org/wiki/Quipu"},
+    {"page": "agra", "section": "القلعة", "severity": "low", "claim": "وتُروى أن شاه جهان قضى فيها آخر سنواته محبوسًا بأمر ابنه أورنغزيب", "issue": "حبس شاه جهان في قلعة أغرا (1658–1666) واقعة ثابتة في المصادر، وصياغتها روايةً تُضعفها بلا داعٍ؛ وفي الجملة خطأ نحوي (تُروى ← يُروى).", "suggested_fix_arabic": "وفيها قضى شاه جهان آخر سنواته محبوسًا بأمر ابنه أورنغزيب، حتى وفاته سنة 1666 م.", "reference_url": "https://en.wikipedia.org/wiki/Agra_Fort"},
+    {"page": "ur-ziggurat", "section": "ما حدث", "severity": "low", "claim": "نحو سنة 2100 ق.م بنى زقورة عظيمة في أور", "issue": "بدأ أور نمو البناء وأكمله ابنه شولكي؛ فنسبة البناء كله إليه فيها تبسيط.", "suggested_fix_arabic": "نحو سنة 2100 ق.م بدأ أور نمو بناء زقورة عظيمة في أور لإله القمر نانا، وأكملها ابنه شولكي.", "reference_url": "https://en.wikipedia.org/wiki/Ziggurat_of_Ur"},
+    {"page": "changan", "section": "بعد هان", "severity": "low", "claim": "ثم عادت تشانغآن عاصمة لأسرتي سوي وتانغ", "issue": "بنت أسرة سوي مدينة جديدة باسم داشينغ إلى الجنوب الشرقي من تشانغآن الهانية القديمة، ثم سمّتها تانغ تشانغآن؛ فليست هي المدينة نفسها.", "suggested_fix_arabic": "انتقلت عاصمة هان الشرقية إلى لويانغ. ثم بنت أسرة سوي قرب الموضع القديم مدينة جديدة سمّتها تانغ تشانغآن، فصارت في القرن الثامن من أكبر مدن العالم، يقصدها التجار من آسيا الوسطى والعالم الإسلامي.", "reference_url": "https://en.wikipedia.org/wiki/Chang%27an"}
+  ]
+}
