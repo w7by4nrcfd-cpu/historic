@@ -71,7 +71,7 @@ TR.update({
  'Serbia': 'صربيا', 'Mongolia': 'منغوليا',
 })
 # أسماء تختلف بحسب السنة
-YTR = {'300': {'Parthian Empire': 'الدولة الساسانية'}, '1800': {'Persia': 'إيران (القاجاريون)'}, '1880': {'Persia': 'إيران (القاجاريون)', 'Egypt': 'مصر (الخديوية)'},
+YTR = {'300': {'Parthian Empire': 'الدولة الساسانية'}, '1300': {'Morocco': 'الدولة المرينية'}, '1400': {'Morocco': 'الدولة المرينية'}, '1530': {'Watassid Morocco': 'الدولة الوطاسية'}, '1800': {'Persia': 'إيران (القاجاريون)'}, '1880': {'Persia': 'إيران (القاجاريون)', 'Egypt': 'مصر (الخديوية)'},
        '1914': {'Persia': 'إيران (القاجاريون)', 'Egypt': 'مصر', 'Eastern Roman Empire': 'الإمبراطورية البيزنطية'},
        '700': {'Eastern Roman Empire': 'الإمبراطورية البيزنطية'}, '600': {'Eastern Roman Empire': 'الإمبراطورية البيزنطية'}}
 SKIP.update({
@@ -193,6 +193,16 @@ for frame, (fname, dyear) in FRAMES.items():
     path = os.path.join(OUT, f'{frame}.json')
     json.dump(out, open(path, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print(frame, fname, len(feats), os.path.getsize(path) // 1024, 'KB', [l['n'] for l in labels][:12])
+index = {}
+for frame in sorted(FRAMES):
+    dd = json.load(open(os.path.join(OUT, f'{frame}.json'), encoding='utf-8'))
+    index[str(frame)] = [l['n'] for l in dd['labels']]
+civmap = {}
+for frame in sorted(FRAMES):
+    for l in json.load(open(os.path.join(OUT, f'{frame}.json'), encoding='utf-8'))['labels']:
+        if l.get('civ'):
+            civmap[l['n']] = l['civ']
+json.dump({'frames': sorted(FRAMES), 'names': index, 'civ': civmap}, open(os.path.join(OUT, 'index.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 open(os.path.join(OUT, 'LICENSE.txt'), 'w', encoding='utf-8').write(
     'Derived from historical-basemaps by André Ourednik and contributors\n'
     'https://github.com/aourednik/historical-basemaps\n'

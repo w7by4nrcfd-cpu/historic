@@ -320,3 +320,21 @@ footer .footer-top div{row-gap:0}
 .mk>.map-point{flex:none;pointer-events:auto;margin:0}
 .maplibregl-marker:has(.map-point:hover),.maplibregl-marker:has(.map-point:focus-visible){z-index:6}
 .maplibregl-marker:has(.map-point.is-sel){z-index:8}
+
+/* V6.2 — ما الذي تغيّر بين اللقطات */
+.sum-chg{margin:14px 0 4px;padding:12px 12px 8px;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:12px;background:rgba(255,215,106,.05)}
+.sum-chg-t{margin:0 0 8px;font-size:13px;font-weight:700;color:#e9c46a}
+.chg-row{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;margin-bottom:6px}
+.chg-l{font-size:12px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chg-l-add{background:rgba(255,215,106,.18);color:#ffd76a}
+.chg-l-gone{background:rgba(152,166,185,.16);color:#b8c2d0}
+.chg{font:inherit;font-size:12.5px;line-height:1.4;margin:0 0 4px 4px;padding:2px 9px;border-radius:8px;border:1px solid transparent;background:rgba(255,255,255,.06);color:inherit;cursor:pointer}
+.chg:hover,.chg:focus-visible{border-color:#ffd76a}
+.chg-gone{opacity:.75;text-decoration:line-through;text-decoration-color:rgba(184,194,208,.5)}
+.chg-more{font-size:12px;color:#98a6b9}
+.ax-parch .sum-chg-t{color:#8a5a00}.ax-parch .chg-l-add{color:#7a4f00;background:rgba(180,120,0,.14)}.ax-parch .chg{background:rgba(0,0,0,.05)}
+
+.ax-chg-pill{display:none}
+@media (max-width:700px){.ax-chg-pill{display:flex;position:absolute;z-index:6;top:122px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);gap:10px;align-items:center;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,215,106,.45);background:rgba(11,18,32,.92);color:#f1e6c8;font:inherit;font-size:12.5px;white-space:nowrap;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.ax-chg-pill[hidden]{display:none}.ax-chg-pill b{color:#ffd76a;font-weight:700}.ax-chg-pill span+span b{color:#b8c2d0}.ax-chg-pill small{opacity:.7}
+.ax-parch .ax-chg-pill{background:rgba(250,244,230,.95);color:#3d3122;border-color:rgba(180,120,0,.45)}.ax-parch .ax-chg-pill b{color:#8a5a00}}

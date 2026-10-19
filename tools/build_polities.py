@@ -172,7 +172,50 @@ FIX = {
  'مقدونيا': {'cap': 'إيغاي ثم بيلا'},
 }
 
+import re
+ORD = {'الأول': 1, 'الثاني': 2, 'الثالث': 3, 'الرابع': 4, 'الخامس': 5, 'السادس': 6, 'السابع': 7, 'الثامن': 8, 'التاسع': 9, 'العاشر': 10,
+       'الحادي عشر': 11, 'الثاني عشر': 12, 'الثالث عشر': 13, 'الرابع عشر': 14, 'الخامس عشر': 15, 'السادس عشر': 16, 'السابع عشر': 17,
+       'الثامن عشر': 18, 'التاسع عشر': 19}
+
+
+def _part(t, bc):
+    m = re.search(r'(\d{1,4})', t)
+    if m:
+        return -int(m.group(1)) if bc else int(m.group(1))
+    for k in sorted(ORD, key=len, reverse=True):
+        if 'القرن ' + k in t:
+            c = ORD[k]
+            if 'أواخر' in t:
+                return -(c - 1) * 100 - 10 if bc else c * 100 - 10
+            return -c * 100 + 50 if bc else (c - 1) * 100 + 50
+    return None
+
+
+def years(d):
+    """سنتا البداية والنهاية التقريبيتان من نص الفترة، لاستعمالهما في «ما الذي تغيّر» فقط. None إن لم تُفهم."""
+    if '–' not in d:
+        return None, None
+    a, b = d.split('–', 1)
+    b = b.split('،')[0]
+    a_bc = 'ق.م' in a or ('ق.م' in b and 'م' not in a.replace('ق.م', ''))
+    return _part(a, a_bc), _part(b, 'ق.م' in b)
+
+
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'dist', 'assets', 'polities.json')
 assert all(n in P for n in FIX), [n for n in FIX if n not in P]
-json.dump({n: {**{'d': d, 'cap': c, 't': t}, **FIX.get(n, {})} for n, (d, c, t) in P.items()}, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-print(len(P), 'polities', os.path.getsize(OUT) // 1024, 'KB')
+# سنوات للمقارنة فقط («ما الذي تغيّر»)، لدول لا تُفهم سنواتها من النص أو ترتبط بحضارة أوسع منها في الموسوعة
+YEARS = {'الجمهورية الرومانية': (-509, -27), 'الإمبراطورية الرومانية': (-27, 395), 'إمبراطورية الإسكندر': (-336, -323),
+         'الدولة العثمانية': (1299, 1922), 'القبيلة الذهبية': (1242, 1502), 'الدولة الإلخانية': (1256, 1335), 'خانية جغطاي': (1226, 1687),
+         'الخانية الكبرى (يوان)': (1271, 1368), 'أرمينيا': (-570, 1375), 'مملكة السند': (489, 712), 'المجر': (1000, 1526),
+         'إنجلترا': (927, 1707), 'النمسا': (976, 1867)}
+out = {}
+for n, (d, c, t) in P.items():
+    card = {**{'d': d, 'cap': c, 't': t}, **FIX.get(n, {})}
+    ys, ye = years(card['d'])
+    if ys is not None and ye is not None and ys < ye:
+        card['s'], card['e'] = ys, ye
+    out[n] = card
+for n, (a, b) in YEARS.items():
+    out.setdefault(n, {})['s'], out[n]['e'] = a, b
+json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+print(len(P), 'polities,', sum('s' in v for v in out.values()), 'with years,', os.path.getsize(OUT) // 1024, 'KB')
