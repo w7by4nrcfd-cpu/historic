@@ -1,0 +1,239 @@
+{
+ "sources_checked": 39,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://en.wikipedia.org/wiki/Battle_of_Al_Mansurah",
+  "https://en.wikipedia.org/wiki/Great_Mosque_of_al-Nuri_(Mosul)",
+  "https://en.wikipedia.org/wiki/Nur_al-Din_(died_1174)",
+  "https://en.wikipedia.org/wiki/Al-Qadi_al-Fadil",
+  "https://en.wikipedia.org/wiki/Ali_ibn_al-Athir",
+  "https://en.wikipedia.org/wiki/Tughril"
+ ],
+ "findings": [
+  {
+   "id": "wiki-mansurah",
+   "severity": "warning",
+   "field": "sources.url",
+   "issue": "URL 'Battle_of_Al_Mansurah' did not appear in any search; the canonical article is 'Battle of Mansurah (1250)' (a separate 'Battle of Mansurah (1221)' exists, so a bare/alternate title is ambiguous).",
+   "old": "WK + 'Battle_of_Al_Mansurah'",
+   "fix": "WK + 'Battle_of_Mansurah_(1250)'",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Mansurah_(1250)"
+  },
+  {
+   "id": "wiki-nuri-mosque",
+   "severity": "warning",
+   "field": "sources.url",
+   "issue": "Canonical title is 'Great Mosque of al-Nuri, Mosul' (comma, not parentheses); the '(Mosul)' form never appears in search results.",
+   "old": "WK + 'Great_Mosque_of_al-Nuri_(Mosul)'",
+   "fix": "WK + 'Great_Mosque_of_al-Nuri,_Mosul'",
+   "evidence": "https://en.wikipedia.org/wiki/Great_Mosque_of_al-Nuri,_Mosul"
+  },
+  {
+   "id": "wiki-nur-din",
+   "severity": "warning",
+   "field": "sources.url",
+   "issue": "Canonical article is 'Nur al-Din Zengi'; search only surfaces the variant 'Nur_ad-Din_(died_1174)', not 'Nur_al-Din_(died_1174)'.",
+   "old": "WK + 'Nur_al-Din_(died_1174)'",
+   "fix": "WK + 'Nur_al-Din_Zengi'",
+   "evidence": "https://en.wikipedia.org/wiki/Nur_al-Din_Zengi"
+  },
+  {
+   "id": "wiki-qadi-fadil",
+   "severity": "warning",
+   "field": "sources.url",
+   "issue": "Canonical article title is 'Qadi al-Fadil' (no 'Al-' prefix); exact-phrase search returns only that URL.",
+   "old": "WK + 'Al-Qadi_al-Fadil'",
+   "fix": "WK + 'Qadi_al-Fadil'",
+   "evidence": "https://en.wikipedia.org/wiki/Qadi_al-Fadil"
+  },
+  {
+   "id": "wiki-ibn-athir",
+   "severity": "warning",
+   "field": "sources.url",
+   "issue": "Historian's article is now at 'Ibn al-Athir' (fetched: 'Abu al-Hasan Ali Izz ad-Din Ibn al-Athir al-Jazari, the historian'); 'Ali_ibn_al-Athir' not returned by search.",
+   "old": "WK + 'Ali_ibn_al-Athir'",
+   "fix": "WK + 'Ibn_al-Athir'",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_al-Athir"
+  },
+  {
+   "id": "wiki-tughril",
+   "severity": "warning",
+   "field": "sources.url",
+   "issue": "Canonical article is 'Tughril I'; bare 'Tughril' is ambiguous (Tughril II, Tughril III, Tughril ibn Kilij Arslan II, disambiguation pages).",
+   "old": "WK + 'Tughril', W)",
+   "fix": "WK + 'Tughril_I', W)",
+   "evidence": "https://en.wikipedia.org/wiki/Tughril_I"
+  },
+  {
+   "id": "wiki-crusades-egypt",
+   "severity": "style",
+   "field": "sources",
+   "issue": "Source 'wiki-crusades-egypt' is created but not cited by any page. It fits egypt-1169 (Amalric's invasions / Shawar).",
+   "old": "['wiki-shirkuh', 'brit-saladin']",
+   "fix": "['wiki-shirkuh', 'wiki-crusades-egypt', 'brit-saladin']",
+   "evidence": "https://en.wikipedia.org/wiki/Crusader_invasions_of_Egypt"
+  },
+  {
+   "id": "edessa-1144",
+   "severity": "error",
+   "field": "sections[2].text",
+   "issue": "Not the first major Muslim victory over the Crusaders (e.g. Harran 1104, Ager Sanguinis/Balat 1119). Its significance is being the first Crusader capital/state to fall. Also grammar: foreign name 'زنكي' is diptote, not 'زنكيًا'.",
+   "old": "كان أول نصر كبير على الصليبيين، فلقّب الخليفة زنكيًا بألقاب كبيرة.",
+   "fix": "كان أكبر نصر على الصليبيين حتى ذلك الحين، وأول استعادة لعاصمة إمارة صليبية، فلقّب الخليفة زنكي بألقاب كبيرة.",
+   "evidence": "https://en.wikipedia.org/wiki/Siege_of_Edessa_(1144) ; Battle of Ager Sanguinis 1119 / Battle of Harran 1104 (scholarly consensus)"
+  },
+  {
+   "id": "jerusalem-1229",
+   "severity": "error",
+   "field": "sections[2].text",
+   "issue": "Jerusalem did not stay Frankish continuously until 1244: when the truce expired an-Nasir Dawud of Kerak occupied it (citadel surrendered 7 Dec 1239) and dismantled its defences; it returned to the Franks by treaty in the early 1240s before the Khwarazmian sack of summer 1244. The Pope's anger was mainly because Frederick was excommunicated (29 Sep 1227), not because the deal was negotiated.",
+   "old": "وغضب البابا كذلك لأنها تمت بالتفاوض. وبقيت القدس للصليبيين حتى أخذها الخوارزمية سنة 1244 م.",
+   "fix": "ولم يعترف بها البابا لأن فريدريك كان محرومًا كنسيًا. ولما انتهت الهدنة دخل الناصر داود صاحب الكرك القدس سنة 1239 م وهدم تحصيناتها، ثم عادت للصليبيين بالصلح، حتى اجتاحها الخوارزمية سنة 1244 م.",
+   "evidence": "https://en.wikipedia.org/wiki/An-Nasir_Dawud ('He occupied the city, and the garrison of the citadel surrendered on 7 December' 1239); https://en.wikipedia.org/wiki/Sixth_Crusade (excommunicated 29 Sept 1227); https://en.wikipedia.org/wiki/History_of_Jerusalem_during_the_Kingdom_of_Jerusalem (Khwarazmian sack summer 1244)"
+  },
+  {
+   "id": "mosul",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Ambiguous/non-neutral: 'destroyed in the war on ISIS' can imply the anti-ISIS forces destroyed it. ISIS blew up the mosque and al-Hadba on 21 June 2017 during the Battle of Mosul; reconstruction (UNESCO/UAE) finished 2024, officially opened 1 Sept 2025.",
+   "old": "دُمّر الجامع النوري والحدباء سنة 2017 م في الحرب على تنظيم داعش، ثم أُعيد بناؤهما في مشروع بإشراف اليونسكو.",
+   "fix": "فجّر تنظيم داعش الجامع النوري والحدباء في يونيو 2017 م في أثناء معركة استعادة الموصل، ثم أُعيد بناؤهما في مشروع لليونسكو بتمويل إماراتي، وافتُتحا رسميًا سنة 2025 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Great_Mosque_of_al-Nuri,_Mosul ('ISIS blew up the mosque on 21 June 2017 ... during the Battle of Mosul'; official opening 1 September 2025)"
+  },
+  {
+   "id": "kerak",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Summary says the Crusaders built the *town* in 1142; Kerak is an ancient Moabite city (Kir-hareseth), only the castle dates from 1142.",
+   "old": "الكرك مدينة وقلعة في جنوب الأردن، بناها الصليبيون سنة 1142 م",
+   "fix": "الكرك مدينة قديمة في جنوب الأردن، بنى الصليبيون قلعتها سنة 1142 م",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Karak ('inhabited since at least the Iron Age ... important city for the Moabites'); https://en.wikipedia.org/wiki/Kerak_Castle"
+  },
+  {
+   "id": "shirkuh",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "The family originated near Dvin in Armenia; they moved to Tikrit later (c. 1130). 'from Tikrit' as origin is inaccurate.",
+   "old": "من أسرة كردية من تكريت، خدم",
+   "fix": "من أسرة كردية أصلها من دوين في أرمينية ثم نزلت تكريت، خدم",
+   "evidence": "https://en.wikipedia.org/wiki/Shirkuh ('The family came from a Kurdish village in Armenia near Dvin ... moved to Baghdad and then Tikrit')"
+  },
+  {
+   "id": "mansurah-1250",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "'led by Baybars' is overstated: sources list Fakhr al-Din ibn al-Shaykh (killed), Faris al-Din Aktai, Baybars and Qutuz; the Bahri Mamluks' leadership is credited jointly.",
+   "old": "هزم المماليك بقيادة بيبرس فرسان",
+   "fix": "هزم المماليك البحرية، وفيهم بيبرس، فرسان",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Mansurah_(1250) (narrative credits Qutuz, Aktai and Baybars)"
+  },
+  {
+   "id": "tughril-beg",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Tughril was proclaimed sultan by the Seljuks in 1037/38; the caliph did not create the title. Al-Qa'im recognised him and in 1058 conferred 'King of the East and the West'.",
+   "old": "ولقّبه الخليفة القائم «السلطان»، فصار",
+   "fix": "واعترف به الخليفة القائم سلطانًا، ثم لقّبه سنة 1058 م «ملك المشرق والمغرب»، فصار",
+   "evidence": "https://en.wikipedia.org/wiki/Tughril_I ('Seljuk leaders declared Tughril sultan in 1037 ... in 1058 he conferred the title King of the East and the West')"
+  },
+  {
+   "id": "jerusalem-1099",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Anachronistic compression: al-Aqsa was first the royal palace; it became the Templars' seat only c. 1119/1120 after the order was founded.",
+   "old": "وصار المسجد الأقصى مقرًا لفرسان المعبد.",
+   "fix": "وصار المسجد الأقصى قصرًا للملك ثم مقرًا لفرسان المعبد منذ نحو 1120 م.",
+   "evidence": "Scholarly consensus (Barber, The New Knighthood, 1994); https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1099)"
+  },
+  {
+   "id": "acre-1291",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Not 'within weeks': Tyre fell 19 May, Sidon mid-July, Beirut end of July, Tortosa early Aug, Atlit mid-Aug 1291 (~3 months); Tortosa omitted.",
+   "old": "أُخليت بعدها صور وصيدا وبيروت وعثليث في أسابيع،",
+   "fix": "أُخليت بعدها صور وصيدا وبيروت وطرطوس وعثليث في نحو ثلاثة أشهر،",
+   "evidence": "Scholarly consensus (Runciman, History of the Crusades III; Riley-Smith); https://en.wikipedia.org/wiki/Siege_of_Acre_(1291)"
+  },
+  {
+   "id": "acre",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Acre's 18th-c. revival began under Zahir al-Umar (autonomous local ruler under nominal Ottoman suzerainty) before al-Jazzar; 'the Ottomans rebuilt it' oversimplifies.",
+   "old": "ثم أعاد العثمانيون عمارتها، فبنى أحمد باشا الجزار",
+   "fix": "ثم أُعيدت عمارتها في العهد العثماني على يد ظاهر العمر ثم أحمد باشا الجزار، الذي بنى",
+   "evidence": "https://whc.unesco.org/en/list/1042/ (Ottoman-era town of the 18th–19th c.); scholarly consensus on Zahir al-Umar"
+  },
+  {
+   "id": "kose-dag-1243",
+   "severity": "warning",
+   "field": "coordinates",
+   "issue": "[38.7, 40.13] is ~60 km east of Mount Kösedağ (Suşehri/Zara, Sivas; summit 40.077N 37.972E), where the battle is usually placed. Text already flags it approximate, but the marker should sit at the mountain.",
+   "old": "'coordinates': [38.7, 40.13]",
+   "fix": "'coordinates': [37.97, 40.08]",
+   "evidence": "https://en.wikipedia.org/wiki/Mount_K%C3%B6seda%C4%9F_(Sivas) (40°04′38″N 37°58′18″E; 'Battle of Kösedağ fought at the mountain's foot')"
+  },
+  {
+   "id": "sanjar",
+   "severity": "style",
+   "field": "summary",
+   "issue": "False precision: Khorasan governor 1097 to death 1157 is ~60 years, not 'more than sixty'.",
+   "old": "حكم خراسان من مرو أكثر من ستين عامًا",
+   "fix": "حكم خراسان من مرو نحو ستين عامًا",
+   "evidence": "https://en.wikipedia.org/wiki/Ahmad_Sanjar"
+  },
+  {
+   "id": "al-adil",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "'Personal friendship' with Richard overstates; sources describe cordial relations (proposed marriage to Joan, courtesy exchanges).",
+   "old": "وجرت بينهما مراسلات وصداقة شخصية.",
+   "fix": "وجرت بينهما مراسلات وعلاقة ودية.",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Adil_I"
+  },
+  {
+   "id": "edessa",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Ambiguous grammar: 'ودعت أوروبا' reads as 'the city called Europe'. The fall prompted the call.",
+   "old": "ودعت أوروبا إلى الحملة الصليبية الثانية.",
+   "fix": "فدفع سقوطها أوروبا إلى الحملة الصليبية الثانية.",
+   "evidence": "Arabic style"
+  },
+  {
+   "id": "antioch-1098",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "'وفتح الطريق' lacks a clear subject; use passive/intransitive.",
+   "old": "وفتح الطريق إلى القدس.",
+   "fix": "وانفتح الطريق إلى القدس.",
+   "evidence": "Arabic style"
+  },
+  {
+   "id": "acre-1191",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "'الأسير المطلق' is awkward/ambiguous (could read 'the absolute captive').",
+   "old": "ملك القدس الأسير المطلق غي دي لوزينيان",
+   "fix": "ملك القدس غي دي لوزينيان بعد إطلاقه من الأسر",
+   "evidence": "Arabic style"
+  },
+  {
+   "id": "qadi-al-fadil",
+   "severity": "style",
+   "field": "summary",
+   "issue": "Standard orthography separates 'عبد' in compound names.",
+   "old": "القاضي الفاضل عبدالرحيم البيساني",
+   "fix": "القاضي الفاضل عبد الرحيم البيساني",
+   "evidence": "Arabic orthography"
+  },
+  {
+   "id": "shidda-1065",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "Use consistent, neutral term as in al-Mustansir page ('الجند السودانيون').",
+   "old": "وتنازع الجند الأتراك والعبيد السودانيون والوزراء.",
+   "fix": "وتنازع الجند الأتراك والجند السودانيون والوزراء.",
+   "evidence": "Consistency with al-mustansir sections[1]"
+  }
+ ]
+}
