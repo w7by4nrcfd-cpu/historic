@@ -1,0 +1,122 @@
+{
+ "sections_checked": 83,
+ "findings": [
+  {
+   "id": "mecca",
+   "severity": "warning",
+   "section": "الحج",
+   "issue": "Overstated number: recent Hajj seasons have about 1.6–1.8 million pilgrims (1,673,230 in 1446 AH/2025), not 'millions'.",
+   "old": "يقصد مكة كل عام في شهر ذي الحجة ملايين المسلمين",
+   "fix": "يقصد مكة كل عام في شهر ذي الحجة قرابة مليوني مسلم",
+   "evidence": "GASTAT: total pilgrims Hajj 1446 AH = 1,673,230 — https://www.stats.gov.sa/ar/w/news/49"
+  },
+  {
+   "id": "jerusalem",
+   "severity": "warning",
+   "section": "الأماكن المقدسة",
+   "issue": "'حائط البراق' is the Muslim name; presenting it as the Jewish name ('الحائط الغربي (حائط البراق) عند اليهود') is inaccurate and blurs that the wall is part of the Haram enclosure.",
+   "old": "والحائط الغربي (حائط البراق) عند اليهود",
+   "fix": "وحائط البراق الذي يقدّسه اليهود باسم الحائط الغربي",
+   "evidence": "Al-Buraq is the Islamic designation (UNESCO/Shaw Commission 1930 use 'Al-Buraq Wall / Western Wall'); Jews call it HaKotel HaMa'aravi."
+  },
+  {
+   "id": "baghdad",
+   "severity": "warning",
+   "section": "ما بقي من بغداد العباسية",
+   "issue": "The Souq al-Ghazl minaret of Jami' al-Khulafa' collapsed in 670 AH/1271 and was rebuilt in 678 AH/1279 (after the Mongol conquest), so listing it as surviving Abbasid fabric without qualification is inaccurate. Usual name is جامع الخلفاء.",
+   "old": "ومئذنة جامع الخليفة في سوق الغزل.",
+   "fix": "ومئذنة جامع الخلفاء في سوق الغزل، وهي في موضع مئذنة عباسية أُعيد بناؤها سنة 1279 م.",
+   "evidence": "Al Jazeera 2021: 'وأعيد بناؤهما عام 678هـ، 1279م' — https://www.aljazeera.net/culture/2021/3/28/جامع-الخلفاء-في-بغداد-معلم-تاريخي-من"
+  },
+  {
+   "id": "prophet-muhammad",
+   "severity": "warning",
+   "section": "الرسالة",
+   "issue": "False precision: Ibn Hisham's recension is the most famous early sira, but not unambiguously the oldest surviving; al-Waqidi's Maghazi (d. 207/823) predates Ibn Hisham (d. 213 or 218 AH), and fragments of Urwa, Musa ibn Uqba and Ibn Ishaq via other transmitters survive.",
+   "old": "وأقدم كتب سيرته الباقية سيرة ابن هشام،",
+   "fix": "ومن أقدم كتب سيرته الباقية وأشهرها سيرة ابن هشام،",
+   "evidence": "Al-Waqidi d. 207 AH (Kitab al-Maghazi extant); Ibn Hisham d. 213/218 AH — standard bio-bibliography (Sezgin, GAS I; EI2 'Ibn Hisham', 'al-Wakidi')."
+  },
+  {
+   "id": "ali",
+   "severity": "warning",
+   "section": "الكوفة",
+   "issue": "Wording error: Kufa is itself in Iraq, so moving to Kufa 'to be close to Iraq' is illogical.",
+   "old": "ليكون قريبًا من العراق ومن جبهة الشام",
+   "fix": "ليكون بين أنصاره في العراق قريبًا من جبهة الشام",
+   "evidence": "Kufa (al-Kufa) is a garrison city in Iraq founded c. 638 by Sa'd ibn Abi Waqqas; Ali moved there after the Battle of the Camel (Rajab 36 AH)."
+  },
+  {
+   "id": "muawiya",
+   "severity": "warning",
+   "section": "تقويمه",
+   "issue": "Incomplete/imbalanced framing of the Sunni position: mainstream Sunni scholarship holds Ali was closer to the truth (hadith of Ammar: 'تقتله الفئة الباغية') and that Muawiya erred in ijtihad; Sunni scholars also criticised the succession of Yazid. As written, criticism is attributed only to Shia and historians.",
+   "old": "يراه أهل السنة صحابيًا وكاتبًا للوحي اجتهد في خلافه مع علي، وينتقده الشيعة وكثير من المؤرخين لقتاله عليًا ولتوريثه الحكم لابنه يزيد.",
+   "fix": "يراه أهل السنة صحابيًا وكاتبًا للوحي اجتهد في خلافه مع علي، ويرون عليًّا أقرب إلى الحق، ويؤخذ عليه عند كثير من العلماء والمؤرخين توريثه الحكم لابنه يزيد. أما الشيعة فينتقدونه بشدة لقتاله عليًّا.",
+   "evidence": "Sahih Muslim 2916 (hadith of Ammar); Ibn Kathir, al-Bidaya wa'l-Nihaya on Siffin; Ibn Taymiyya, Majmu' al-Fatawa 4/467 — Ali 'أولى بالحق'."
+  },
+  {
+   "id": "harun-al-rashid",
+   "severity": "warning",
+   "section": "بغداد في عهده",
+   "issue": "Overstatement: the Kufa–Mecca pilgrim road predates Zubayda and was developed by Abbasid caliphs from al-Saffah/al-Mahdi onward; Zubayda funded many wells, pools and stations, so the road was named after her. She did not create the series.",
+   "old": "وأنشأت زوجته زبيدة على طريق الحج من الكوفة إلى مكة سلسلة من البرك والآبار والمنازل، عُرفت بدرب زبيدة.",
+   "fix": "وأنفقت زوجته زبيدة على عمارة طريق الحج من الكوفة إلى مكة، فحُفرت عليه برك وآبار كثيرة، حتى عُرف الطريق بدرب زبيدة.",
+   "evidence": "Asharq Al-Awsat on Darb Zubaydah (route used before Islam, developed in Abbasid era, named for Zubayda's contributions) — https://aawsat.com/node/892596"
+  },
+  {
+   "id": "saladin",
+   "severity": "error",
+   "section": "صفاته",
+   "issue": "Ibn Shaddad was not Saladin's secretary (kātib); he was his qadi al-askar (army judge), adviser and biographer (al-Nawadir al-Sultaniyya). His secretary/chancery writer was Imad al-Din al-Isfahani (and al-Qadi al-Fadil).",
+   "old": "ويروي كاتبه ابن شداد",
+   "fix": "ويروي قاضيه وكاتب سيرته ابن شداد",
+   "evidence": "Baha al-Din Ibn Shaddad, author of النوادر السلطانية, served as قاضي العسكر — https://shamela.ws/author/618 ; EI2 'Ibn Shaddad, Baha al-Din'."
+  },
+  {
+   "id": "suleiman",
+   "severity": "warning",
+   "section": "الأسرة",
+   "issue": "Passive 'في عهده أُعدم' obscures that Suleiman himself ordered the execution (strangled in his tent at Ereğli, 1553); and Mustafa was his eldest *surviving* son (Mahmud, b. 1512, died 1521).",
+   "old": "وفي عهده أُعدم ابنه الأكبر مصطفى سنة 1553 م بتهمة التآمر",
+   "fix": "وفي سنة 1553 م أمر بإعدام ابنه مصطفى، أكبر أبنائه الأحياء، بتهمة التآمر",
+   "evidence": "Execution of Şehzade Mustafa by Suleiman's order at Ereğli, 6 Oct 1553 (Imber, The Ottoman Empire 1300–1650); Şehzade Mahmud d. 1521."
+  },
+  {
+   "id": "muhammad-saud",
+   "severity": "error",
+   "section": "النسب",
+   "issue": "Genealogical error: Muhammad ibn Saud ibn Muhammad ibn Muqrin — Saud ibn Muhammad is his FATHER, not his grandfather; the family name Al Saud derives from him.",
+   "old": "وإلى جده سعود بن محمد تُنسب الأسرة",
+   "fix": "وإلى أبيه سعود بن محمد تُنسب الأسرة",
+   "evidence": "Saudipedia: 'محمد بن سعود بن محمد بن مقرن' — https://saudipedia.com/article/6423/الأسرة-المالكة/حكام-الدولة-السعودية-الأولى/محمد-بن-سعود-بن-محمد-بن-مقرن"
+  },
+  {
+   "id": "ibn-khaldun",
+   "severity": "warning",
+   "section": "الأثر",
+   "issue": "Inaccurate date: the first translation of the Muqaddima was into Ottoman Turkish by Şeyhülislam Pîrîzâde Mehmed Sâhib in the first half of the 18th century (c. 1730), before the 19th-century European translations (de Slane 1862–68).",
+   "old": "وتُرجمت المقدمة إلى لغات كثيرة منذ القرن التاسع عشر.",
+   "fix": "وتُرجمت المقدمة إلى لغات كثيرة، أولها التركية العثمانية في القرن الثامن عشر.",
+   "evidence": "Dîvân dergisi: Pîrîzâde Mehmed Sâhib translated the first five sections in the first half of the 18th c. — https://divandergisi.com/en/Dergi/Makale/21/229"
+  },
+  {
+   "id": "constantinople-1453",
+   "severity": "warning",
+   "section": "المدافع",
+   "issue": "Overstatement: Orban's great bombard fired only a few shots a day and reportedly cracked; the land walls were breached by the sustained fire of the whole Ottoman artillery, not by this single gun.",
+   "old": "فدكّ به أسوار المدينة البرية التي صمدت قرونًا.",
+   "fix": "واستُعمل مع مدافع أخرى في دكّ أسوار المدينة البرية التي صمدت قرونًا.",
+   "evidence": "Runciman, The Fall of Constantinople 1453 (1965), ch. 7: the great cannon could fire only about seven times a day; bombardment by the full battery."
+  },
+  {
+   "id": "dome-rock",
+   "severity": "warning",
+   "section": "المبنى اليوم",
+   "issue": "Imprecise: the 1993–94 restoration (funded by King Hussein) covered the dome with plates gilded with ~80 kg of gold leaf, not solid gold plates; work extended into 1994.",
+   "old": "ثم بصفائح ذهبية سنة 1993 م.",
+   "fix": "ثم بصفائح مطلية بالذهب في ترميم 1993–1994 م.",
+   "evidence": "Jordanian Hashemite restoration 1992–1994: dome re-covered with 5,000+ gold-leaf-plated sheets (~80 kg gold) — Royal Hashemite Court records of the third Hashemite restoration."
+  }
+ ]
+}
