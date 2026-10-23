@@ -1,0 +1,293 @@
+{
+ "sources_checked": 38,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://en.wikipedia.org/wiki/Abbasid_Caliphate_of_Cairo",
+  "https://en.wikipedia.org/wiki/Battle_of_Diu_(1509)",
+  "https://en.wikipedia.org/wiki/Tuman_bay_II",
+  "https://en.wikipedia.org/wiki/Goharshad_Begum",
+  "https://en.wikipedia.org/wiki/Al-Ashraf_Qansuh_al-Ghawri"
+ ],
+ "note": "Every other URL was confirmed verbatim in WebSearch results (en.wikipedia.org / whc.unesco.org). The five listed above were not returned verbatim. The canonical equivalents are given in the findings (the first appears not to exist). Many pages were also loaded with WebFetch to check facts.",
+ "findings": [
+  {
+   "id": "indus-1221",
+   "severity": "error",
+   "field": "sections[2].text",
+   "issue": "Claim that the Mongols did not pursue Jalal al-Din in India is false: Genghis sent Dorbei Doqshin with two tumens in early 1222; they took Nandana and besieged Multan for 42 days.",
+   "old": "لجأ جلال الدين إلى الهند ثلاث سنوات، ولم يتعقبه المغول فيها.",
+   "fix": "لجأ جلال الدين إلى الهند نحو ثلاث سنوات، فأرسل جنكيز في أثره قوة حاصرت ملتان سنة 1222 م ثم انسحبت.",
+   "evidence": "https://en.wikipedia.org/wiki/Jalal_al-Din_Mangburni — 'Dorbei Doqshin was sent with two tumens in early 1222 … besieged Multan … retreated after 42 days'"
+  },
+  {
+   "id": "indus-1221",
+   "severity": "warning",
+   "field": "coordinates",
+   "issue": "Marker is ~100 km SW of the battle site given by the source (33°46′N 72°11′E, near Attock/Nilab). Even as an approximate marker it exceeds tolerance.",
+   "old": "'coordinates': [71.6, 33.0]",
+   "fix": "'coordinates': [72.18, 33.77]",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_the_Indus — infobox coordinates 33°46′N 72°11′E"
+  },
+  {
+   "id": "mongol-europe-1241",
+   "severity": "error",
+   "field": "sections[2].text",
+   "issue": "(1) Ögedei's death as the cause of the 1242 withdrawal is debated, not established (Rashid al-Din says the withdrawal began before news arrived). (2) 'Did not return in great force' is wrong: the 1259 raid on Poland and the 1285–1287 invasions of Hungary and Poland were large, 'much greater in scale than anything since 1241–1242'.",
+   "old": "وصل خبر موت أوقطاي، فانسحب المغول سنة 1242 م ولم يعودوا بقوة كبيرة.",
+   "fix": "انسحب المغول سنة 1242 م، ويُربط انسحابهم عادةً بموت أوقطاي وإن اختلف المؤرخون في أسبابه. ثم عادوا فأغاروا على بولندا والمجر سنة 1259 م وبين 1285 و1287 م دون أن يستقروا فيهما.",
+   "evidence": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe — 'The true reasons for the Mongol withdrawal are not fully known'; 1280s raids 'much greater in scale than anything since the 1241–1242 invasion'"
+  },
+  {
+   "id": "mongol-europe-1241",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "States the debated causal link to Ögedei's death as fact.",
+   "old": "ثم انسحبوا سنة 1242 م بعد موت الخان أوقطاي.",
+   "fix": "ثم انسحبوا سنة 1242 م، ويُربط انسحابهم عادةً بموت الخان أوقطاي.",
+   "evidence": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe — 'The most common reason given … is Ögedei's death … The true reasons … are not fully known'"
+  },
+  {
+   "id": "ogedei",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Overstated/inaccurate: Batu, the commander of the European campaign, deliberately did not go to Mongolia for the kurultai (he stayed on the Volga); only some princes returned, and the link between the death and the withdrawal is debated.",
+   "old": "فعاد قادة الحملة الأوروبية إلى منغوليا لاختيار خان جديد.",
+   "fix": "فعاد بعض أمراء الحملة الأوروبية إلى منغوليا، وبقي باتو على الفولغا، ويُربط موته عادةً بانسحاب المغول من أوروبا.",
+   "evidence": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe — 'Batu specifically decided against attending the kurultai in favor of staying in Europe'"
+  },
+  {
+   "id": "ghazan-islam-1295",
+   "severity": "warning",
+   "field": "sections[1].text",
+   "issue": "Baydu was not Ghazan's cousin but his father's cousin (Baydu b. Taraqai b. Hülegü; Ghazan b. Arghun b. Abaqa b. Hülegü).",
+   "old": "مع ابن عمه بايدو",
+   "fix": "مع بايدو ابن عم أبيه",
+   "evidence": "Genealogy in https://en.wikipedia.org/wiki/Ilkhanate (Baydu grandson of Hülegü via Taraqai; Ghazan great-grandson via Abaqa and Arghun)"
+  },
+  {
+   "id": "ghazan-islam-1295",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Over-generalisation: the third Ilkhan, Tekuder, was a Muslim (Ahmad, r. 1282–1284).",
+   "old": "كان أوائل الإلخانات على البوذية أو الشامانية،",
+   "fix": "كان أوائل الإلخانات على البوذية أو الشامانية، باستثناء أحمد تكودار (1282–1284 م) الذي أسلم،",
+   "evidence": "https://en.wikipedia.org/wiki/Ilkhanate — Tekuder (Ahmad) converted to Islam and ruled 1282–1284"
+  },
+  {
+   "id": "ghazan-islam-1295",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "Verb تلقّب takes the preposition بـ.",
+   "old": "وتلقب «محمود».",
+   "fix": "وتلقّب بـ«محمود».",
+   "evidence": "Arabic usage: تلقّب بكذا"
+  },
+  {
+   "id": "al-nasir-muhammad",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Inaccurate sequence: his first reign lasted about a year (1293–1294); his second reign ended in 1309 when he withdrew to al-Karak and gave up the throne under pressure from Baybars al-Jashnakir and Salar, rather than being directly deposed. 'فعُزل' immediately after 'تولى' also implies an immediate removal.",
+   "old": "تولى صبيًا سنة 1293 م فعُزل، ثم أعيد وعُزل مرة أخرى،",
+   "fix": "تولى صبيًا سنة 1293 م ثم عُزل سنة 1294 م، ثم أعيد سنة 1299 م، فاعتزل في الكرك سنة 1309 م مضطرًا،",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Nasir_Muhammad — he went to al-Karak instead of making the pilgrimage, ending his reign; 'an-Nasir did not actually mean to resign'"
+  },
+  {
+   "id": "aybak",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Aybak was made atabeg by Shajar al-Durr after Turanshah's murder, not before it.",
+   "old": "وكان أتابك العسكر حين قُتل توران شاه سنة 1250 م.",
+   "fix": "وجعلته شجر الدر أتابك العسكر بعد قتل توران شاه سنة 1250 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Aybak — after the murder Shajar al-Durr 'appointed Aybak to the important position of Atabeg'"
+  },
+  {
+   "id": "ibn-al-nafis",
+   "severity": "warning",
+   "field": "period / sections[0].text",
+   "issue": "Birth year given as certain 1213; the source gives 607 AH (1210/11) and a range of 1210–1213.",
+   "old": "{'period': '1213 – 1288 م'",
+   "fix": "{'period': 'نحو 1210/1213 – 1288 م'",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_al-Nafis — born 'between 1210 and 1213' (infobox 607 AH)"
+  },
+  {
+   "id": "ibn-al-nafis",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Same birth-year false precision in the section text.",
+   "old": "وُلد في دمشق سنة 1213 م،",
+   "fix": "وُلد في دمشق نحو 1210–1213 م،",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_al-Nafis"
+  },
+  {
+   "id": "rashid-al-din",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "'The first comprehensive world history' is stated as fact; the source says only that the work 'attempted to provide a history of the whole world', and calls him 'the first world historian' only in the title of a cited study.",
+   "old": "كتب «جامع التواريخ»، أول تاريخ شامل للعالم يجمع",
+   "fix": "كتب «جامع التواريخ»، ويُعدّ من أوائل التواريخ الشاملة للعالم، إذ جمع",
+   "evidence": "https://en.wikipedia.org/wiki/Rashid_al-Din_Hamadani — 'attempted to provide a history of the whole world of that era'"
+  },
+  {
+   "id": "rashid-al-din",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "He converted at around age thirty (by 1277), so 'شابًا' (as a youth) is imprecise.",
+   "old": "وأسلم شابًا،",
+   "fix": "وأسلم نحو الثلاثين من عمره،",
+   "evidence": "https://en.wikipedia.org/wiki/Rashid_al-Din_Hamadani — 'converted … around age thirty'"
+  },
+  {
+   "id": "sultaniyya",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Founding of the city is credited to Öljaitü alone; Arghun (Öljaitü's father) began it and Öljaitü completed it and made it his capital (c. 1305–1307).",
+   "old": "السلطانية مدينة بناها السلطان الإلخاني أولجايتو عاصمة له",
+   "fix": "السلطانية مدينة بدأها الإلخان أرغون وأتمّها ابنه أولجايتو عاصمة له",
+   "evidence": "Encyclopaedia Britannica / Encyclopaedia Iranica s.v. Solṭāniya: founded by Arghun (r. 1284–91), completed by Öljeitü (unverified online; scholarly consensus)"
+  },
+  {
+   "id": "sultaniyya",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Same issue in the section text.",
+   "old": "بنى أولجايتو، أخو غازان، مدينة جديدة",
+   "fix": "أتمّ أولجايتو، أخو غازان، بناء مدينة جديدة بدأها أبوه أرغون",
+   "evidence": "Britannica / Iranica s.v. Solṭāniya"
+  },
+  {
+   "id": "ilkhanate-end-1335",
+   "severity": "warning",
+   "field": "coordinates/certainty",
+   "issue": "Abu Sa'id died in Karabakh (Arran) on campaign, not at Soltaniyeh; the marker is at the capital but nothing says it is a reference point.",
+   "old": "'coordinates': [48.797, 36.434], 'kind': 'political', 'certainty': 'موثق'}",
+   "fix": "'coordinates': [48.797, 36.434], 'kind': 'political', 'certainty': 'موثق؛ العلامة عند السلطانية عاصمة الدولة، وقد توفي أبو سعيد في قراباغ'}",
+   "evidence": "https://en.wikipedia.org/wiki/Ilkhanate — Abu Sa'id died 1335 in Karabakh during campaign against the Golden Horde"
+  },
+  {
+   "id": "ibn-taymiyya",
+   "severity": "style",
+   "field": "summary",
+   "issue": "In Arabic, 'متكلم' means an adherent of kalām, which Ibn Taymiyya criticised; the neutral equivalent of 'theologian' (the source's word) is 'عالم في العقيدة'.",
+   "old": "فقيه ومحدث ومتكلم حنبلي من حران",
+   "fix": "فقيه ومحدث وعالم في العقيدة حنبلي من حران",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_Taymiyya — 'scholar, jurist, traditionist, and theologian'"
+  },
+  {
+   "id": "ibn-taymiyya",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "'ف' implies the flight came immediately after his birth; the family left Harran in 1269, when he was about six.",
+   "old": "وُلد في حران سنة 1263 م، ففرت أسرته إلى دمشق من المغول وهو صغير.",
+   "fix": "وُلد في حران سنة 1263 م، ثم فرت أسرته إلى دمشق من المغول سنة 1269 م وهو صغير.",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_Taymiyya — 'In 1269 … left Harran'"
+  },
+  {
+   "id": "ibn-taymiyya",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Incomplete: he was also held under house arrest in Alexandria (1309). Also 'علماء عصره' over-generalises; many contemporaries supported him.",
+   "old": "خالف علماء عصره في مسائل في العقيدة والفقه، فسُجن في القاهرة ودمشق مرات،",
+   "fix": "خالف كثيرًا من علماء عصره في مسائل في العقيدة والفقه، فسُجن في القاهرة ودمشق مرات، وأقام مدة تحت الإقامة الجبرية في الإسكندرية،",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_Taymiyya — house arrest in Alexandria 1309"
+  },
+  {
+   "id": "ibn-taymiyya",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Not all of his works are in Majmūʿ al-Fatāwā (e.g. Darʾ taʿāruḍ, Minhāj al-sunna are separate).",
+   "old": "وترك مؤلفات كثيرة جُمعت في «مجموع الفتاوى»",
+   "fix": "وترك مؤلفات كثيرة، جُمع جزء كبير منها في «مجموع الفتاوى»",
+   "evidence": "Majmūʿ al-Fatāwā (compiled by Ibn Qāsim) excludes major separate works such as Darʾ taʿāruḍ al-ʿaql wa-l-naql"
+  },
+  {
+   "id": "al-ghuri",
+   "severity": "style",
+   "field": "summary",
+   "issue": "'قبل آخر سلاطين المماليك' is ambiguous and ungrammatical for 'penultimate sultan'.",
+   "old": "الأشرف قانصوه الغوري قبل آخر سلاطين المماليك (1501–1516 م)",
+   "fix": "الأشرف قانصوه الغوري، السلطان المملوكي قبل الأخير (1501–1516 م)",
+   "evidence": "Arabic usage: قبل الأخير"
+  },
+  {
+   "id": "al-ghuri",
+   "severity": "style",
+   "field": "summary",
+   "issue": "The standard name is 'المحيط الهندي', and the rest of the batch uses it.",
+   "old": "واجه البرتغاليين في البحر الهندي",
+   "fix": "واجه البرتغاليين في المحيط الهندي",
+   "evidence": "Consistency with the diu-1509 page"
+  },
+  {
+   "id": "alexandria",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "'ف' wrongly links the founding (331 BC) and the conquest (641 CE) as consecutive events.",
+   "old": "ففتحها عمرو بن العاص في خلافة عمر بن الخطاب.",
+   "fix": "ثم فتحها عمرو بن العاص سنة 641 م في خلافة عمر بن الخطاب.",
+   "evidence": "https://en.wikipedia.org/wiki/Alexandria — Muslim conquest 641"
+  },
+  {
+   "id": "alexandria",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "The lighthouse was one of the Seven Wonders of the Ancient World; 'عجائب العالم' alone is imprecise.",
+   "old": "إحدى عجائب العالم،",
+   "fix": "إحدى عجائب الدنيا السبع القديمة،",
+   "evidence": "https://en.wikipedia.org/wiki/Alexandria"
+  },
+  {
+   "id": "shahrisabz",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "Ak-Saray was built 1380–1404, about 24 years.",
+   "old": "واستغرق بناؤه نحو عشرين عامًا",
+   "fix": "واستغرق بناؤه أكثر من عشرين عامًا",
+   "evidence": "https://whc.unesco.org/en/list/885/ (begun 1380); completed 1404 per standard references"
+  },
+  {
+   "id": "source:wiki-cairo-abbasids",
+   "severity": "warning",
+   "field": "sources url",
+   "issue": "No English Wikipedia article titled 'Abbasid Caliphate of Cairo' could be found in searches. Point to the article on al-Mustansir II, which covers the 1261 investiture and the continuation of the Cairo caliphate until 1517.",
+   "old": "('wiki-cairo-abbasids', 'الخلافة العباسية في القاهرة — ويكيبيديا', WK + 'Abbasid_Caliphate_of_Cairo', W)",
+   "fix": "('wiki-cairo-abbasids', 'المستنصر بالله الثاني والخلافة العباسية في القاهرة — ويكيبيديا', WK + 'Al-Mustansir_II', W)",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Mustansir_II — installed 13 June 1261; Cairo caliphate 'lasted until the Ottoman conquest of Egypt in 1517'"
+  },
+  {
+   "id": "source:wiki-gawhar-shad",
+   "severity": "style",
+   "field": "sources url",
+   "issue": "The canonical title is 'Gawhar Shad'; 'Goharshad_Begum' is at most a redirect.",
+   "old": "WK + 'Goharshad_Begum'",
+   "fix": "WK + 'Gawhar_Shad'",
+   "evidence": "WebSearch result https://en.wikipedia.org/wiki/Gawhar_Shad"
+  },
+  {
+   "id": "source:wiki-ghuri",
+   "severity": "style",
+   "field": "sources url",
+   "issue": "The canonical title is 'Al-Ashraf Qansuh al-Ghuri'.",
+   "old": "WK + 'Al-Ashraf_Qansuh_al-Ghawri'",
+   "fix": "WK + 'Al-Ashraf_Qansuh_al-Ghuri'",
+   "evidence": "WebSearch result https://en.wikipedia.org/wiki/Al-Ashraf_Qansuh_al-Ghuri"
+  },
+  {
+   "id": "source:wiki-tumanbay",
+   "severity": "style",
+   "field": "sources url",
+   "issue": "The canonical title is 'Tuman Bay II' (capital B).",
+   "old": "WK + 'Tuman_bay_II'",
+   "fix": "WK + 'Tuman_Bay_II'",
+   "evidence": "WebSearch result https://en.wikipedia.org/wiki/Tuman_Bay_II"
+  },
+  {
+   "id": "source:wiki-diu-1509",
+   "severity": "style",
+   "field": "sources url",
+   "issue": "The 1509 battle's canonical article is 'Battle of Diu'.",
+   "old": "WK + 'Battle_of_Diu_(1509)'",
+   "fix": "WK + 'Battle_of_Diu'",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Diu — naval battle of 3 February 1509"
+  }
+ ]
+}
