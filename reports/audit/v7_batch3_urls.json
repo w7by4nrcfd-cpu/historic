@@ -1,0 +1,47 @@
+{
+  "checked": 29,
+  "confirmed": [
+    "https://whc.unesco.org/en/list/314",
+    "https://whc.unesco.org/en/list/383",
+    "https://whc.unesco.org/en/list/379",
+    "https://whc.unesco.org/en/list/313",
+    "https://whc.unesco.org/en/list/1560",
+    "https://whc.unesco.org/en/list/170",
+    "https://whc.unesco.org/en/list/36",
+    "https://en.wikipedia.org/wiki/Abd_al-Mu%27min",
+    "https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub_al-Mansur",
+    "https://en.wikipedia.org/wiki/Ibn_Tufail",
+    "https://en.wikipedia.org/wiki/Muhammad_al-Idrisi",
+    "https://en.wikipedia.org/wiki/Ibn_Khaldun",
+    "https://en.wikipedia.org/wiki/Ibn_Arabi",
+    "https://en.wikipedia.org/wiki/Idris_I_of_Morocco",
+    "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin",
+    "https://en.wikipedia.org/wiki/Muhammad_XII_of_Granada",
+    "https://en.wikipedia.org/wiki/Ibn_al-Khatib",
+    "https://en.wikipedia.org/wiki/Muslim_conquest_of_Sicily",
+    "https://en.wikipedia.org/wiki/Taifa",
+    "https://en.wikipedia.org/wiki/Battle_of_Sagrajas",
+    "https://en.wikipedia.org/wiki/Banu_Hilal",
+    "https://en.wikipedia.org/wiki/Battle_of_Alarcos",
+    "https://en.wikipedia.org/wiki/Nasrid_dynasty",
+    "https://en.wikipedia.org/wiki/Siege_of_C%C3%B3rdoba_(1236)",
+    "https://en.wikipedia.org/wiki/Siege_of_Seville",
+    "https://en.wikipedia.org/wiki/Marinid_Sultanate",
+    "https://en.wikipedia.org/wiki/Granada_War",
+    "https://en.wikipedia.org/wiki/Expulsion_of_the_Moriscos"
+  ],
+  "broken_or_redirect": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Fatima_al-Fihri",
+      "correct": "https://en.wikipedia.org/wiki/Fatima_al-Fihriya",
+      "evidence": "Two searches ('Fatima al-Fihri', 'Fatima al-Fihri founder al-Qarawiyyin mosque Fez') never returned /wiki/Fatima_al-Fihri; the article appears as 'Fatima al-Fihriya' at /wiki/Fatima_al-Fihriya. Old title is likely a redirect, but use the canonical URL."
+    }
+  ],
+  "notes": {
+    "whc_trailing_slash": "All UNESCO URLs appear in results with a trailing slash (e.g. https://whc.unesco.org/en/list/314/); treated as canonical equivalent.",
+    "https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub_al-Mansur": "Exact URL returned in results, titled 'Yaqub al-Mansur' (resolves via redirect; canonical likely /wiki/Yaqub_al-Mansur).",
+    "https://en.wikipedia.org/wiki/Ibn_Tufail": "Exact URL returned in results, titled 'Ibn Tufayl'; canonical is https://en.wikipedia.org/wiki/Ibn_Tufayl.",
+    "https://en.wikipedia.org/wiki/Marinid_Sultanate": "Exact URL returned in results; main article also appears as /wiki/Marinid_dynasty, so this may be a redirect."
+  },
+  "unconfirmed": []
+}
