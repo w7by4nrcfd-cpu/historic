@@ -52,14 +52,15 @@ def line(coords):
     return out
 
 
-for f in ['land.geojson', 'water.geojson', 'physical.geojson']:
-    d = json.load(open(os.path.join(SRC, f), encoding='utf-8'))
-    feats = []
-    for ft in d['features']:
-        g = ft['geometry']
-        c = poly(g['coordinates']) if g['type'] == 'MultiPolygon' else line(g['coordinates'])
-        if c:
-            feats.append({'type': 'Feature', 'properties': ft['properties'], 'geometry': {'type': g['type'], 'coordinates': c}})
-    j = json.dumps({'type': 'FeatureCollection', 'features': feats}, ensure_ascii=False, separators=(',', ':'))
-    open(os.path.join(OUT, f), 'w', encoding='utf-8').write(j)
-    print(f, len(d['features']), '→', len(feats), 'features |', len(j) // 1024, 'KB |', len(gzip.compress(j.encode())) // 1024, 'KB gz')
+if __name__ == '__main__':
+    for f in ['land.geojson', 'water.geojson', 'physical.geojson']:
+        d = json.load(open(os.path.join(SRC, f), encoding='utf-8'))
+        feats = []
+        for ft in d['features']:
+            g = ft['geometry']
+            c = poly(g['coordinates']) if g['type'] == 'MultiPolygon' else line(g['coordinates'])
+            if c:
+                feats.append({'type': 'Feature', 'properties': ft['properties'], 'geometry': {'type': g['type'], 'coordinates': c}})
+        j = json.dumps({'type': 'FeatureCollection', 'features': feats}, ensure_ascii=False, separators=(',', ':'))
+        open(os.path.join(OUT, f), 'w', encoding='utf-8').write(j)
+        print(f, len(d['features']), '→', len(feats), 'features |', len(j) // 1024, 'KB |', len(gzip.compress(j.encode())) // 1024, 'KB gz')

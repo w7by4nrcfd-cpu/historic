@@ -2,8 +2,8 @@
    في ذاكرة الجهاز، فتفتح الخريطة في الزيارة الثانية دون تنزيلها من جديد.
    باقي الملفات (الصفحة، الكود، المحتوى) تُطلب من الشبكة دائمًا، فيصل كل تحديث فور نشره. */
 // غيّر الرقم عند تحديث مكتبة الخريطة أو بيانات اليابسة والمياه والخط، ليحذف المتصفح النسخة القديمة
-const CACHE = 'atlas-static-v1';
-const STATIC = /\/assets\/(maplibre-gl\.(js|css)|land\.geojson|water\.geojson|physical\.geojson|arabic\.woff|dem\/|borders\/)/;
+const CACHE = 'atlas-static-v2';
+const STATIC = /\/assets\/(maplibre-gl\.(js|css)|land\.geojson|water\.geojson|physical\.geojson|arabic\.woff|minimap\.json|dem\/|borders\/)/;
 
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil(
