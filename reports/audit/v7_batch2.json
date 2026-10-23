@@ -1,0 +1,204 @@
+{
+ "sources_checked": 40,
+ "pages_checked": 40,
+ "findings": [
+  {
+   "id": "amorium-838",
+   "severity": "error",
+   "field": "sections[ما حدث].text",
+   "issue": "Battle of Dazimon (Anzen, July 838) was won by the army wing under al-Afshin, not by al-Mu'tasim personally; text makes al-Mu'tasim the victor. Also 'بجيش ضخم في جيشين' is awkward Arabic.",
+   "old": "سار المعتصم بجيش ضخم في جيشين، فهزم ثيوفيلوس في دازيمون، ثم حاصر عمورية",
+   "fix": "سار المعتصم بجيش ضخم قسّمه جيشين، فهزم أحدهما بقيادة الأفشين ثيوفيلوسَ في دازيمون، ثم حاصر المعتصم عمورية",
+   "evidence": "https://en.wikipedia.org/wiki/Sack_of_Amorium — commander at Dazimon: Afshin"
+  },
+  {
+   "id": "ahmad-ibn-tulun",
+   "severity": "warning",
+   "field": "sections[القطائع وجامعه].text",
+   "issue": "Anachronism: the mosque's present spiral minaret is a Mamluk rebuild (restoration of Sultan Lajin, 1296), not part of the mosque as completed c. 879.",
+   "old": "وفيها جامعه الذي اكتمل نحو 879 م بمئذنته الملتوية",
+   "fix": "وفيها جامعه الذي اكتمل نحو 879 م، وتشتهر مئذنته الملتوية التي أُعيد بناؤها في العصر المملوكي",
+   "evidence": "Mosque of Ibn Tulun: current minaret dates to Lajin's restoration (1296); https://en.wikipedia.org/wiki/Ahmad_ibn_Tulun gives mosque 876/878–879/880"
+  },
+  {
+   "id": "al-tabari",
+   "severity": "warning",
+   "field": "sections[التفسير].text",
+   "issue": "Overclaim: Tabari's Jami' al-Bayan is not the oldest complete extant tafsir (e.g. the complete tafsir of Muqatil ibn Sulayman, d. 767, survives). Cited source describes it only as assembling earlier exegesis on a vast scale and becoming the standard reference.",
+   "old": "أقدم تفسير كامل وصل إلينا يجمع أقوال الصحابة والتابعين",
+   "fix": "أوسع تفسير مبكر وصل إلينا يجمع أقوال الصحابة والتابعين بأسانيدها",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Tabari — 'assembled earlier exegetical traditions on a vast scale and became a standard work of reference'"
+  },
+  {
+   "id": "merv",
+   "severity": "warning",
+   "field": "sections[مقر المأمون والسلاجقة].text",
+   "issue": "Al-Ma'mun left Merv c. 817–818 (via Tus, where Ali al-Rida died 818) and only reached Baghdad in 819; text implies he stayed in Merv until 819.",
+   "old": "حتى انتقل إلى بغداد سنة 819 م",
+   "fix": "حتى غادرها نحو 817–818 م، ودخل بغداد سنة 819 م",
+   "evidence": "https://en.wikipedia.org/wiki/Siege_of_Baghdad_(812%E2%80%93813) — al-Ma'mun arrived in Baghdad 819; departure from Merv precedes Ali al-Rida's death at Tus (818)"
+  },
+  {
+   "id": "siege-baghdad-812",
+   "severity": "warning",
+   "field": "sections[النتائج].text",
+   "issue": "Same issue: al-Ma'mun did not stay in Merv until 819; he left Merv c. 817–818 and entered Baghdad in 819.",
+   "old": "لكنه بقي في مرو حتى سنة 819 م",
+   "fix": "لكنه بقي في خراسان، ولم يدخل بغداد إلا سنة 819 م",
+   "evidence": "https://en.wikipedia.org/wiki/Siege_of_Baghdad_(812%E2%80%93813) — 'he arrived in Baghdad in 819'"
+  },
+  {
+   "id": "yahya-barmaki",
+   "severity": "warning",
+   "field": "period",
+   "issue": "False precision: cited sources give Yahya's death as c. 806 (190 AH), with 805 (189 AH) as an alternative.",
+   "old": "{'period': 'توفي 805 م'",
+   "fix": "{'period': 'توفي نحو 805–806 م'",
+   "evidence": "https://en.wikipedia.org/wiki/Yahya_ibn_Khalid — died c. 806; https://en.wikipedia.org/wiki/Barmakids — 190 AH/806 (or 189/805)"
+  },
+  {
+   "id": "yahya-barmaki",
+   "severity": "warning",
+   "field": "sections[النكبة].text",
+   "issue": "Same false precision on death year.",
+   "old": "ومات يحيى في سجنه سنة 805 م",
+   "fix": "ومات يحيى في سجنه نحو 805–806 م",
+   "evidence": "https://en.wikipedia.org/wiki/Yahya_ibn_Khalid"
+  },
+  {
+   "id": "mihna-833",
+   "severity": "warning",
+   "field": "sections[النهاية].text",
+   "issue": "Questionable absolute claim: later caliph al-Qadir imposed the 'Qadiri creed' on scholars (1018/1029), so the Mihna was not the last such caliphal attempt. Rephrase to a defensible claim.",
+   "old": "وتُعد آخر محاولة كبرى من الخلفاء لفرض عقيدة كلامية على العلماء",
+   "fix": "وتُعد أشهر محاولة من الخلفاء لفرض رأي كلامي على العلماء بالقوة",
+   "evidence": "https://en.wikipedia.org/wiki/Mihna ; al-Qadir's Risala al-Qadiriyya (409/1018, reread 420/1029)"
+  },
+  {
+   "id": "abu-hanifa",
+   "severity": "warning",
+   "field": "sections[المحنة والأثر].text",
+   "issue": "'مذهب الدولة العباسية' overstates: the Abbasids had no formally declared state madhhab; Hanafis dominated the judiciary (from Abu Yusuf). It was the official school of the Ottoman state.",
+   "old": "وصار مذهبه مذهب الدولة العباسية ثم العثمانية",
+   "fix": "وغلب مذهبه على القضاء في الدولة العباسية، ثم صار المذهب الرسمي للدولة العثمانية",
+   "evidence": "https://en.wikipedia.org/wiki/Abu_Hanifa (no claim of an official Abbasid madhhab; Abu Yusuf as chief qadi under Harun)"
+  },
+  {
+   "id": "al-razi",
+   "severity": "warning",
+   "field": "period",
+   "issue": "Death date is disputed between 925 and 935 (313 or 323 AH); 'نحو 925' hides a 10-year alternative.",
+   "old": "{'period': '865 – نحو 925 م'",
+   "fix": "{'period': '865 – 925 أو 935 م'",
+   "evidence": "https://en.wikipedia.org/wiki/Abu_Bakr_al-Razi — died 925 or 935 (313 or 323 AH)"
+  },
+  {
+   "id": "al-razi",
+   "severity": "warning",
+   "field": "sections[الكتب].text",
+   "issue": "Overclaim 'first': the cited source says he was 'among the first' (with Thabit ibn Qurra) to distinguish smallpox and measles clinically.",
+   "old": "أول تمييز سريري واضح بين المرضين",
+   "fix": "من أوائل التمييز السريري الواضح بين المرضين",
+   "evidence": "https://en.wikipedia.org/wiki/Abu_Bakr_al-Razi — 'Together with Thābit ibn Qurra, he was among the first physicians to distinguish clinically between smallpox and measles'"
+  },
+  {
+   "id": "al-razi",
+   "severity": "style",
+   "field": "sections[النشأة].text",
+   "issue": "Grammar: impersonal passive with 'أنّ' clause takes masculine verb (يُروى), as used elsewhere in the file.",
+   "old": "وتُروى أنه",
+   "fix": "ويُروى أنه",
+   "evidence": "Arabic grammar"
+  },
+  {
+   "id": "talas-751",
+   "severity": "warning",
+   "field": "sections[النتائج].text",
+   "issue": "The paper-transfer story is not in contemporary Arabic sources; it appears in later Arabic writers (e.g. al-Tha'alibi, 11th c.). Specify 'later'.",
+   "old": "وتروي مصادر عربية أن أسرى صينيين",
+   "fix": "وتروي مصادر عربية متأخرة أن أسرى صينيين",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Talas — 'no contemporary Arabic accounts of the transfer of paper exist'"
+  },
+  {
+   "id": "nishapur",
+   "severity": "warning",
+   "field": "startYear/period",
+   "issue": "Tahirid capital was moved to Nishapur by Abdallah ibn Tahir c. 828–830 (Tahir himself ruled from Merv from 821). startYear 821 marks the dynasty, not the city's status.",
+   "old": "'startYear': 821, 'endYear': 1221, 'period': 'من الطاهريين إلى الغزو المغولي (نحو 821–1221 م)'",
+   "fix": "'startYear': 830, 'endYear': 1221, 'period': 'من الطاهريين إلى الغزو المغولي (نحو 830–1221 م)'",
+   "evidence": "https://en.wikipedia.org/wiki/Nishapur — Tahirid capital 828–845 onward"
+  },
+  {
+   "id": "al-shafii",
+   "severity": "style",
+   "field": "sections[مصر].text",
+   "issue": "Wikipedia gives the dome by al-Kamil as 608 AH / 1212; 608 AH spans 1211–1212, so give the hijri year with a range.",
+   "old": "قبة سنة 1211 م",
+   "fix": "قبة سنة 608 هـ (1211–1212 م)",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Shafi%27i — 'al-Kamil ... 1212 CE/608 AH'"
+  },
+  {
+   "id": "malik-ibn-anas",
+   "severity": "style",
+   "field": "sections[المذهب].text",
+   "issue": "'وما زال غالبًا فيها' includes al-Andalus, where it obviously no longer prevails.",
+   "old": "وانتشر مذهبه في المغرب والأندلس وغرب إفريقيا، وما زال غالبًا فيها.",
+   "fix": "وانتشر مذهبه في المغرب والأندلس وغرب إفريقيا، وما زال غالبًا في المغرب العربي وغرب إفريقيا.",
+   "evidence": "https://en.wikipedia.org/wiki/Malik_ibn_Anas — al-Andalus 'until the expulsion'"
+  },
+  {
+   "id": "hunayn-ibn-ishaq",
+   "severity": "style",
+   "field": "period",
+   "issue": "Cited source gives birth year 808 (809 also appears in literature).",
+   "old": "{'period': '809 – 873 م'",
+   "fix": "{'period': '808 – 873 م'",
+   "evidence": "https://en.wikipedia.org/wiki/Hunayn_ibn_Ishaq — 808–873"
+  },
+  {
+   "id": "al-biruni",
+   "severity": "style",
+   "field": "sections[العالم].text",
+   "issue": "The measurement was made at Nandana fort (Pind Dadan Khan), in present-day Pakistan; add modern location for clarity.",
+   "old": "من قمة جبل في الهند",
+   "fix": "من قمة جبل قرب قلعة نندنة في الهند (باكستان اليوم)",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Biruni — 'Nandana in Pind Dadan Khan (present-day Pakistan)'"
+  },
+  {
+   "id": "sayf-al-dawla",
+   "severity": "style",
+   "field": "sections[حروب الروم].text",
+   "issue": "He first took Aleppo on 29 Oct 944 (lost it briefly, regained 946/947); the Aleppo page uses 944. Align.",
+   "old": "استولى على حلب نحو 945 م",
+   "fix": "استولى على حلب سنة 944 م",
+   "evidence": "https://en.wikipedia.org/wiki/Sayf_al-Dawla — took Aleppo 29 October 944"
+  },
+  {
+   "id": "wiki-shafii",
+   "severity": "style",
+   "field": "url",
+   "issue": "URL resolves via redirect to the canonical title Al-Shafi'i.",
+   "old": "https://en.wikipedia.org/wiki/Al-Shafi%CA%BDi",
+   "fix": "https://en.wikipedia.org/wiki/Al-Shafi%27i",
+   "evidence": "Firecrawl: redirected to https://en.wikipedia.org/wiki/Al-Shafi%27i"
+  },
+  {
+   "id": "wiki-nasir",
+   "severity": "style",
+   "field": "url",
+   "issue": "URL redirects to canonical article title Al-Nasir.",
+   "old": "https://en.wikipedia.org/wiki/Al-Nasir_li-Din_Allah",
+   "fix": "https://en.wikipedia.org/wiki/Al-Nasir",
+   "evidence": "Firecrawl: redirected to https://en.wikipedia.org/wiki/Al-Nasir"
+  },
+  {
+   "id": "wiki-nizamiyya",
+   "severity": "style",
+   "field": "url",
+   "issue": "URL redirects to canonical article title Nizamiyya_of_Baghdad.",
+   "old": "https://en.wikipedia.org/wiki/Al-Nizamiyya_of_Baghdad",
+   "fix": "https://en.wikipedia.org/wiki/Nizamiyya_of_Baghdad",
+   "evidence": "Firecrawl: redirected to https://en.wikipedia.org/wiki/Nizamiyya_of_Baghdad"
+  }
+ ]
+}
