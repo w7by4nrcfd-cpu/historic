@@ -1,0 +1,173 @@
+{
+ "sources_checked": 40,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://whc.unesco.org/en/list/314",
+  "https://whc.unesco.org/en/list/383",
+  "https://whc.unesco.org/en/list/379",
+  "https://whc.unesco.org/en/list/313",
+  "https://whc.unesco.org/en/list/1560",
+  "https://whc.unesco.org/en/list/170",
+  "https://whc.unesco.org/en/list/36",
+  "https://en.wikipedia.org/wiki/Abd_al-Mu%27min",
+  "https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub_al-Mansur",
+  "https://en.wikipedia.org/wiki/Ibn_Tufail",
+  "https://en.wikipedia.org/wiki/Muhammad_al-Idrisi",
+  "https://en.wikipedia.org/wiki/Ibn_Khaldun",
+  "https://en.wikipedia.org/wiki/Ibn_Arabi",
+  "https://en.wikipedia.org/wiki/Idris_I_of_Morocco",
+  "https://en.wikipedia.org/wiki/Fatima_al-Fihri",
+  "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin",
+  "https://en.wikipedia.org/wiki/Muhammad_XII_of_Granada",
+  "https://en.wikipedia.org/wiki/Ibn_al-Khatib",
+  "https://en.wikipedia.org/wiki/Muslim_conquest_of_Sicily",
+  "https://en.wikipedia.org/wiki/Taifa",
+  "https://en.wikipedia.org/wiki/Battle_of_Sagrajas",
+  "https://en.wikipedia.org/wiki/Banu_Hilal",
+  "https://en.wikipedia.org/wiki/Battle_of_Alarcos",
+  "https://en.wikipedia.org/wiki/Nasrid_dynasty",
+  "https://en.wikipedia.org/wiki/Siege_of_C%C3%B3rdoba_(1236)",
+  "https://en.wikipedia.org/wiki/Siege_of_Seville",
+  "https://en.wikipedia.org/wiki/Marinid_Sultanate",
+  "https://en.wikipedia.org/wiki/Granada_War",
+  "https://en.wikipedia.org/wiki/Expulsion_of_the_Moriscos"
+ ],
+ "note": "Firecrawl credits ran out after 11 Wikipedia URLs were confirmed live (Siege_of_Toledo_(1085), Tlemcen, Mahdia, Sijilmasa, Al-Hakam_II, Almanzor, Ziryab, Abbas_ibn_Firnas, Ibn_Hazm, Al-Mu'tamid_ibn_Abbad, Yusuf_ibn_Tashfin). The remaining 29 URLs were checked only for well-formedness against known article titles / UNESCO list numbers; facts checked from scholarly knowledge.",
+ "findings": [
+  {
+   "id": "seville-1248",
+   "severity": "error",
+   "field": "sections[2].text",
+   "issue": "Not only Granada remained Muslim after Nov 1248: the taifa of Niebla held out until 1262, the Murcia kingdom (a Castilian protectorate since 1243) until its 1264-66 revolt was crushed, and Jerez/the Cadiz area until 1264.",
+   "old": "ولم يبق في يد المسلمين بعدها إلا مملكة غرناطة.",
+   "fix": "ولم يبق في يد المسلمين بعدها غير مملكة غرناطة وجيوب صغيرة، مثل لبلة ومرسية التابعة لقشتالة، سقطت في السنوات التالية.",
+   "evidence": "https://en.wikipedia.org/wiki/Siege_of_Seville (unverified, credits exhausted); standard chronology: Taifa of Niebla to 1262, Mudejar revolt of 1264-66 (Murcia, Jerez)"
+  },
+  {
+   "id": "idris-i",
+   "severity": "warning",
+   "field": "sections[1].text",
+   "issue": "'First independent Islamic state in Morocco' is contradicted by this same batch (sijilmasa page: Midrarids from 757) and by the Nekor emirate (710) and Barghawata (744). Idrisids are better described as one of the first / the first Alid dynasty.",
+   "old": "فبايعوه إمامًا سنة 788–789 م، فكانت أول دولة إسلامية مستقلة في المغرب الأقصى.",
+   "fix": "فبايعوه إمامًا سنة 788–789 م، فكانت من أوائل الدول الإسلامية المستقلة عن الخلافة في المغرب الأقصى.",
+   "evidence": "Internal: 'sijilmasa' page (Banu Midrar from 757); https://en.wikipedia.org/wiki/Emirate_of_Nekor; https://en.wikipedia.org/wiki/Barghawata"
+  },
+  {
+   "id": "idrisid-789",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Same overstated 'first independent Islamic state' claim (Nekor 710, Barghawata 744, Midrarids 757 predate it).",
+   "old": "فقامت دولة الأدارسة أول دولة إسلامية مستقلة في المغرب الأقصى.",
+   "fix": "فقامت دولة الأدارسة، من أوائل الدول الإسلامية المستقلة عن الخلافة في المغرب الأقصى.",
+   "evidence": "As above; Sijilmasa founded 757 per https://en.wikipedia.org/wiki/Sijilmasa"
+  },
+  {
+   "id": "idris-i",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Idris II was born posthumously (about two months after Idris I died); the freedman Rashid acted as guardian and Idris II received the formal bay'a only in 803 (aged ~11). 'Proclaimed shortly after his birth' misstates this.",
+   "old": "فبويع ابنه إدريس الثاني بعد ولادته بقليل.",
+   "fix": "ووُلد ابنه إدريس الثاني بعد وفاته بنحو شهرين، فكفله مولاه راشد، ثم بويع إمامًا صبيًا سنة 803 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Idris_II_of_Morocco (unverified URL fetch); standard account (Ibn Abi Zar', Encyclopaedia of Islam 'Idrisids')"
+  },
+  {
+   "id": "qarawiyyin-859",
+   "severity": "warning",
+   "field": "certainty",
+   "issue": "Event marked plainly 'موثق' while the linked fatima-al-fihri page correctly says the founding story comes from late (14th-c.) sources; the attribution and the date 859 rest on Ibn Abi Zar' (Rawd al-Qirtas). Certainty should match.",
+   "old": "{'year': 859, 'dateLabel': '859 م (245 هـ)', 'coordinates': FEZ, 'kind': 'founding', 'certainty': 'موثق'}",
+   "fix": "{'year': 859, 'dateLabel': '859 م (245 هـ)', 'coordinates': FEZ, 'kind': 'founding', 'certainty': 'موثق؛ نسبة البناء إلى فاطمة الفهرية وسنته من رواية مصادر القرن الرابع عشر'}",
+   "evidence": "https://en.wikipedia.org/wiki/Fatima_al-Fihri ; https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin (founding narrative relies on Ibn Abi Zar', c.1326)"
+  },
+  {
+   "id": "zallaqa-1086",
+   "severity": "warning",
+   "field": "sections[1].text",
+   "issue": "At Sagrajas the Andalusian taifa contingents largely broke under the first Castilian charge; only al-Mu'tamid's Sevillans (with the Almoravid vanguard under Dawud ibn Aisha) held. 'The Andalusians stood firm' misrepresents the sources.",
+   "old": "فثبت الأندلسيون في الهجوم الأول، ثم التفّ المرابطون",
+   "fix": "فانكشف كثير من جند الطوائف في الهجوم الأول وصمد المعتمد بن عباد ومقدمة المرابطين، ثم التفّ المرابطون",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Sagrajas (unverified fetch); al-Hulal al-Mawshiyya / Ibn Abi Zar' accounts"
+  },
+  {
+   "id": "ibn-hazm",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Ibn Hazm was not the founder/imam of the Zahiri school (founded by Dawud al-Zahiri, d. 884); Wikipedia: 'a leading proponent and codifier of the Zahiri school'.",
+   "old": "فقيه وأديب من قرطبة، إمام المذهب الظاهري،",
+   "fix": "فقيه وأديب من قرطبة، أبرز أعلام المذهب الظاهري،",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_Hazm — 'a leading proponent and codifier of the Zahiri school of Islamic jurisprudence'"
+  },
+  {
+   "id": "ziryab",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "The cited source says Ziryab was a pupil of Ibrahim al-Mawsili and left Baghdad under al-Ma'mun; the Ishaq al-Mawsili jealousy story before Harun al-Rashid (d. 809) is al-Maqqari's late anecdote. Present teacher as Ibrahim and his son Ishaq and keep the story as a report.",
+   "old": "تعلم الغناء في بغداد على إسحاق الموصلي. وتروي المصادر أن أستاذه غار منه",
+   "fix": "تعلم الغناء في بغداد على إبراهيم الموصلي وابنه إسحاق. وتروي المصادر أن إسحاق غار منه",
+   "evidence": "https://en.wikipedia.org/wiki/Ziryab — 'student of the musician and composer Ibrahim al-Mawsili ... He left Baghdad during the reign of the Abbasid caliph al-Ma'mun'"
+  },
+  {
+   "id": "tlemcen",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "The Great Mosque of Tlemcen was founded by the Almoravids (Yusuf ibn Tashfin) in 1082 (11th c.); 1136 is Ali ibn Yusuf's rebuilding/decoration (dated inscription).",
+   "old": "وبنى فيها المرابطون جامعها الكبير في القرن الثاني عشر الميلادي.",
+   "fix": "وبنى فيها المرابطون جامعها الكبير سنة 1082 م، ثم جدّدوه وزخرفوه سنة 1136 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Great_Mosque_of_Tlemcen (founded 1082, rebuilt 1136 under Ali ibn Yusuf; inscription 530 AH)"
+  },
+  {
+   "id": "muhammad-xii",
+   "severity": "warning",
+   "field": "sections[1].text",
+   "issue": "After his 1483 release Boabdil did not return to rule Granada directly: he held Guadix/the eastern part as a Castilian vassal, while his father and then al-Zaghal held Granada; he took the Albaicin in 1486 and the Alhambra only in 1487 (hence reign '1487–1492' in this same page).",
+   "old": "ثم أطلقوه بشروط، فعاد يحكم غرناطة مع استمرار الحرب الأهلية،",
+   "fix": "ثم أطلقوه بشروط جعلته تابعًا لقشتالة، فحكم أولًا من وادي آش في شرق المملكة، ولم يستقر له الأمر في غرناطة إلا سنة 1487 م،",
+   "evidence": "https://en.wikipedia.org/wiki/Muhammad_XII_of_Granada (unverified fetch); https://en.wikipedia.org/wiki/Granada_War; internal period field 'حكم 1482–1483 و1487–1492 م'"
+  },
+  {
+   "id": "sijilmasa",
+   "severity": "warning",
+   "field": "sections[1].text",
+   "issue": "Salt did not originate at Sijilmasa; caravans heading south loaded it at Saharan mines such as Taghaza. Text implies salt was shipped from the city.",
+   "old": "فيُحمل منها الملح والسلع جنوبًا، ويأتيها الذهب شمالًا",
+   "fix": "فتخرج منها القوافل بالسلع جنوبًا وتحمل الملح من مناجم الصحراء مثل تغازة، ويأتيها الذهب شمالًا",
+   "evidence": "https://en.wikipedia.org/wiki/Sijilmasa (northern terminus of trans-Saharan route); https://en.wikipedia.org/wiki/Taghaza (salt mine supplying the trade)"
+  },
+  {
+   "id": "al-hakam-ii",
+   "severity": "warning",
+   "field": "sections[1].text",
+   "issue": "The tradition (Ibn Hazm via Ibn Khaldun/al-Maqqari) speaks of 44 catalogue fascicles (كراسة/فهرسة) of about 20 leaves each, not 44 bound volumes; 'مجلدة' overstates.",
+   "old": "أن فهرسها وحده بلغ أربعًا وأربعين مجلدة",
+   "fix": "أن فهارسها وحدها بلغت أربعًا وأربعين كراسة في كل منها عشرون ورقة",
+   "evidence": "Ibn Khaldun, Kitab al-Ibar (al-Hakam II): 'أربعًا وأربعين فهرسة في كل فهرسة عشرون ورقة'; https://en.wikipedia.org/wiki/Al-Hakam_II"
+  },
+  {
+   "id": "granada",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "Arabic wording: 'يفصلها نهر' is unclear (the Darro separates the hills from each other); use 'يفصل بينها'.",
+   "old": "على تلال يفصلها نهر حدرة",
+   "fix": "على تلال يفصل بينها نهر حدرة",
+   "evidence": "Arabic usage"
+  },
+  {
+   "id": "fez",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Non-neutral/informal adjective 'جميلة' in encyclopedic text.",
+   "old": "ومدارس جميلة مثل العطارين والبوعنانية",
+   "fix": "ومدارس شهيرة مثل العطارين والبوعنانية",
+   "evidence": "Style guidance (neutral wording)"
+  },
+  {
+   "id": "marinids-1269",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Non-neutral/informal adjective 'جميلة'.",
+   "old": "وبنوا فيها فاس الجديد ومدارس جميلة.",
+   "fix": "وبنوا فيها فاس الجديد ومدارس كثيرة.",
+   "evidence": "Style guidance (neutral wording)"
+  }
+ ]
+}
