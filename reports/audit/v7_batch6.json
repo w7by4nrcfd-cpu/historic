@@ -1,0 +1,145 @@
+{
+ "sources_checked": 39,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://en.wikipedia.org/wiki/Siege_of_Vienna_(1529)",
+  "https://en.wikipedia.org/wiki/Treaty_of_Karlowitz"
+ ],
+ "findings": [
+  {
+   "id": "kosovo-1389",
+   "severity": "error",
+   "field": "summary",
+   "issue": "Result stated as a clear Ottoman victory; Wikipedia infobox gives the result as 'Inconclusive' (heavy losses, both rulers killed, both armies withdrew; Ottomans benefited strategically). Kosovo must be worded neutrally.",
+   "old": "في 15 يونيو 1389 م انتصر العثمانيون على تحالف بلقاني بقيادة الأمير الصربي لازار في سهل كوسوفو، وقُتل فيها",
+   "fix": "في 15 يونيو 1389 م التقى العثمانيون تحالفًا بلقانيًا بقيادة الأمير الصربي لازار في سهل كوسوفو، فكانت معركة دامية غير حاسمة في ميدانها أفادت العثمانيين على المدى البعيد، وقُتل فيها",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Kosovo — infobox: 'Result: Inconclusive'"
+  },
+  {
+   "id": "kosovo-1389",
+   "severity": "error",
+   "field": "sections[1].text",
+   "issue": "States Bayezid 'won' as fact; outcome is assessed as inconclusive by modern scholarship.",
+   "old": "وتولى ابنه بايزيد القيادة فانتصر، وأُسر لازار وقُتل.",
+   "fix": "وتولى ابنه بايزيد القيادة، وأُسر لازار وقُتل، وانسحب الجيشان بعد خسائر فادحة، ويعدّ أكثر المؤرخين نتيجتها غير حاسمة.",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Kosovo — 'Result: Inconclusive'"
+  },
+  {
+   "id": "murad-i",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Same issue on the Murad I page: 'the Ottomans won' stated as certain.",
+   "old": "فانتصر العثمانيون، لكن مراد قُتل،",
+   "fix": "فكانت معركة دامية غير حاسمة في ميدانها أفادت العثمانيين لاحقًا، وقُتل فيها مراد،",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Kosovo — 'Result: Inconclusive'"
+  },
+  {
+   "id": "tanzimat-1839",
+   "severity": "error",
+   "field": "sections[1].text",
+   "issue": "Mustafa Reşid Pasha was Foreign Minister in Nov 1839, not Grand Vizier (the grand vizier was Koca Hüsrev Mehmed Pasha); 'الصدر' implies grand vizier.",
+   "old": "قرأ الصدر مصطفى رشيد باشا في حديقة كلخانة",
+   "fix": "قرأ وزير الخارجية مصطفى رشيد باشا في حديقة كلخانة",
+   "evidence": "https://en.wikipedia.org/wiki/Edict_of_G%C3%BClhane ; https://en.wikipedia.org/wiki/Tanzimat (Reşid Pasha as foreign minister proclaimed the edict; he became grand vizier only in 1846)"
+  },
+  {
+   "id": "lepanto-1571",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "'Largest oared naval battle in history' overstated: Wikipedia says 'largest naval battle in Western history since classical antiquity'; ancient battles such as Cape Ecnomus (256 BC) may have been larger.",
+   "old": "في أكبر معركة بحرية بالمجاديف في التاريخ.",
+   "fix": "في أكبر معركة بحرية عرفها الغرب منذ العصور القديمة.",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Lepanto — 'the largest naval battle in Western history since classical antiquity'"
+  },
+  {
+   "id": "kosem-sultan",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Claim that Ahmed I built her a palace is unsupported; Wikipedia mentions jewels and a daily stipend of 1,000 aspers, no palace. Her Greek origin is reported as probable (correctly hedged).",
+   "old": "صارت أحب نساء السلطان أحمد الأول إليه، وبنى لها قصرًا.",
+   "fix": "صارت أحب نساء السلطان أحمد الأول إليه وأعلاهن مكانة.",
+   "evidence": "https://en.wikipedia.org/wiki/K%C3%B6sem_Sultan — gifts of jewels and 1,000 aspers daily; no palace mentioned"
+  },
+  {
+   "id": "evliya-celebi",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Place of death is uncertain (Istanbul or Cairo); 'most likely Cairo' overstates.",
+   "old": "وتوفي بعد سنة 1682 م، على الأرجح في القاهرة.",
+   "fix": "وتوفي بعد سنة 1682 م، ولا يُعرف أكان موته في القاهرة أم في إسطنبول.",
+   "evidence": "https://en.wikipedia.org/wiki/Evliya_%C3%87elebi — 'unclear whether he died in Constantinople or Cairo'"
+  },
+  {
+   "id": "edirne",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Hadrian refounded the city on the site of earlier Orestias / Thracian Uskudama; 'founded' alone is imprecise.",
+   "old": "أسسها الإمبراطور الروماني هادريان، فحملت اسمه.",
+   "fix": "أعاد الإمبراطور الروماني هادريان تأسيسها في موضع مدينة أقدم، فحملت اسمه (هادريانوبوليس).",
+   "evidence": "https://en.wikipedia.org/wiki/Edirne — founded or re-established by Hadrian on the site of Orestias/Uskudama"
+  },
+  {
+   "id": "edirne",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "Mehmed II was born in Edirne (1432) but spent his youth largely as governor in Amasya and Manisa; 'وُلد' is more precise than 'نشأ'.",
+   "old": "وفيها نشأ محمد الفاتح،",
+   "fix": "وفيها وُلد محمد الفاتح،",
+   "evidence": "https://en.wikipedia.org/wiki/Edirne — 'Mehmed II was born in Adrianople'"
+  },
+  {
+   "id": "janissaries-1826",
+   "severity": "warning",
+   "field": "sections[0].text",
+   "issue": "Non-neutral wording: labels the Janissaries simply a 'rebellious force'. Neutral phrasing describes their political role.",
+   "old": "ثم صارت قوة متمردة تعزل السلاطين وتعارض الإصلاح، ومنها عزل سليم الثالث.",
+   "fix": "ثم صارت قوة ذات نفوذ سياسي كبير، شاركت في عزل عدد من السلاطين وعارضت كثيرًا من الإصلاحات العسكرية، ومن ذلك عزل سليم الثالث.",
+   "evidence": "https://en.wikipedia.org/wiki/Auspicious_Incident ; https://en.wikipedia.org/wiki/Janissary"
+  },
+  {
+   "id": "bursa",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "Arabic: clause lacks a verb ('…وتكية حول كل منها حي جديد'); add 'نشأ'.",
+   "old": "مجمعات من مسجد ومدرسة وحمام وتكية حول كل منها حي جديد.",
+   "fix": "مجمعات من مسجد ومدرسة وحمام وتكية، نشأ حول كل منها حي جديد.",
+   "evidence": "Arabic grammar"
+  },
+  {
+   "id": "sokollu-mehmed",
+   "severity": "style",
+   "field": "period",
+   "issue": "Wikipedia gives birth year 1505.",
+   "old": "{'period': 'نحو 1506 – 1579 م'",
+   "fix": "{'period': 'نحو 1505 – 1579 م'",
+   "evidence": "https://en.wikipedia.org/wiki/Sokollu_Mehmed_Pasha — born 1505"
+  },
+  {
+   "id": "hurrem-sultan",
+   "severity": "style",
+   "field": "source url",
+   "issue": "Canonical article title is 'Hürrem Sultan'; 'Hurrem_Sultan' is a redirect.",
+   "old": "WK + 'Hurrem_Sultan'",
+   "fix": "WK + 'H%C3%BCrrem_Sultan'",
+   "evidence": "WebSearch result: https://en.wikipedia.org/wiki/H%C3%BCrrem_Sultan"
+  },
+  {
+   "id": "abdulmejid-i",
+   "severity": "style",
+   "field": "source url",
+   "issue": "Canonical article title is 'Abdülmecid I'; 'Abdulmejid_I' is a redirect.",
+   "old": "WK + 'Abdulmejid_I'",
+   "fix": "WK + 'Abd%C3%BClmecid_I'",
+   "evidence": "WebSearch result: https://en.wikipedia.org/wiki/Abd%C3%BClmecid_I"
+  },
+  {
+   "id": "sarajevo",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "'وأهلها البوشناق' implies the whole population; the majority (not all) are Bosniaks.",
+   "old": "وأهلها البوشناق من مسلمي أوروبا.",
+   "fix": "وأكثر أهلها من البوشناق، وهم من مسلمي أوروبا.",
+   "evidence": "https://en.wikipedia.org/wiki/Sarajevo (demographics)"
+  }
+ ]
+}

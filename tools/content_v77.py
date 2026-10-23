@@ -59,6 +59,7 @@ for i, t, u, k in [
     ('wiki-hejaz-conquest', 'ضم الحجاز — ويكيبيديا', WK + 'Saudi_conquest_of_Hejaz', W),
     ('wiki-jabal-shammar', 'إمارة جبل شمر — ويكيبيديا', WK + 'Emirate_of_Jabal_Shammar', W),
     ('wiki-sabilla', 'معركة السبلة — ويكيبيديا', WK + 'Battle_of_Sabilla', W),
+    ('wiki-marib-dam', 'سد مأرب — ويكيبيديا', WK + 'Marib_Dam', W),
     ('wiki-dammam-7', 'بئر الدمام رقم 7 — ويكيبيديا', WK + 'Dammam_No._7', W),
 ]:
     src(i, t, u, k)
@@ -271,6 +272,14 @@ NEW = {
               ('الشعر', 'كان الشعراء يلقون فيه قصائدهم، ويُحكم بينهم، وتروي الأخبار أن النابغة الذبياني كانت تُضرب له قبة يحكم فيها. وتروي السيرة أن النبي ﷺ كان يدعو القبائل فيه.'),
               ('النهاية والإحياء', 'استمر في الإسلام حتى نحو سنة 746 م (129 هـ)، حين نهبه الخوارج فتُرك. ثم أعادت المملكة العربية السعودية إحياءه مهرجانًا ثقافيًا سنة 2007 م.')],
              ['wiki-okaz'], ['rashidun', 'taif', 'imru-al-qays', 'antara']),
+    'marib-collapse': ('event', 'انهيار سد مأرب',
+                       'في القرن السادس الميلادي انهار سد مأرب العظيم بعد ترميمات متكررة، فتفرقت القبائل التي كانت تعيش على زراعته، كما يذكر القرآن في «سيل العرم».',
+                       {'year': 570, 'dateLabel': 'أواخر القرن السادس الميلادي (تقريبي)', 'coordinates': [45.27, 15.4], 'kind': 'political',
+                        'certainty': 'الانهيار النهائي تقريبي التاريخ؛ الترميمات السابقة موثقة بالنقوش'},
+                       [('السد', 'بنى السبئيون سد مأرب على وادي أذنة قبل الميلاد بقرون، فسقى جنتين عن يمين الوادي وشماله، وكان أساس ازدهار سبأ.'),
+                        ('الترميمات', 'تذكر النقوش أن السد انكسر مرات فرُمّم، منها ترميم الملك الحميري شرحبيل يعفر في منتصف القرن الخامس الميلادي، وترميم أبرهة نحو سنة 548 م.'),
+                        ('الانهيار', 'ثم انهار انهيارًا لم يُرمم بعده في أواخر القرن السادس الميلادي على الأرجح، فهجر الناس الأرض. ويذكر القرآن في سورة سبأ «سيل العرم»، وتربط الأخبار به هجرة قبائل من الأزد إلى الشمال، منهم الأوس والخزرج وغسان.')],
+                       ['wiki-marib-dam', 'unesco-saba'], ['saba', 'marib-dam', 'marib', 'abraha']),
     'diriyah-pact-1744': ('event', 'ميثاق الدرعية',
                           'في سنة 1744 م تعاهد الإمام محمد بن سعود والشيخ محمد بن عبدالوهاب في الدرعية على نصرة الدعوة، فاجتمع للدولة الناشئة سند ديني وسياسي.',
                           {'year': 1744, 'dateLabel': '1744 م (1157 هـ)', 'coordinates': DIR, 'kind': 'political', 'certainty': 'موثق'},
@@ -371,7 +380,7 @@ BACK = {
     'diriyah': ['diriyah-pact-1744', 'muhammad-ibn-abd-al-wahhab'], 'diriyah-fall': ['abdullah-bin-saud', 'ibrahim-pasha', 'ottoman-campaign-1811'],
     'mulayda-1891': ['muhammad-ibn-rashid', 'hail'], 'faisal-bin-turki': ['abdulrahman-al-faisal'], 'king-abdulaziz': ['abdulrahman-al-faisal', 'rawdat-muhanna-1906', 'ahsa-1913', 'hail-1921', 'mecca-1924', 'sabilla-1929', 'oil-1938'],
     'jeddah-1925': ['mecca-1924', 'jeddah'], 'kingdom-1932': ['sabilla-1929', 'oil-1938'], 'masmak-1902': ['rawdat-muhanna-1906'],
-    'riyadh': ['riyadh-1773'], 'marib-dam': ['abraha'], 'himyar-saba': ['zafar-himyar', 'aksum-525'], 'hegra-tombs': ['al-ula'],
+    'riyadh': ['riyadh-1773'], 'marib-dam': ['abraha', 'marib-collapse'], 'himyar-saba': ['zafar-himyar', 'aksum-525'], 'hegra-tombs': ['al-ula'],
     'babylon-539': ['nabonidus'], 'mecca': ['elephant-570', 'mecca-1803', 'mecca-1924'], 'qarmatians-930': ['al-ahsa'],
     'prophet-muhammad': ['elephant-570', 'taif'], 'hejaz-railway-1908': ['arab-revolt-1916'],
 }
