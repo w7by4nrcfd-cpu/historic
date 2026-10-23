@@ -1,0 +1,127 @@
+{
+ "sources_checked": 40,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://whc.unesco.org/en/list/23",
+  "https://whc.unesco.org/en/list/22"
+ ],
+ "findings": [
+  {
+   "id": "napoleon-egypt-1798",
+   "severity": "warning",
+   "field": "sections[النتائج]",
+   "issue": "The Rosetta Stone was found in July 1799 by French soldiers (engineer officer Pierre-François Bouchard) during fortification work at Rashid, not discovered by the expedition's scholars; the savants studied it afterwards.",
+   "old": "وكشف علماء الحملة حجر رشيد، ونشروا «وصف مصر».",
+   "fix": "وعثر جنود الحملة على حجر رشيد سنة 1799 م فدرسه علماؤها، ونشر العلماء «وصف مصر».",
+   "evidence": "https://en.wikipedia.org/wiki/Rosetta_Stone — 'rediscovered there in July 1799 by French officer Pierre-François Bouchard during the Napoleonic campaign in Egypt'"
+  },
+  {
+   "id": "muhammad-abduh",
+   "severity": "error",
+   "field": "sections[الإصلاح]",
+   "issue": "Tafsir al-Manar was not completed by Rashid Rida: Rida continued Abduh's commentary in al-Manar but it stopped at Surah Yusuf (12:101) when Rida died in 1935.",
+   "old": "وبدأ تفسيرًا أكمله تلميذه رشيد رضا في مجلة «المنار».",
+   "fix": "وبدأ تفسيرًا للقرآن واصله تلميذه رشيد رضا في مجلة «المنار»، ولم يكتمل.",
+   "evidence": "https://en.wikipedia.org/wiki/Tafsir_al-Manar — commentary 'ended at verse 101 of Surah Yusuf' with Rida's death (1935)"
+  },
+  {
+   "id": "muhammad-abduh",
+   "severity": "warning",
+   "field": "sections[النفي]",
+   "issue": "Order of exile is reversed: Abduh was exiled at the end of 1882 and went first to Beirut, joined al-Afghani in Paris in 1884 for al-Urwa al-Wuthqa, then returned to Beirut until 1888.",
+   "old": "فنُفي بعد الاحتلال البريطاني سنة 1882 م، فلحق بالأفغاني في باريس وأصدرا «العروة الوثقى»، ثم أقام في بيروت.",
+   "fix": "فنُفي بعد الاحتلال البريطاني سنة 1882 م إلى بيروت، ثم لحق بالأفغاني في باريس فأصدرا «العروة الوثقى» سنة 1884 م، ثم عاد إلى بيروت.",
+   "evidence": "https://en.wikipedia.org/wiki/Muhammad_Abduh — exiled 1882, Beirut, then Paris 1884 with al-Afghani, back to Beirut, returned to Egypt 1888"
+  },
+  {
+   "id": "urabi-1882",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "'Occupied Egypt for seventy years' is imprecise and inconsistent with the page's own statement that British troops stayed until 1956 (74 years).",
+   "old": "فاحتلت مصر سبعين عامًا.",
+   "fix": "فبقيت قواتها في مصر أكثر من سبعين عامًا.",
+   "evidence": "https://en.wikipedia.org/wiki/Anglo-Egyptian_War — occupation from 1882; British evacuation of the Canal Zone completed June 1956"
+  },
+  {
+   "id": "jabir-ibn-hayyan",
+   "severity": "warning",
+   "field": "certainty",
+   "issue": "Jabir's historicity is itself doubted (Kraus and later scholars); 'his person is documented in the sources' overstates it.",
+   "old": "'certainty': 'شخصيته موثقة في المصادر؛ نسبة الكتب إليه موضع خلاف'",
+   "fix": "'certainty': 'وجوده التاريخي غير مؤكد؛ نسبة الكتب إليه موضع خلاف'",
+   "evidence": "https://en.wikipedia.org/wiki/Jabir_ibn_Hayyan — 'his historicity is unclear'"
+  },
+  {
+   "id": "jabir-ibn-hayyan",
+   "severity": "warning",
+   "field": "sections[الأثر]",
+   "issue": "The famous Latin 'Geber' works (Summa perfectionis etc.) are original Latin texts by an anonymous pseudo-Geber (c. 1300), not translations of Arabic Jabirian treatises; only a few Jabirian texts were translated.",
+   "old": "تُرجمت رسائل منسوبة إليه إلى اللاتينية، فعُرف في أوروبا باسم «Geber».",
+   "fix": "تُرجمت رسائل قليلة منسوبة إليه إلى اللاتينية، وعُرف في أوروبا باسم «Geber»، ثم نُسبت إلى هذا الاسم كتب لاتينية لمؤلف مجهول.",
+   "evidence": "https://en.wikipedia.org/wiki/Pseudo-Geber — Latin works written c. 1300 under the name Geber"
+  },
+  {
+   "id": "dhi-qar-609",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "'First major Arab victory over the Persians' is a traditional Arab-historiographical framing (the reported saying 'the first day the Arabs got even with the Persians') stated as fact.",
+   "old": "فكان أول نصر كبير للعرب على الفرس.",
+   "fix": "فعدّته الأخبار العربية أول نصر كبير للعرب على الفرس.",
+   "evidence": "https://en.wikipedia.org/wiki/Battle_of_Dhi_Qar — significance described per Arab tradition"
+  },
+  {
+   "id": "taqi-al-din",
+   "severity": "warning",
+   "field": "sections[مرصد إسطنبول]",
+   "issue": "Taqi al-Din was appointed chief astronomer (müneccimbaşı) in 1571 under Selim II; Murad III (from 1574) sponsored the observatory.",
+   "old": "صار رئيس المنجمين للسلطان مراد الثالث، فبنى له مرصدًا كبيرًا في إسطنبول سنة 1577 م.",
+   "fix": "صار رئيس المنجمين في البلاط العثماني سنة 1571 م، ثم بنى للسلطان مراد الثالث مرصدًا كبيرًا في إسطنبول سنة 1577 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Taqi_ad-Din_Muhammad_ibn_Ma%27ruf — appointed chief astronomer in 1571 (Selim II)"
+  },
+  {
+   "id": "banu-musa",
+   "severity": "style",
+   "field": "sections[كتاب الحيل]",
+   "issue": "Arabic: 'وكتبًا في الهندسة' dangles after the device list, reading as if Kitab al-Hiyal describes books; needs its own verb.",
+   "old": "منها أوعية تملأ نفسها وصمامات آلية ونافورات، وكتبًا في الهندسة وقياس الأشكال.",
+   "fix": "منها أوعية تملأ نفسها وصمامات آلية ونافورات. وألفوا كتبًا في الهندسة وقياس الأشكال.",
+   "evidence": "Arabic grammar"
+  },
+  {
+   "id": "thabit-ibn-qurra",
+   "severity": "style",
+   "field": "sections[من حران]",
+   "issue": "Arabic: sentence-initial 'فالتقى به' has no causal antecedent; awkward.",
+   "old": "أتقن السريانية واليونانية. فالتقى به محمد بن موسى بن شاكر، فحمله إلى بغداد.",
+   "fix": "أتقن السريانية واليونانية. والتقاه محمد بن موسى بن شاكر، فحمله إلى بغداد.",
+   "evidence": "Arabic style"
+  },
+  {
+   "id": "wiki-hira",
+   "severity": "style",
+   "field": "sources",
+   "issue": "Redirect; canonical English Wikipedia title is 'Al-Hira'.",
+   "old": "WK + 'Al-Hirah'",
+   "fix": "WK + 'Al-Hira'",
+   "evidence": "https://en.wikipedia.org/wiki/Al-Hira (WebSearch result)"
+  },
+  {
+   "id": "wiki-ibn-baytar",
+   "severity": "style",
+   "field": "sources",
+   "issue": "Redirect; canonical title is 'Ibn al-Baytar'.",
+   "old": "WK + 'Ibn_al-Baitar'",
+   "fix": "WK + 'Ibn_al-Baytar'",
+   "evidence": "https://en.wikipedia.org/wiki/Ibn_al-Baytar (WebSearch result)"
+  },
+  {
+   "id": "wiki-tahtawi",
+   "severity": "style",
+   "field": "sources",
+   "issue": "Redirect; canonical title is 'Rifa'a at-Tahtawi'.",
+   "old": "WK + 'Rifa%27a_al-Tahtawi'",
+   "fix": "WK + 'Rifa%27a_at-Tahtawi'",
+   "evidence": "https://en.wikipedia.org/wiki/Rifa%27a_at-Tahtawi (WebSearch result)"
+  }
+ ]
+}
