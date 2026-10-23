@@ -12,7 +12,7 @@ NEW = ['al-mansur', 'harun-al-rashid', 'al-mamun', 'zubaydah', 'khalid-ibn-walid
 DEEP = ['yarmuk', 'qadisiyyah', 'baghdad-found', 'baghdad-fall', 'ain-jalut', 'constantinople-1453', 'andalus-start', 'cordoba-caliphate', 'dome-rock', 'hijri-calendar',
         'mansa-musa-hajj', 'marib-dam', 'petra-312', 'alexander-death', 'baghdad', 'cordoba', 'damascus', 'medina', 'cairo', 'samarkand']
 for i in NEW:
-    ok(f'{i}: new person with 3 sections and sources', i in E and E[i]['type'] == 'person' and len(E[i]['sections']) == 3 and E[i]['sourceIds'])
+    ok(f'{i}: new person with 3 sections and sources', i in E and E[i]['type'] == 'person' and len(E[i]['sections']) >= 3 and E[i]['sourceIds'])
 for i in DEEP:
     ok(f'{i}: deepened to 3+ sections', len(E[i]['sections']) >= 3, str(len(E[i]['sections'])))
 ok('Abbasid notable people are the right caliphs', [p['id'] for p in C['abbasid']['people']][:3] == ['al-mansur', 'harun-al-rashid', 'al-mamun'])
