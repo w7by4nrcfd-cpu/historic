@@ -1,0 +1,99 @@
+{
+ "sources_checked": 20,
+ "pages_checked": 20,
+ "unverified_urls": [
+  "https://ar.wikipedia.org/wiki/%D8%B9%D8%AB%D9%85%D8%A7%D9%86_%D8%A8%D9%86_%D8%A8%D8%B4%D8%B1 (ar.wikipedia not fetchable/indexed in search; a mirror (areq.net) of the article exists; https://saudipedia.com/عثمان-بن-بشر is a verified alternative)"
+ ],
+ "findings": [
+  {
+   "id": "bahrain-1783",
+   "severity": "error",
+   "field": "sections[الخلفية]",
+   "issue": "Al Madhkur were themselves the rulers of Bushehr (Shaikh Nasr Al Madhkur), governing Bahrain from Bushehr as vassals of Zand Persia; they were not subordinate to 'the rulers of Bushehr'.",
+   "old": "يحكمها آل مذكور تابعين لحكام بوشهر في فارس",
+   "fix": "يحكمها آل مذكور حكام بوشهر، تابعين للدولة الزندية في فارس",
+   "evidence": "https://en.wikipedia.org/wiki/Bani_Utbah_invasion_of_Bahrain (Bahrain held by Nasr Al-Madhkur, ruler of Bushehr, on behalf of the Zand dynasty)"
+  },
+  {
+   "id": "kuwait-1899",
+   "severity": "warning",
+   "field": "sections[ما حدث]",
+   "issue": "The 1899 bond itself contains only Mubarak's undertakings (no foreign agents, no cession/lease of territory without British consent); Britain's counterpart was a separate assurance of 'good offices' plus a payment of Rs 15,000, not a formal protection clause. Stating 'protection' as the treaty term is imprecise.",
+   "old": "مقابل حمايتها له ولخلفائه.",
+   "fix": "مقابل تعهد بريطاني منفصل بمساندته ومساندة خلفائه («المساعي الحميدة») ومبلغ من المال.",
+   "evidence": "https://en.wikipedia.org/wiki/Anglo-Kuwaiti_Agreement_of_1899 (text of the bond; British assurance of good offices given in accompanying letter by Col. Meade)"
+  },
+  {
+   "id": "mubarak-al-sabah",
+   "severity": "warning",
+   "field": "sections[الاتفاقية]",
+   "issue": "Same imprecision: the agreement text does not 'guarantee protection'; Britain promised its good offices in a separate letter.",
+   "old": "تضمن حمايتها للكويت مقابل ألا يتنازل",
+   "fix": "يتعهد فيها ألا يتنازل",
+   "evidence": "https://en.wikipedia.org/wiki/Anglo-Kuwaiti_Agreement_of_1899"
+  },
+  {
+   "id": "king-saud",
+   "severity": "warning",
+   "field": "sections[التنحي]",
+   "issue": "'تنحى' implies a voluntary abdication; in fact senior members of the royal family, backed by a fatwa of the ulama and the Council of Ministers, transferred the throne to Faisal on 2 Nov 1964 (27 Jumada II 1384). Wording should be factual and respectful.",
+   "old": "تنحى عن الملك لأخيه فيصل سنة 1964 م،",
+   "fix": "انتقل الملك إلى أخيه فيصل سنة 1964 م (1384 هـ) بقرار من كبار الأسرة المالكة وفتوى العلماء،",
+   "evidence": "https://en.wikipedia.org/wiki/Saud_of_Saudi_Arabia ; https://en.wikipedia.org/wiki/Succession_to_the_Saudi_Arabian_throne"
+  },
+  {
+   "id": "taif-treaty-1934",
+   "severity": "warning",
+   "field": "sections[ما حدث]",
+   "issue": "Prince Saud's column operated from the Najran area into the northern Yemeni highlands toward Sa'dah and was slowed by the mountains; Najran was its base/disputed area, not the objective of the advance.",
+   "old": "تقدم جيش بقيادة الأمير سعود في الجبال الشمالية نحو نجران،",
+   "fix": "تقدم جيش بقيادة الأمير سعود من جهة نجران في الجبال الشمالية نحو صعدة، فأبطأته وعورتها،",
+   "evidence": "https://en.wikipedia.org/wiki/Saudi%E2%80%93Yemeni_war_(1934)"
+  },
+  {
+   "id": "concession-1933",
+   "severity": "warning",
+   "field": "sections[ما حدث]",
+   "issue": "The 1933 concession paid a gold loan/advance (£30,000 + £5,000 annual rental) and a royalty of 4 gold shillings per ton; it did not give the state a share of production.",
+   "old": "مقابل مبالغ من الذهب وحصة من الإنتاج.",
+   "fix": "مقابل قرض ومبالغ سنوية من الذهب، وإتاوة عن كل طن من النفط المنتج.",
+   "evidence": "https://en.wikipedia.org/wiki/Saudi_Aramco ; https://www.fundinguniverse.com/company-histories/saudi-arabian-oil-company-history"
+  },
+  {
+   "id": "ibn-bishr",
+   "severity": "warning",
+   "field": "certainty",
+   "issue": "Birth year is disputed: Saudipedia gives 1210 AH/1795, while Dorar and the Arabic Wikipedia lead give 1194 AH/c.1780. Death (Jumada II 1290 AH/1873) is well attested, so calling both dates approximate is imprecise; the dispute should be stated.",
+   "old": "'certainty': 'موثق؛ سنتا مولده ووفاته تقريبيتان'",
+   "fix": "'certainty': 'موثق؛ سنة مولده موضع خلاف (1194 أو 1210 هـ)'",
+   "evidence": "https://saudipedia.com/عثمان-بن-بشر (1210هـ/1795م – 1290هـ/1873م); https://dorar.net/history/event/4686 («ولد ابن بشر في جلاجل سنة 1194هـ»)"
+  },
+  {
+   "id": "zubarah",
+   "severity": "warning",
+   "field": "sections[التأسيس]",
+   "issue": "Attributing the founding of al-Zubarah to the Al Khalifa is contested (Qatari historiography and the Qatar–Bahrain ICJ case); UNESCO describes the town's flourishing without crediting a founder. Neutral wording: the Utub/Al Khalifa settled there c.1760s and it grew.",
+   "old": "أسسها آل خليفة من العتوب القادمين من الكويت نحو ستينيات القرن الثامن عشر، فصارت",
+   "fix": "استقر فيها آل خليفة وغيرهم من العتوب القادمين من الكويت نحو ستينيات القرن الثامن عشر، فازدهرت وصارت",
+   "evidence": "https://whc.unesco.org/en/list/1402 ; ICJ, Maritime Delimitation and Territorial Questions between Qatar and Bahrain (2001)"
+  },
+  {
+   "id": "king-faisal",
+   "severity": "style",
+   "field": "sections[الملك]",
+   "issue": "Anachronism: in 1969 the body was the Organisation of the Islamic Conference; renamed Organisation of Islamic Cooperation in 2011. Also 'خطط ... الأولى' should be singular (first five-year plan, 1970).",
+   "old": "وأُعدت خطط التنمية الخمسية الأولى، وأسهم في قيام منظمة التعاون الإسلامي سنة 1969 م.",
+   "fix": "وأُعدت خطة التنمية الخمسية الأولى، وأسهم في قيام منظمة المؤتمر الإسلامي (منظمة التعاون الإسلامي اليوم) سنة 1969 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Organisation_of_Islamic_Cooperation (founded 1969 as OIC 'Conference', renamed 2011)"
+  },
+  {
+   "id": "taizz",
+   "severity": "style",
+   "field": "summary",
+   "issue": "Summary says capital in the 13th–14th centuries, but the page's own period is 1229–1454 (to mid-15th century).",
+   "old": "كانت عاصمة الدولة الرسولية في القرنين الثالث عشر والرابع عشر،",
+   "fix": "كانت عاصمة الدولة الرسولية من القرن الثالث عشر إلى منتصف القرن الخامس عشر،",
+   "evidence": "https://en.wikipedia.org/wiki/Rasulid_dynasty (1229–1454)"
+  }
+ ]
+}
