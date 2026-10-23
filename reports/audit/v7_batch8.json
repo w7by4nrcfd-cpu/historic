@@ -1,0 +1,165 @@
+{
+ "sources_checked": 41,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://en.wikipedia.org/wiki/Ghazni (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Shiraz (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Mashhad (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Mahmud_of_Ghazni (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Ferdowsi (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Rumi (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Saadi_Shirazi (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Hafez (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Tahmasp_I (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Nader_Shah (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Alauddin_Khalji (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Humayun (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Shah_Jahan (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Aurangzeb (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Ahmad_ibn_Ibrahim_al-Ghazi (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Ahmad_ibn_Majid (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Malacca_Sultanate (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Delhi_Sultanate (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Battle_of_Karnal (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Battle_of_Plassey (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat (not fetchable; well-known canonical title, confirmed by knowledge only)",
+  "https://whc.unesco.org/en/list/233 (subpages /maps and /documents found in search; page itself not fetched)"
+ ],
+ "findings": [
+  {
+   "id": "wiki-hormuz-1622",
+   "severity": "warning",
+   "field": "source.url",
+   "issue": "'Capture_of_Ormuz_(1622)' is not the current English Wikipedia title; the article is now 'Anglo-Persian capture of Hormuz' (older 'Capture of Ormuz' also listed). Use the canonical title to avoid redirect chains.",
+   "old": "WK + 'Capture_of_Ormuz_(1622)'",
+   "fix": "WK + 'Anglo-Persian_capture_of_Hormuz'",
+   "evidence": "WebSearch result https://en.wikipedia.org/wiki/Anglo-Persian_capture_of_Hormuz ; the (1622) title only appears on military-history.fandom.com"
+  },
+  {
+   "id": "wiki-parameswara",
+   "severity": "warning",
+   "field": "source.url",
+   "issue": "Canonical English Wikipedia title is 'Parameswara of Malacca'; 'Parameswara_(king_of_Malacca)' was not found (bare 'Parameswara' is a separate/ambiguous page).",
+   "old": "WK + 'Parameswara_(king_of_Malacca)'",
+   "fix": "WK + 'Parameswara_of_Malacca'",
+   "evidence": "WebSearch result https://en.wikipedia.org/wiki/Parameswara_of_Malacca"
+  },
+  {
+   "id": "wiki-ismail-samani",
+   "severity": "style",
+   "field": "source.url",
+   "issue": "Article's canonical title is 'Ismail Samani'; 'Ismail_ibn_Ahmad' at best redirects.",
+   "old": "WK + 'Ismail_ibn_Ahmad'",
+   "fix": "WK + 'Ismail_Samani'",
+   "evidence": "WebSearch result https://en.wikipedia.org/wiki/Ismail_Samani"
+  },
+  {
+   "id": "delhi",
+   "severity": "warning",
+   "field": "sections[0]",
+   "issue": "Aybak ruled from Lahore; Delhi became the sultanate's capital under Iltutmish (r. 1211–1236). 'Capital since 1206' is an anachronism.",
+   "old": "صارت عاصمة سلاطين دلهي منذ 1206 م، فبنوا",
+   "fix": "صارت عاصمة سلاطين دلهي في عهد إيلتتمش (نحو 1211 م) بعد أن كان أيبك يحكم من لاهور، فبنوا",
+   "evidence": "https://en.wikipedia.org/wiki/Mamluk_dynasty_(Delhi) — Aibak's capital Lahore; Iltutmish shifted the capital to Delhi"
+  },
+  {
+   "id": "delhi-sultanate-1206",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Aybak is not known to have formally assumed the title sultan (he used malik/sipahsalar, struck no coins in his name); stating he 'declared himself sultan' is overstated.",
+   "old": "أعلن القائد قطب الدين أيبك نفسه سلطانًا بعد مقتل سيده محمد الغوري",
+   "fix": "استقل القائد قطب الدين أيبك بالحكم بعد مقتل سيده محمد الغوري",
+   "evidence": "https://en.wikipedia.org/wiki/Qutb_ud-Din_Aibak ; https://en.wikipedia.org/wiki/Mamluk_dynasty_(Delhi)"
+  },
+  {
+   "id": "fatehpur-sikri",
+   "severity": "warning",
+   "field": "sections[1]",
+   "issue": "Akbar's interfaith debates were held in the Ibadat Khana (1575), not the Diwan-i-Khas; identifying the Diwan-i-Khas as the debate hall is a popular misattribution.",
+   "old": "ودار «ديوان خاص» التي كان أكبر يجالس فيها العلماء من الأديان المختلفة",
+   "fix": "و«عبادت خانه» (دار العبادة) التي كان أكبر يجالس فيها العلماء من الأديان المختلفة",
+   "evidence": "https://en.wikipedia.org/wiki/Ibadat_Khana — 'meeting house built in 1575 by Akbar at Fatehpur Sikri to gather spiritual leaders of different religions'"
+  },
+  {
+   "id": "ahmad-gran",
+   "severity": "warning",
+   "field": "sections[1]",
+   "issue": "Chronology: the large Ottoman musketeer contingent (~900 men) reached Imam Ahmad only in 1542, in response to the Portuguese expedition; his 1529–1541 conquests were made with a mostly local army with a small matchlock contingent.",
+   "old": "مستعينًا بحملة بنادق عثمانية.",
+   "fix": "وكان في جيشه عدد قليل من حملة البنادق، ثم أمدّه العثمانيون بنحو تسعمئة منهم سنة 1542 م.",
+   "evidence": "https://en.wikipedia.org/wiki/Ethiopian%E2%80%93Adal_War ; https://en.wikipedia.org/wiki/Ahmad_ibn_Ibrahim_al-Ghazi (Ottoman reinforcement of 900 musketeers after Portuguese arrival)"
+  },
+  {
+   "id": "rumi",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Birthplace disputed: Wikipedia states Rumi was born in Wakhsh (in the province of Balkh, now Tajikistan), with the city of Balkh the traditional account. Stated as certain.",
+   "old": "وُلد في بلخ وعاش في قونية",
+   "fix": "وُلد في إقليم بلخ وعاش في قونية",
+   "evidence": "https://en.wikipedia.org/wiki/Rumi — 'born in Wakhsh, a village ... in present-day Tajikistan ... Wakhsh belonged to the larger province of Balkh'"
+  },
+  {
+   "id": "rumi",
+   "severity": "warning",
+   "field": "sections[0]",
+   "issue": "Same disputed birthplace stated as certain in the section text.",
+   "old": "وُلد في بلخ (أفغانستان اليوم) سنة 1207 م",
+   "fix": "وُلد سنة 1207 م في إقليم بلخ، في وخش (طاجيكستان اليوم) على الأرجح، وتقول الرواية التقليدية إنه وُلد في مدينة بلخ",
+   "evidence": "https://en.wikipedia.org/wiki/Rumi"
+  },
+  {
+   "id": "karnal-1739",
+   "severity": "warning",
+   "field": "sections[1]",
+   "issue": "The Delhi massacre (22 March 1739) is understated as 'large numbers'; standard accounts give c. 20,000–30,000 dead in one day, triggered by riots after a rumour of Nader's death. Neutral, factual figures should be given.",
+   "old": "فلما قُتل بعض جنوده في اضطرابات أمر بقتل أعداد كبيرة من أهلها",
+   "fix": "فلما قُتل بعض جنوده في اضطرابات أثارتها شائعة موته أمر في 22 مارس 1739 م بقتل أهلها، فقُتل نحو عشرين إلى ثلاثين ألفًا بحسب أكثر التقديرات",
+   "evidence": "https://en.wikipedia.org/wiki/Nader_Shah%27s_invasion_of_the_Mughal_Empire — 'some 20,000 to 30,000 Indians were killed'"
+  },
+  {
+   "id": "ghazni",
+   "severity": "warning",
+   "field": "sections[0]",
+   "issue": "Ghazni was already the seat of Alp-Tegin's successors from 962; Sebüktigin took power there in 977 rather than 'adopting it as seat' that year.",
+   "old": "اتخذها القائد التركي سبكتكين مقرًا سنة 977 م",
+   "fix": "تولى الحكم فيها القائد التركي سبكتكين سنة 977 م",
+   "evidence": "https://en.wikipedia.org/wiki/Ghazni ; https://en.wikipedia.org/wiki/Sabuktigin (Alp-Tegin seized Ghazni 962; Sebüktigin succeeded 977)"
+  },
+  {
+   "id": "malacca-1511",
+   "severity": "style",
+   "field": "sections[2]",
+   "issue": "Johor was founded by one son, Alauddin Riayat Shah II (c. 1528); another son founded Perak. 'Sons founded Johor' is imprecise.",
+   "old": "أسس أبناء السلطان سلطنة جوهور",
+   "fix": "أسس ابنه علاء الدين رعاية شاه الثاني سلطنة جوهور وأسس ابن آخر سلطنة بيراك",
+   "evidence": "https://en.wikipedia.org/wiki/Johor_Sultanate ; https://en.wikipedia.org/wiki/Perak_Sultanate"
+  },
+  {
+   "id": "saadi",
+   "severity": "style",
+   "field": "sections[2]",
+   "issue": "The 'Bani Adam' verses are not inscribed on the UN building; they are woven on a carpet (gift of Iran) hung at UN Headquarters, and quoted by UN officials.",
+   "old": "وهو مكتوب في مبنى الأمم المتحدة",
+   "fix": "وهو منسوج على سجادة معلّقة في مقر الأمم المتحدة بنيويورك",
+   "evidence": "https://en.wikipedia.org/wiki/Bani_Adam"
+  },
+  {
+   "id": "lahore",
+   "severity": "style",
+   "field": "sections[0]",
+   "issue": "Ambiguous Arabic: 'من مدن سلطنة دلهي الكبرى' reads as if 'the Greater Delhi Sultanate'.",
+   "old": "ثم من مدن سلطنة دلهي الكبرى",
+   "fix": "ثم من كبرى مدن سلطنة دلهي",
+   "evidence": "Arabic usage"
+  },
+  {
+   "id": "shiraz",
+   "severity": "style",
+   "field": "sections[1]",
+   "issue": "Vague/awkward wording ('visited for poetry more than history').",
+   "old": "يزورهما الناس للشعر أكثر من التاريخ",
+   "fix": "ويقصدهما محبو الشعر من داخل إيران وخارجها",
+   "evidence": "Arabic style"
+  }
+ ]
+}
