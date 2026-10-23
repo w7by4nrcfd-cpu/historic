@@ -30,7 +30,7 @@ with sync_playwright() as p:
   except Exception: ok('city marker clickable with events on',False)
   pg.locator('.map-point').first.click(force=True); pg.wait_for_timeout(300)
   ok('marker click shows selection', 'اقرأ الموضوع' in pg.inner_text('#map-selection'))
-  pg.fill('#map-query','بغداد'); pg.wait_for_timeout(300); ok('map query filters', pg.locator('#map-topic-list button').count()==2 and 'قرطبة' not in pg.inner_text('#map-topic-list'))
+  pg.fill('#map-query','بغداد'); pg.wait_for_timeout(300); ok('map query filters', pg.locator('#map-topic-list button').count()>=2 and 'بغداد' in pg.inner_text('#map-topic-list') and 'قرطبة' not in pg.inner_text('#map-topic-list'))  # بغداد ومعها أحداث العباسيين
   # zoom
   z0=pg.evaluate("()=>document.querySelector('.maplibregl-ctrl-zoom-in')?1:0"); pg.click('.maplibregl-ctrl-zoom-in'); ok('zoom ctrl', z0)
   # search
@@ -195,7 +195,7 @@ with sync_playwright() as p:
   print(('PASS' if '1000' in pg.inner_text('#cmp-note') else 'FAIL'),'compare overlay note')
   pg.select_option('#cmp-year',''); pg.wait_for_timeout(500)
   print(('PASS' if pg.locator('#cmp-note').count()==0 else 'FAIL'),'compare cleared')
-  box=pg.locator('#map').bounding_box(); pg.mouse.click(box['x']+box['width']*0.80, box['y']+box['height']*0.70); pg.wait_for_timeout(800)
+  pt=pg.evaluate("()=>{const m=window.__atlasMap,q=m.project([42.5,31.5]),r=m.getContainer().getBoundingClientRect();return [r.left+q.x,r.top+q.y]}"); pg.mouse.click(pt[0],pt[1]); pg.wait_for_timeout(800)  # نقطة في العراق داخل حدود الدولة القائمة، لا موضع ثابت على الشاشة
   print(('PASS' if 'دولة على الخريطة' in pg.inner_text('#map-selection') else 'FAIL'),'polygon click shows info')
   pg.click(fsel(1932)); pg.wait_for_timeout(2500)
   t=pg.inner_text('#map-topic-list'); print(('PASS' if 'الرياض' in t and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'1932 frame shows Riyadh, no borders')
