@@ -80,6 +80,8 @@ with sync_playwright() as p:
             pg.wait_for_timeout(500)
         pg.wait_for_timeout(800)
         pts = pg.evaluate("""()=>{const top=document.querySelector('.ax-era').getBoundingClientRect().bottom+10,dock=document.querySelector('.ax-dock').getBoundingClientRect().top-10;return [...document.querySelectorAll('.border-label')].filter(e=>getComputedStyle(e).display!=='none'&&getComputedStyle(e).visibility!=='hidden').map(e=>{const r=e.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}).filter(p=>p[1]>top&&p[1]<dock&&document.elementFromPoint(p[0],p[1])?.tagName==='CANVAS')}""")
+        if not pts:  # كل أسماء الدول مغطاة بعلامات في هذا العرض: نضغط نقاطًا داخل دول قائمة سنة 1300 لا تغطيها علامة
+            pts = pg.evaluate("()=>{const m=window.__atlasMap,r=m.getContainer().getBoundingClientRect();return [[45,50],[5,32],[43.5,33.5],[30,45]].map(ll=>{const q=m.project(ll);return [r.left+q.x,r.top+q.y]}).filter(p=>document.elementFromPoint(p[0],p[1])?.tagName==='CANVAS')}")
         for x, y in pts[:4]:
             pg.mouse.click(x, y)
             pg.wait_for_timeout(700)
