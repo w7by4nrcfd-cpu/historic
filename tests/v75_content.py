@@ -14,7 +14,7 @@ NEW = ['tabriz', 'sultaniyya', 'kunya-urgench', 'alexandria', 'shahrisabz', 'mar
        'ibn-hajar', 'ogedei', 'jalal-al-din-khwarazm', 'ghazan', 'nasir-al-din-tusi', 'rashid-al-din', 'gawhar-shad',
        'mongol-khwarazm-1219', 'indus-1221', 'mongol-europe-1241', 'maragheh-observatory-1259', 'abbasid-cairo-1261',
        'elbistan-1277', 'homs-1281', 'ghazan-islam-1295', 'shaqhab-1303', 'ilkhanate-end-1335', 'black-death-1348',
-       'qaitbay-citadel-1477', 'diu-1509', 'marj-dabiq-1516', 'ridaniya-1517', 'gur-amir-1404']
+       'qaitbay-citadel-1477', 'diu-1509', 'marj-dabiq-1516', 'cyprus-1426', 'gur-amir-1404']
 ok('40 new pages, all present', len(set(NEW)) == 40 and all(i in E for i in NEW))
 ok('content grew to at least 420 pages', len(d['entries']) >= 420, str(len(d['entries'])))
 for i in NEW:
@@ -42,7 +42,7 @@ with sync_playwright() as p:
         n = pg.locator('.article-text section').count()
         ok(f'{i}: page renders its sections', n >= 3, str(n))
         ok(f'{i}: no horizontal scroll', not pg.evaluate('document.documentElement.scrollWidth>innerWidth+1'))
-    pg.goto(B + '#/search?q=' + 'الريدانية'); pg.wait_for_timeout(1500)
-    ok('search finds a new page', 'معركة الريدانية' in pg.inner_text('main') and 'لا نتائج' not in pg.inner_text('main'))
+    pg.goto(B + '#/search?q=' + 'قبرص'); pg.wait_for_timeout(1500)
+    ok('search finds a new page', 'حملة المماليك على قبرص' in pg.inner_text('main') and 'لا نتائج' not in pg.inner_text('main'))
     ok('no page errors', not errs, str(errs)); b.close()
 print(f'TOTAL {sum(R)} / {len(R)}'); raise SystemExit(0 if all(R) else 1)
