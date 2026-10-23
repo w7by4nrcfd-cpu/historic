@@ -1,0 +1,204 @@
+{
+ "sources_checked": 37,
+ "pages_checked": 40,
+ "unverified_urls": [
+  "https://en.wikipedia.org/wiki/Taif",
+  "https://en.wikipedia.org/wiki/Ha%27il",
+  "https://en.wikipedia.org/wiki/Tayma",
+  "https://en.wikipedia.org/wiki/Najran",
+  "https://en.wikipedia.org/wiki/Muscat",
+  "https://en.wikipedia.org/wiki/Dadan_(Al-%27Ula) (not found)",
+  "https://en.wikipedia.org/wiki/Saud_bin_Abdulaziz_bin_Muhammad_bin_Saud (not found)"
+ ],
+ "findings": [
+  {
+   "id": "wiki-dadan",
+   "severity": "warning",
+   "field": "source.url",
+   "issue": "No English Wikipedia article titled 'Dadan (Al-'Ula)' was found; the ancient city is covered by the article 'Dedan' (Dadanu redirects to al-Ula).",
+   "old": "WK + 'Dadan_(Al-%27Ula)'",
+   "fix": "WK + 'Dedan'",
+   "evidence": "WebSearch on en.wikipedia.org returned https://en.wikipedia.org/wiki/Dedan, /Lion_tombs_of_Dedan, /Dadanu (redirect to al-Ula) but no Dadan_(Al-'Ula) page"
+  },
+  {
+   "id": "wiki-saud-kabir",
+   "severity": "warning",
+   "field": "source.url",
+   "issue": "URL title not found on Wikipedia; canonical article is 'Saud bin Abdulaziz Al Saud (1748–1814)'.",
+   "old": "WK + 'Saud_bin_Abdulaziz_bin_Muhammad_bin_Saud'",
+   "fix": "WK + 'Saud_bin_Abdulaziz_Al_Saud_(1748%E2%80%931814)'",
+   "evidence": "https://en.wikipedia.org/wiki/Saud_bin_Abdulaziz_Al_Saud_(1748%E2%80%931814) (search result); no result for the given title"
+  },
+  {
+   "id": "wiki-abdullah-saud",
+   "severity": "warning",
+   "field": "source.url",
+   "issue": "'Abdullah bin Saud' is ambiguous (several Al Saud princes); canonical article is 'Abdullah bin Saud Al Saud'.",
+   "old": "WK + 'Abdullah_bin_Saud'",
+   "fix": "WK + 'Abdullah_bin_Saud_Al_Saud'",
+   "evidence": "https://en.wikipedia.org/wiki/Abdullah_bin_Saud_Al_Saud"
+  },
+  {
+   "id": "wiki-abdulrahman-faisal",
+   "severity": "warning",
+   "field": "source.url",
+   "issue": "Wikipedia now disambiguates two people of this name; the imam's article is 'Abdul Rahman bin Faisal Al Saud (1850–1928)' (a 1942–2014 namesake exists).",
+   "old": "WK + 'Abdul_Rahman_bin_Faisal_Al_Saud'",
+   "fix": "WK + 'Abdul_Rahman_bin_Faisal_Al_Saud_(1850%E2%80%931928)'",
+   "evidence": "https://en.wikipedia.org/wiki/Abdul_Rahman_bin_Faisal_Al_Saud_(1850%E2%80%931928) and https://en.wikipedia.org/wiki/Abdul_Rahman_bin_Faisal_Al_Saud_(1942%E2%80%932014)"
+  },
+  {
+   "id": "wiki-sharif-hussein",
+   "severity": "style",
+   "field": "source.url",
+   "issue": "Old title (redirect); canonical article is 'Hussein, King of Hejaz'.",
+   "old": "WK + 'Hussein_bin_Ali,_Sharif_of_Mecca'",
+   "fix": "WK + 'Hussein,_King_of_Hejaz'",
+   "evidence": "https://en.wikipedia.org/wiki/Hussein,_King_of_Hejaz"
+  },
+  {
+   "id": "wiki-sayf-yazan",
+   "severity": "style",
+   "field": "source.url",
+   "issue": "Canonical article title is 'Saif ibn Dhi Yazan'.",
+   "old": "WK + 'Sayf_ibn_Dhi_Yazan'",
+   "fix": "WK + 'Saif_ibn_Dhi_Yazan'",
+   "evidence": "https://en.wikipedia.org/wiki/Saif_ibn_Dhi_Yazan"
+  },
+  {
+   "id": "wiki-okaz",
+   "severity": "style",
+   "field": "source.url",
+   "issue": "Canonical article title is 'Souk Okaz'.",
+   "old": "WK + 'Souq_Okaz'",
+   "fix": "WK + 'Souk_Okaz'",
+   "evidence": "https://en.wikipedia.org/wiki/Souk_Okaz"
+  },
+  {
+   "id": "zafar-himyar",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Himyar did not unify South Arabia from the 1st century; the kingdom arose c. 110 BC and absorbed Saba c. 275 and Hadramawt c. 300 AD (as the page's own section says). Summary contradicts the section.",
+   "old": "التي وحّدت جنوب الجزيرة العربية من القرن الأول تقريبًا حتى القرن السادس الميلادي.",
+   "fix": "التي قامت نحو أواخر القرن الثاني قبل الميلاد، ووحّدت جنوب الجزيرة العربية في أواخر القرن الثالث الميلادي، وبقيت حتى القرن السادس.",
+   "evidence": "https://en.wikipedia.org/wiki/Himyarite_Kingdom (110 BCE–525 CE; annexation of Saba late 3rd c.)"
+  },
+  {
+   "id": "zafar-himyar",
+   "severity": "warning",
+   "field": "period",
+   "issue": "startYear is -110 (late 2nd century BC) but period says 1st century BC; make consistent.",
+   "old": "'period': 'عاصمة حمير نحو القرن الأول ق.م – 525 م'",
+   "fix": "'period': 'مملكة حمير نحو 110 ق.م – 525 م'",
+   "evidence": "https://en.wikipedia.org/wiki/Himyarite_Kingdom"
+  },
+  {
+   "id": "al-ahsa",
+   "severity": "error",
+   "field": "sections[0].text",
+   "issue": "Understated: UNESCO describes Al-Ahsa as the largest oasis in the world with about 2.5 million date palms, not 'hundreds of thousands'.",
+   "old": "تسقي عيونها الكثيرة مئات الآلاف من النخيل",
+   "fix": "تسقي عيونها الكثيرة نحو مليونين ونصف مليون نخلة",
+   "evidence": "https://whc.unesco.org/en/list/1563 (Al-Ahsa Oasis, an Evolving Cultural Landscape: '2.5 million date palms')"
+  },
+  {
+   "id": "al-ahsa",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Omits the Second Saudi State: Al-Ahsa was under the Second Saudi State until the Ottoman occupation of 1871; current wording implies Ottoman rule followed the First State directly.",
+   "old": "دخلت في حكم الدولة السعودية الأولى، ثم العثمانيين من 1871 م",
+   "fix": "دخلت في حكم الدولة السعودية الأولى ثم الثانية، ثم حكمها العثمانيون من 1871 م",
+   "evidence": "https://en.wikipedia.org/wiki/Emirate_of_Nejd (Second Saudi State incl. al-Hasa until 1871 Ottoman expedition)"
+  },
+  {
+   "id": "diriyah-pact-1744",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Awkward/inaccurate Arabic ('تعتمد سنة ... يومًا'); Founding Day is 22 February, commemorating the start of Imam Muhammad bin Saud's rule in 1727.",
+   "old": "وتعتمد المملكة اليوم سنة 1727 م يومًا للتأسيس.",
+   "fix": "وتحتفي المملكة اليوم بيوم التأسيس في 22 فبراير من كل عام، إحياءً لبداية حكم الإمام محمد بن سعود سنة 1727 م.",
+   "evidence": "Royal Order (Jan 2022) designating 22 February as يوم التأسيس — https://saudipedia.com/ar/يوم-التأسيس"
+  },
+  {
+   "id": "marib-collapse",
+   "severity": "warning",
+   "field": "summary",
+   "issue": "Summary states as fact that the 6th-century final collapse is the Quranic 'Sayl al-Arim' and caused the tribal dispersal; this identification is traditional, and the Azd migrations long predate the final collapse.",
+   "old": "فتفرقت القبائل التي كانت تعيش على زراعته، كما يذكر القرآن في «سيل العرم».",
+   "fix": "فهُجرت الأرض التي كان يسقيها، ويربط المفسرون والإخباريون خراب السد بـ«سيل العرم» المذكور في القرآن.",
+   "evidence": "https://en.wikipedia.org/wiki/Marib_Dam ; Ghassanids already Byzantine foederati by c. 500 — https://en.wikipedia.org/wiki/Ghassanids"
+  },
+  {
+   "id": "marib-collapse",
+   "severity": "warning",
+   "field": "sections[2].text",
+   "issue": "Anachronism: links a late-6th-century collapse to the migration of Aws, Khazraj and Ghassan, who were settled in Yathrib and Syria centuries earlier; tradition ties the migration to Sayl al-Arim, not to the final breach.",
+   "old": "وتربط الأخبار به هجرة قبائل من الأزد إلى الشمال، منهم الأوس والخزرج وغسان.",
+   "fix": "وتربط الأخبار «سيل العرم» بهجرة قبائل من الأزد إلى الشمال، منهم الأوس والخزرج وغسان، وهي هجرات أقدم من الانهيار الأخير بقرون.",
+   "evidence": "https://en.wikipedia.org/wiki/Ghassanids ; https://en.wikipedia.org/wiki/Marib_Dam"
+  },
+  {
+   "id": "arab-revolt-1916",
+   "severity": "style",
+   "field": "sections[2].text",
+   "issue": "Simplification: Sykes–Picot (1916) was a secret plan; the actual division was the 1920 San Remo mandates.",
+   "old": "فقد قسّمت بريطانيا وفرنسا المشرق بينهما باتفاقية سايكس بيكو.",
+   "fix": "فقد قسّمت بريطانيا وفرنسا المشرق بينهما وفق اتفاقية سايكس بيكو (1916 م) ثم نظام الانتداب (1920 م).",
+   "evidence": "https://en.wikipedia.org/wiki/Arab_Revolt ; https://en.wikipedia.org/wiki/San_Remo_conference"
+  },
+  {
+   "id": "rawdat-muhanna-1906",
+   "severity": "warning",
+   "field": "coordinates",
+   "issue": "Marker is ~35 km SW of Buraydah, but Rawdat Muhanna lies in eastern Qassim, west of Nafud al-Thuwairat near al-Nabqiyah (E/NE of Buraydah). Proposed point is approximate; confirm on a map.",
+   "old": "'coordinates': [43.75, 26.05]",
+   "fix": "'coordinates': [44.2, 26.2]",
+   "evidence": "https://saudipedia.com/ar/معركة-روضة-مهنا ('غربي نفود الثويرات'); https://www.alyaum.com/ampArticle/6635117 ('قرب بلدة النبقية شرق منطقة القصيم')"
+  },
+  {
+   "id": "rawdat-muhanna-1906",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "Saudipedia's account dates the battle to 16 Safar 1324 / 10 April 1906 and says Ibn Rashid fell in a pre-dawn attack; 'قرب بريدة' is imprecise.",
+   "old": "باغت الملك عبدالعزيز معسكر ابن رشيد في روضة مهنا قرب بريدة",
+   "fix": "باغت الملك عبدالعزيز معسكر ابن رشيد قبيل الفجر في روضة مهنا شرق القصيم",
+   "evidence": "https://saudipedia.com/ar/معركة-روضة-مهنا"
+  },
+  {
+   "id": "oil-1938",
+   "severity": "warning",
+   "field": "dateLabel",
+   "issue": "False precision: sources differ on the day (Aramco gives 3 March 1938; Wikipedia 4 March). Safer to give the month.",
+   "old": "'dateLabel': '4 مارس 1938 م (1357 هـ)'",
+   "fix": "'dateLabel': 'مارس 1938 م (1357 هـ)'",
+   "evidence": "https://en.wikipedia.org/wiki/Dammam_No._7 vs Saudi Aramco history ('March 3, 1938')"
+  },
+  {
+   "id": "taif",
+   "severity": "style",
+   "field": "sections[0].text",
+   "issue": "Singular 'بستان' reads oddly next to 'كروم'; plural intended.",
+   "old": "وفيها بستان وكروم",
+   "fix": "وفيها بساتين وكروم",
+   "evidence": "Arabic usage"
+  },
+  {
+   "id": "al-ula",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "The lions at the Dadan tombs are carved reliefs on the cliff face, not free-standing statues on top.",
+   "old": "يعلو بعضها تمثالا أسدين",
+   "fix": "تزين بعضها نقوش بارزة لأسود",
+   "evidence": "https://en.wikipedia.org/wiki/Lion_tombs_of_Dedan"
+  },
+  {
+   "id": "aksum-525",
+   "severity": "style",
+   "field": "sections[1].text",
+   "issue": "Ambiguous subject of 'وقُتل' (could read as Kaleb was killed).",
+   "old": "فهزم ذا نواس وقُتل.",
+   "fix": "فهزم ذا نواس، وقُتل ذو نواس في الحرب.",
+   "evidence": "Arabic clarity; https://en.wikipedia.org/wiki/Himyarite_Kingdom"
+  }
+ ]
+}
