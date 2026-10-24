@@ -9,3 +9,4 @@ dist/robots.txt
 __pycache__/
 dist/content-core.json
 dist/content-text.json
+dist/method/
