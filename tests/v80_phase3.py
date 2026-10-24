@@ -41,8 +41,11 @@ with sync_playwright() as p:
         pg = b.new_page(viewport=vp); errs = []
         pg.on('pageerror', lambda e: errs.append(str(e)))
         for y in [650, 850, 1200, 1300, 1600]:
-            pg.goto(B + f'#/atlas?year={y}'); pg.wait_for_timeout(3500)
-            n = pg.locator('.map-point.event').count()
+            pg.goto(B + f'#/atlas?year={y}')
+            for _ in range(20):  # الرسم في هذه البيئة بطيء: ننتظر حتى تظهر العلامات (10 ثوانٍ على الأكثر)
+                pg.wait_for_timeout(500); n = pg.locator('.map-point.event').count()
+                if n: break
+            pg.wait_for_timeout(500); n = pg.locator('.map-point.event').count()
             ok(f'{name}: {y} shows at most {cap} event markers', 0 < n <= cap, str(n))
         # الحدث المطلوب في الرابط يظهر حتى لو كان أقدم من غيره
         pg.goto(B + '#/atlas?topic=badr-624&year=650'); pg.wait_for_timeout(4000)
