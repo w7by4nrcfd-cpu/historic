@@ -15,7 +15,7 @@ from shapely.validation import make_valid
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LAND = os.path.join(HERE, '..', 'dist', 'assets', 'land.geojson')
-COAST_PAD, LAND_EPS, MIN_PART, ND = 0.04, 0.03, 0.05, 2
+COAST_PAD, LAND_EPS, MIN_PART, ND, SEAM = 0.04, 0.03, 0.05, 2, 0.06
 
 
 def polys(g):
@@ -41,7 +41,10 @@ def landmask():
 def clean_frame(path, mask):
     d = json.load(open(path, encoding='utf-8'))
     F = d['features']
-    G = [unary_union(polys(shape(f['geometry']))) for f in F]
+    # أجزاء الدولة الواحدة المتلاصقة (بُسّط كل جزء وحده فبقيت بينها شقوق) تُدمج في مضلع واحد بلا خط داخلي
+    # كل جزء يُصحَّح وحده ثم تُجمع الأجزاء: لو صُحّحت معًا لألغى الجزء الواقع في ثقب جزء آخر نفسه (مثل حائل داخل نجد سنة 1930)
+    parts_of = lambda g: [shape({'type': 'Polygon', 'coordinates': c}) for c in (g['coordinates'] if g['type'] == 'MultiPolygon' else [g['coordinates']])]
+    G = [unary_union([q for pp in parts_of(f['geometry']) for q in polys(pp)]).buffer(SEAM, join_style=2).buffer(-SEAM, join_style=2) for f in F]
     order = sorted(range(len(F)), key=lambda i: G[i].area)
     done, out = [], {}
     for i in order:  # الأصغر أولًا: كل دولة تُطرح منها مساحات الدول الأصغر التي تداخلها

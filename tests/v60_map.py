@@ -13,8 +13,8 @@ FRAMES = [int(x) for x in re.search(r'export const FRAMES=\[([^\]]*)\]', core).g
 app = open(os.path.join(ROOT, 'app.js'), encoding='utf-8').read()
 BY = [int(x) for x in re.search(r'BORDER_YEARS=\[([^\]]*)\]', app).group(1).split(',')]
 ok('36 frames, sorted', len(FRAMES) == 36 and FRAMES == sorted(FRAMES), str(len(FRAMES)))
-ok('30 border snapshots, each a frame with a file', len(BY) == 30 and all(y in FRAMES and os.path.exists(os.path.join(ROOT, 'assets', 'borders', f'{y}.json')) for y in BY))
-ok('frames without trustworthy data stay without borders', not {-1750, -1400, 650, 1200, 1850, 1932} & set(BY))
+ok('31 border snapshots, each a frame with a file', len(BY) == 31 and all(y in FRAMES and os.path.exists(os.path.join(ROOT, 'assets', 'borders', f'{y}.json')) for y in BY))
+ok('frames without trustworthy data stay without borders', not {-1750, -1400, 650, 1200, 1850} & set(BY))
 
 P = json.load(open(os.path.join(ROOT, 'assets', 'polities.json'), encoding='utf-8'))
 labels = {}
@@ -25,7 +25,7 @@ for f in [f for f in glob.glob(os.path.join(ROOT, 'assets', 'borders', '*.json')
         labels.setdefault(l['n'], set()).add(d['year'])
 missing = [n for n in labels if 't' not in P.get(n, {}) and not any(l.get('civ') for f in [f for f in glob.glob(os.path.join(ROOT, 'assets', 'borders', '*.json')) if not f.endswith('index.json')] for l in json.load(open(f, encoding='utf-8'))['labels'] if l['n'] == n)]
 ok('every state without an encyclopedia page has a card', not missing, str(missing))
-ok('every card has period, capital and text', all(p['d'] and p['cap'] and len(p['t']) > 30 for p in P.values() if 't' in p) and sum('t' in p for p in P.values()) == 138)
+ok('every card has period, capital and text', all(p['d'] and p['cap'] and len(p['t']) > 30 for p in P.values() if 't' in p) and sum('t' in p for p in P.values()) == 164)
 # أخطاء زمنية استُبعدت عمدًا
 y = lambda n: labels.get(n, set())
 ok('no Sasanians after 651', not [v for v in y('الدولة الساسانية') if v > 651])

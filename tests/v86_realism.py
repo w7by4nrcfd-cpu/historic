@@ -42,6 +42,13 @@ for p in glob.glob(os.path.join(ROOT, 'assets', 'borders', '*.json')):
     if bad: ok(f'labels inside their state in {os.path.basename(p)}', False, str(bad))
 ok(f'no overlapping states in any of {frames} border frames', worst_ov < 0.1, f'{worst_ov:.2f}')
 ok('borders stay on land (sea part under 1%)', worst_sea < 0.01, f'{worst_sea:.4f}')
+b1932 = json.load(open(os.path.join(ROOT, 'assets', 'borders', '1932.json'), encoding='utf-8'))
+ks = [f for f in b1932['features'] if f['properties']['n'] == 'المملكة العربية السعودية']
+ok('1932: one Saudi kingdom (Hejaz, Najd, Hail and al-Jawf merged, no inner lines)', len(ks) == 1 and shape(ks[0]['geometry']).geom_type == 'Polygon' and ks[0]['properties'].get('civ') == 'saudi-kingdom')
+k = make_valid(shape(ks[0]['geometry']))
+ok('1932: kingdom covers Riyadh, Makkah, Hail, al-Jawf and Abha but not Kuwait or Amman', all(k.contains(Point(q)) for q in [(46.7, 24.6), (39.8, 21.4), (41.7, 27.5), (39.9, 29.8), (42.5, 18.2)]) and not k.contains(Point(47.98, 29.37)) and not k.contains(Point(35.9, 31.95)))
+n1932 = {f['properties']['n'] for f in b1932['features']}
+ok('1932: no out-of-time names (Ottoman Egypt, medieval Ghana, Hail emirate)', not n1932 & {'مصر (إيالة عثمانية)', 'مملكة غانا', 'الحجاز', 'إمارة حائل'} and 'مملكة مصر' in n1932, str(sorted(n1932)[:8]))
 b900 = {f['properties']['n']: make_valid(shape(f['geometry'])) for f in json.load(open(os.path.join(ROOT, 'assets', 'borders', '900.json')))['features']}
 ok('900: Khazars no longer cover Volga Bulgaria', b900['الخزر'].intersection(b900['بلغار الفولغا']).area < 0.01)
 

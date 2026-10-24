@@ -198,7 +198,7 @@ with sync_playwright() as p:
   pt=pg.evaluate("()=>{const m=window.__atlasMap,q=m.project([42.5,31.5]),r=m.getContainer().getBoundingClientRect();return [r.left+q.x,r.top+q.y]}"); pg.mouse.click(pt[0],pt[1]); pg.wait_for_timeout(800)  # نقطة في العراق داخل حدود الدولة القائمة، لا موضع ثابت على الشاشة
   print(('PASS' if 'دولة على الخريطة' in pg.inner_text('#map-selection') else 'FAIL'),'polygon click shows info')
   pg.click(fsel(1932)); pg.wait_for_timeout(2500)
-  t=pg.inner_text('#map-topic-list'); print(('PASS' if 'الرياض' in t and 'لا تتوفر' in pg.inner_text('#map-tag') else 'FAIL'),'1932 frame shows Riyadh, no borders')
+  t=pg.inner_text('#map-topic-list'); print(('PASS' if 'الرياض' in t and '1930' in pg.inner_text('#map-tag') else 'FAIL'),'1932 frame shows Riyadh, with 1930 borders')
   pg.goto(B+'#/topic/saudi-kingdom'); pg.wait_for_timeout(400); print(('PASS' if '1932' in pg.inner_text('main') else 'FAIL'),'kingdom page')
   print(('PASS' if not errs else 'FAIL'),'v3.3 no errors',errs[:3])
   b.close()

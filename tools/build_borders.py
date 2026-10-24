@@ -11,8 +11,9 @@ FRAMES = {-500: ('bc500', -500), -400: ('bc400', -400), -323: ('bc323', -323), -
           117: ('100', 100), 200: ('200', 200), 300: ('300', 300), 400: ('400', 400), 500: ('500', 500), 600: ('600', 600), 700: ('700', 700),
           850: ('800', 800), 900: ('900', 900), 1000: ('1000', 1000), 1100: ('1100', 1100), 1279: ('1279', 1279), 1300: ('1300', 1300),
           1400: ('1400', 1400), 1492: ('1492', 1492), 1500: ('1500', 1500), 1530: ('1530', 1530), 1600: ('1600', 1600), 1650: ('1650', 1650),
-          1700: ('1700', 1700), 1750: ('1715', 1715), 1800: ('1800', 1800), 1880: ('1880', 1880), 1914: ('1914', 1914)}
-# لم نستعمل ملفات قبل 500 ق.م ولا ملفي 1200 و1930: فيها دول في غير زمنها (الحيثيون ومملكة داود سنة 700 ق.م، والفاطميون والبويهيون سنة 1200)
+          1700: ('1700', 1700), 1750: ('1715', 1715), 1800: ('1800', 1800), 1880: ('1880', 1880), 1914: ('1914', 1914), 1932: ('1930', 1930)}
+# لم نستعمل ملفات قبل 500 ق.م ولا ملف 1200: فيها دول في غير زمنها (الحيثيون ومملكة داود سنة 700 ق.م، والفاطميون والبويهيون والمغول سنة 1200،
+# ووسط الأناضول بيزنطي فيه وكان للسلاجقة). وملف 1930 أخطاؤه في الأسماء فقط، فصُحّحت في ـ1930 أدناه (لقطة 1932).
 TR = {
  'Aztec Empire': 'إمبراطورية الأزتك', 'Inca Empire': 'إمبراطورية الإنكا', 'Timurid Emirates': 'الإمارات التيمورية', 'Emirate of the White Sheep Turks': 'آق قويونلو',
  'Songhai': 'إمبراطورية سنغاي', 'Wattasid Caliphate': 'الدولة الوطاسية', 'Zayyanid Caliphate': 'الدولة الزيانية', 'Vijayanagara': 'إمبراطورية فيجاياناغارا', 'Bahmani Kingdom': 'السلطنة البهمنية', 'Grand Duchy of Moscow': 'دوقية موسكو الكبرى', 'Castille': 'قشتالة',
@@ -86,6 +87,22 @@ for k, v in {'bc400': {'Xiongnu'}, 'bc200': {'Kingdom of Syphax'}, '400': {'Sata
              '900': {'Avars'}, '1650': {'Vijayanagara', 'Songhai'}, '1700': {'Vijayanagara', 'Songhai'}, '1800': {'Songhai'}, '1914': {'Georgia', 'Armenia'}}.items():
     SKIP[k] = set(SKIP.get(k, set())) | v
 YCIV = {'300': {'Parthian Empire': 'sasanian'}, '1800': {'Persia': None}, '1880': {'Persia': None}, '1914': {'Persia': None}}
+# لقطة 1932 من ملف 1930: تصحيح الأسماء، وتوحيد أجزاء المملكة (الحجاز وحائل ونجد والجوف) كما كانت سنة 1932
+YTR['1930'] = {
+    'Hejaz': 'المملكة العربية السعودية', 'Hail': 'المملكة العربية السعودية', "Emirate of Bin Shal'an": 'المملكة العربية السعودية',
+    'Egypt': 'مملكة مصر', 'Iran': 'إيران (البهلوية)', 'Republic of Turkey': 'الجمهورية التركية',
+    'Mesopotamia (GB)': 'العراق وشرق الأردن (انتداب بريطاني)', 'Syria (France)': 'سوريا ولبنان (انتداب فرنسي)', 'Mandatory Palestine (GB)': 'فلسطين (انتداب بريطاني)',
+    'Yemen': 'المملكة المتوكلية اليمنية', 'Muscat and Oman': 'سلطنة مسقط وعمان', 'Trucial Oman': 'الإمارات المتصالحة', 'Qatar': 'قطر',
+    'Sudan': 'السودان الإنجليزي المصري', 'Libya (IT)': 'ليبيا (إيطالية)', 'Eritrea': 'إريتريا (إيطالية)', 'Morocco': 'المغرب (حماية فرنسية)',
+    'White Russia': 'الاتحاد السوفيتي', 'Armenia': 'أرمينيا السوفيتية', 'Georgia': 'جورجيا السوفيتية', 'Azerbaijan': 'أذربيجان السوفيتية',
+    'Yugoslavia': 'يوغوسلافيا', 'Poland': 'بولندا', 'Austria': 'النمسا', 'Czechoslovakia': 'تشيكوسلوفاكيا', 'Albania': 'ألبانيا',
+    'United Kingdom of Great Britain and Ireland': 'المملكة المتحدة', 'Chinese Warlords': 'الصين (الجمهورية)', 'Tibet': 'التبت',
+    'Empire of Japan': 'اليابان', 'Rattanakosin Kingdom': 'سيام', 'French Indo-China': 'الهند الصينية الفرنسية',
+}
+SKIP['1930'] = set(SKIP.get('1930', set())) | {'Ghana', 'Xinjiang', 'Manchuria', 'Far Eastern SSR'}  # غانا القديمة في غير زمنها، ومناطق بلا دولة واضحة
+YCIV['1930'] = {'Hejaz': 'saudi-kingdom', 'Hail': 'saudi-kingdom', "Emirate of Bin Shal'an": 'saudi-kingdom', 'Egypt': None, 'Iran': None}
+UNNAMED_1930_SAUDI = (36, 27, 44, 33)  # المنطقة الشمالية بلا اسم في الملف (الجوف ووادي السرحان)، وكانت تحت حكم الملك عبدالعزيز منذ 1922–1925
+RDP_EPS = float(os.environ.get('RDP_EPS', 0.05))  # دقة تبسيط الحدود بالدرجات
 PAL = ['#8c7a5b', '#6f8f8a', '#9a6f6f', '#7d7aa3', '#a08c5a', '#6c8f6a', '#9c7aa0', '#5f8aa3', '#a3866f', '#7a9a5f']
 
 
@@ -156,9 +173,14 @@ for frame, (fname, dyear) in FRAMES.items():
     for ft in d['features']:
         g = ft['geometry']
         n = (ft['properties'] or {}).get('NAME')
-        if not g or n not in TR or n in SKIP.get(fname, ()):
+        if fname == '1930' and n is None and g:
+            from shapely.geometry import shape as _sh
+            _c = _sh(g).representative_point(); W_, S_, E_, N_ = UNNAMED_1930_SAUDI
+            if W_ < _c.x < E_ and S_ < _c.y < N_:
+                n = 'Hail'
+        if not g or (n not in TR and n not in YTR.get(fname, {})) or n in SKIP.get(fname, ()):  # أسماء ـYTR خاصة بسنتها
             continue
-        ar_name = YTR.get(fname, {}).get(n, TR[n])
+        ar_name = YTR.get(fname, {}).get(n, TR.get(n))
         polys = g['coordinates'] if g['type'] == 'MultiPolygon' else [g['coordinates']]
         for poly in polys:
             outer = poly[0]
@@ -166,7 +188,7 @@ for frame, (fname, dyear) in FRAMES.items():
                 continue
             rings = []
             for k, r in enumerate(poly):
-                s = [[round(x, 2), round(y, 2)] for x, y in rdp([tuple(p[:2]) for p in r], 0.12)]
+                s = [[round(x, 2), round(y, 2)] for x, y in rdp([tuple(p[:2]) for p in r], RDP_EPS)]
                 if len(s) >= 4 and ring_area(s) > 0.15:
                     rings.append(s)
                 elif k == 0:

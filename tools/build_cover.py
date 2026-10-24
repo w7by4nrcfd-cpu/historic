@@ -73,7 +73,7 @@ mask = land.buffer(-IN).simplify(IN * 0.6, preserve_topology=True).buffer(0)
 feats, taken = [], None
 for k in reversed(ORDER):  # الأعلى أولًا (الجليد ثم الصحراء...)، وكل فئة يُطرح منها ما أخذته التي قبلها فلا تتداخل
     # تبسيط ثم تمدد يسير، فتتلاقى الفئات المتجاورة بلا شقوق بينها، ثم القص على القناع الساحلي
-    g = raw[k].simplify(EPS, preserve_topology=True).buffer(EPS * 0.6, join_style=2).intersection(mask)
+    g = raw[k].simplify(EPS, preserve_topology=True).buffer(-EPS * 0.4, join_style=1, quad_segs=2).buffer(EPS, join_style=1, quad_segs=2).intersection(mask).simplify(0.03, preserve_topology=True)  # تدوير الزوايا
     if taken is not None:
         g = g.difference(taken)
     g = g.buffer(0)
@@ -81,7 +81,7 @@ for k in reversed(ORDER):  # الأعلى أولًا (الجليد ثم الصح
     parts = [p for p in getattr(g, 'geoms', [g]) if p.geom_type == 'Polygon' and p.area >= MIN_AREA]
     if not parts:
         continue
-    m = mapping(unary_union(parts).simplify(0.01, preserve_topology=True))
+    m = mapping(unary_union(parts))  # بلا تبسيط بعد الطرح، فلا تتداخل الفئات
     feats.append({'type': 'Feature', 'properties': {'c': k}, 'geometry': {'type': m['type'], 'coordinates': rnd(m['coordinates'])}})
 feats.sort(key=lambda f: ORDER.index(f['properties']['c']))
 j = json.dumps({'type': 'FeatureCollection', 'features': feats}, separators=(',', ':'), ensure_ascii=False)
