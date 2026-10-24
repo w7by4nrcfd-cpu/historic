@@ -48,5 +48,12 @@ with sync_playwright() as p:
         ok(f'{name}: static method address opens the full page', pg.inner_text('h1') == 'منهجنا' and pg.locator('main details').count() == 1)
         ok(f'{name}: no page errors', not errs, str(errs))
         pg.close()
+    pg = br.new_page(viewport={'width': 390, 'height': 844}); reqs = []
+    pg.on('request', lambda r: reqs.append(r.url))
+    pg.goto(B + '#/'); pg.wait_for_selector('.hero', timeout=15000); pg.wait_for_timeout(6500)
+    ok('home page warms the map library in the background', any(u.endswith('assets/maplibre-gl.js') for u in reqs) and any(u.endswith('assets/land.geojson') for u in reqs))
+    reqs.clear(); pg.goto(B + '#/encyclopedia'); pg.wait_for_timeout(500)
+    ok('non-home pages do not warm the map', not any(u.endswith('assets/maplibre-gl.js') for u in reqs))
+    pg.close()
     br.close()
 print(f'TOTAL {sum(R)} / {len(R)}'); raise SystemExit(0 if all(R) else 1)
