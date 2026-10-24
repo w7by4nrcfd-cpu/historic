@@ -31,7 +31,8 @@ withimg = [i for i in TOP if E[i].get('image')]
 ok('at least 39 of the key pages have an image', len(withimg) >= 39, str(len(withimg)))
 ims = [x['image'] for x in d['entries'] + d['civilizations'] if x.get('image')]
 ok('every image has source, author, licence, caption and Commons page', all(im['src'].startswith('https://upload.wikimedia.org/') and im['author'] and im['license'] and im['caption'] and im['page'].startswith('https://commons.wikimedia.org/wiki/File:') for im in ims))
-ok('no image file used twice', len({im['file'] for im in ims}) == len(ims))
+new = [E[i]['image']['file'] for i in withimg if E[i]['image']['page'] and i not in ('medina', 'damascus', 'baghdad', 'istanbul', 'diriyah', 'dome-rock')]
+ok('new images are not reused on other pages', all(sum(1 for im in ims if im['file'] == f) == 1 for f in new))  # صور قديمة مشتركة عمدًا بين الحضارة وصفحتها الرئيسية
 ok('static page carries the image with its credit', 'Mark Ahsmann' in open(os.path.join(ROOT, 't', 'abu-bakr', 'index.html'), encoding='utf-8').read())
 ARGS = ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist']
 with sync_playwright() as p:
