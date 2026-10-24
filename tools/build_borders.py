@@ -193,6 +193,8 @@ for frame, (fname, dyear) in FRAMES.items():
     path = os.path.join(OUT, f'{frame}.json')
     json.dump(out, open(path, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print(frame, fname, len(feats), os.path.getsize(path) // 1024, 'KB', [l['n'] for l in labels][:12])
+from clean_borders import clean_all  # إزالة التداخل والقص على اليابسة (tools/clean_borders.py)
+clean_all(OUT)
 index = {}
 for frame in sorted(FRAMES):
     dd = json.load(open(os.path.join(OUT, f'{frame}.json'), encoding='utf-8'))
