@@ -25,7 +25,7 @@ with sync_playwright() as p:
     ok('1750 BC markers', pg.locator('.map-point').count() >= 3, str(pg.locator('.map-point').count()))
     pg.click(fsel(-400)); pg.wait_for_timeout(1500)
     ok('400 BC shows Carthage', 'قرطاج' in pg.inner_text('#map-topic-list'))
-    pg.goto(B + '#/topic/mesopotamia'); pg.wait_for_timeout(800)
+    pg.goto(B + '#/topic/mesopotamia'); pg.wait_for_function("()=>document.querySelector('main').innerText.includes('ولادة الكتابة')", timeout=15000)
     m = pg.inner_text('main')
     ok('mesopotamia article', 'حمورابي' in m and 'ولادة الكتابة' in m and 'بلاد الرافدين' in m)
     ok('mesopotamia map link uses year', pg.locator('a[href*="topic=mesopotamia&year=-1750"]').count() >= 1)
