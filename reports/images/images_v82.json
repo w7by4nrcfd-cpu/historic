@@ -1,0 +1,314 @@
+{
+ "mecca": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/The_Kabah_in_the_Grand_Mosque_of_Makkah%2C_Saudi_Arabia_%2852501405646%29.jpg/1280px-The_Kabah_in_the_Grand_Mosque_of_Makkah%2C_Saudi_Arabia_%2852501405646%29.jpg",
+  "file": "The Kabah in the Grand Mosque of Makkah, Saudi Arabia (52501405646).jpg",
+  "author": "Richard Mortel",
+  "license": "CC BY 2.0",
+  "caption": "الكعبة المشرفة في المسجد الحرام بمكة المكرمة",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Kabah_in_the_Grand_Mosque_of_Makkah%2C_Saudi_Arabia_%2852501405646%29.jpg"
+ },
+ "jerusalem": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jerusalem-A-Quds-2013%282%29-Aerial-Al-Aqsa_Mosque_Compound-%28south_exposure%29.jpg/1280px-Jerusalem-A-Quds-2013%282%29-Aerial-Al-Aqsa_Mosque_Compound-%28south_exposure%29.jpg",
+  "file": "Jerusalem-A-Quds-2013(2)-Aerial-Al-Aqsa Mosque Compound-(south exposure).jpg",
+  "author": "Andrew Shiva (Godot13)",
+  "license": "CC BY-SA 4.0",
+  "caption": "المسجد الأقصى وقبة الصخرة في الحرم القدسي من الجو",
+  "page": "https://commons.wikimedia.org/wiki/File:Jerusalem-A-Quds-2013%282%29-Aerial-Al-Aqsa_Mosque_Compound-%28south_exposure%29.jpg"
+ },
+ "cairo": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Al-Azhar_%28inside%29_2006.jpg/1280px-Al-Azhar_%28inside%29_2006.jpg",
+  "file": "Al-Azhar (inside) 2006.jpg",
+  "author": "Tentoila",
+  "license": "ملكية عامة",
+  "caption": "صحن الجامع الأزهر في القاهرة",
+  "page": "https://commons.wikimedia.org/wiki/File:Al-Azhar_%28inside%29_2006.jpg"
+ },
+ "cordoba": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Colonnes_de_la_Mezquita_%288281472877%29.jpg/1280px-Colonnes_de_la_Mezquita_%288281472877%29.jpg",
+  "file": "Colonnes de la Mezquita (8281472877).jpg",
+  "author": "Nicolas Vollmer",
+  "license": "CC BY 2.0",
+  "caption": "غابة الأعمدة والأقواس في جامع قرطبة",
+  "page": "https://commons.wikimedia.org/wiki/File:Colonnes_de_la_Mezquita_%288281472877%29.jpg"
+ },
+ "granada": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg/1280px-Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg",
+  "file": "Alhambra evening panorama Mirador San Nicolas sRGB-1.jpg",
+  "author": "Slaunger",
+  "license": "CC BY-SA 3.0",
+  "caption": "قصر الحمراء في غرناطة مساءً، من حي البيازين",
+  "page": "https://commons.wikimedia.org/wiki/File:Alhambra_evening_panorama_Mirador_San_Nicolas_sRGB-1.jpg"
+ },
+ "riyadh": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Murabba_Palace.jpg/1280px-Murabba_Palace.jpg",
+  "file": "Murabba Palace.jpg",
+  "author": "saudipics",
+  "license": "CC BY-SA 4.0",
+  "caption": "قصر المربع في الرياض",
+  "page": "https://commons.wikimedia.org/wiki/File:Murabba_Palace.jpg"
+ },
+ "prophet-muhammad": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Medina_Altes_Minaret_der_heiligen_Moschee%2C_erbaut_1483%3B_die_gr%C3%BCne_Kuppel_%C3%BCber_dem_Grabe_des_Propheten_erbaut_1840._1910._LCCN2002715728.jpg",
+  "file": "Medina Altes Minaret der heiligen Moschee, erbaut 1483; die grüne Kuppel über dem Grabe des Propheten erbaut 1840. 1910. LCCN2002715728.jpg",
+  "author": "Bernhard Moritz",
+  "license": "ملكية عامة",
+  "caption": "المسجد النبوي والقبة الخضراء في المدينة المنورة، صورة من سنة 1910",
+  "page": "https://commons.wikimedia.org/wiki/File:Medina_Altes_Minaret_der_heiligen_Moschee%2C_erbaut_1483%3B_die_gr%C3%BCne_Kuppel_%C3%BCber_dem_Grabe_des_Propheten_erbaut_1840._1910._LCCN2002715728.jpg"
+ },
+ "abu-bakr": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/20131203_Istanbul_091.jpg/1280px-20131203_Istanbul_091.jpg",
+  "file": "20131203 Istanbul 091.jpg",
+  "author": "Mark Ahsmann",
+  "license": "CC BY-SA 3.0",
+  "caption": "لوحة باسم أبي بكر الصديق بالخط العربي في آيا صوفيا بإسطنبول",
+  "page": "https://commons.wikimedia.org/wiki/File:20131203_Istanbul_091.jpg"
+ },
+ "umar": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/20131203_Istanbul_118.jpg/1280px-20131203_Istanbul_118.jpg",
+  "file": "20131203 Istanbul 118.jpg",
+  "author": "Mark Ahsmann",
+  "license": "CC BY-SA 3.0",
+  "caption": "لوحة باسم عمر الفاروق بالخط العربي في آيا صوفيا بإسطنبول",
+  "page": "https://commons.wikimedia.org/wiki/File:20131203_Istanbul_118.jpg"
+ },
+ "uthman": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Ayasofya_13_%28cropped%29.JPG",
+  "file": "Ayasofya 13 (cropped).JPG",
+  "author": "Vikiçizer",
+  "license": "CC BY-SA 4.0",
+  "caption": "لوحة باسم عثمان بن عفان بالخط العربي في آيا صوفيا بإسطنبول",
+  "page": "https://commons.wikimedia.org/wiki/File:Ayasofya_13_%28cropped%29.JPG"
+ },
+ "ali": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Istanbul_-_Santa_Sofia_-_Medall%C3%B3_%28cropped%29.JPG/1280px-Istanbul_-_Santa_Sofia_-_Medall%C3%B3_%28cropped%29.JPG",
+  "file": "Istanbul - Santa Sofia - Medalló (cropped).JPG",
+  "author": "Josep Renalias",
+  "license": "CC BY-SA 3.0",
+  "caption": "لوحة باسم علي بن أبي طالب بالخط العربي في آيا صوفيا بإسطنبول",
+  "page": "https://commons.wikimedia.org/wiki/File:Istanbul_-_Santa_Sofia_-_Medall%C3%B3_%28cropped%29.JPG"
+ },
+ "khalid-ibn-walid": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Khalid_ibn_al-Walid_Mosque.jpg/1280px-Khalid_ibn_al-Walid_Mosque.jpg",
+  "file": "Khalid ibn al-Walid Mosque.jpg",
+  "author": "Abdulhadi Najjar",
+  "license": "CC BY-SA 3.0",
+  "caption": "جامع خالد بن الوليد في حمص",
+  "page": "https://commons.wikimedia.org/wiki/File:Khalid_ibn_al-Walid_Mosque.jpg"
+ },
+ "muawiya": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Arab-Sasanian_coin_of_Muawiyah_I%2C_struck_at_the_Fasa_mint_in_Darabjird_%28Fars%29.jpg",
+  "file": "Arab-Sasanian coin of Muawiyah I, struck at the Fasa mint in Darabjird (Fars).jpg",
+  "author": "Classical Numismatic Group",
+  "license": "ملكية عامة",
+  "caption": "درهم عربي ساساني ضُرب باسم معاوية في دارابجرد سنة 54–55 هـ",
+  "page": "https://commons.wikimedia.org/wiki/File:Arab-Sasanian_coin_of_Muawiyah_I%2C_struck_at_the_Fasa_mint_in_Darabjird_%28Fars%29.jpg"
+ },
+ "abd-al-malik": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Gold_dinar_of_Abd_al-Malik_697-98.png/1280px-Gold_dinar_of_Abd_al-Malik_697-98.png",
+  "file": "Gold dinar of Abd al-Malik 697-98.png",
+  "author": "غير معروف",
+  "license": "ملكية عامة",
+  "caption": "دينار ذهبي من دنانير عبدالملك بن مروان الإسلامية، ضُرب في دمشق",
+  "page": "https://commons.wikimedia.org/wiki/File:Gold_dinar_of_Abd_al-Malik_697-98.png"
+ },
+ "harun-al-rashid": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Gold_dinar_of_Harun_al-Rashid%2C_AH_170-193.jpg",
+  "file": "Gold dinar of Harun al-Rashid, AH 170-193.jpg",
+  "author": "Classical Numismatic Group",
+  "license": "CC BY-SA 2.5",
+  "caption": "دينار ذهبي عباسي ضُرب سنة 184 هـ في عهد هارون الرشيد",
+  "page": "https://commons.wikimedia.org/wiki/File:Gold_dinar_of_Harun_al-Rashid%2C_AH_170-193.jpg"
+ },
+ "al-mamun": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/3/30/Dirhem_of_al-Ma%27mun%2C_AH_199-218.jpg",
+  "file": "Dirhem of al-Ma'mun, AH 199-218.jpg",
+  "author": "Classical Numismatic Group",
+  "license": "CC BY-SA 2.5",
+  "caption": "درهم عباسي ضُرب في أصبهان سنة 205 هـ في عهد المأمون",
+  "page": "https://commons.wikimedia.org/wiki/File:Dirhem_of_al-Ma%27mun%2C_AH_199-218.jpg"
+ },
+ "saladin": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Damascus-SaladinTomb.jpg/1280px-Damascus-SaladinTomb.jpg",
+  "file": "Damascus-SaladinTomb.jpg",
+  "author": "Heretiq",
+  "license": "CC BY-SA 3.0",
+  "caption": "ضريح صلاح الدين بجوار الجامع الأموي في دمشق",
+  "page": "https://commons.wikimedia.org/wiki/File:Damascus-SaladinTomb.jpg"
+ },
+ "baybars": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Dinar_LACMA_M.2006.143.10_%281_of_2%29.jpg/1280px-Dinar_LACMA_M.2006.143.10_%281_of_2%29.jpg",
+  "file": "Dinar LACMA M.2006.143.10 (1 of 2).jpg",
+  "author": "Los Angeles County Museum of Art",
+  "license": "ملكية عامة",
+  "caption": "دينار ذهبي ضُرب في مصر سنة 662 هـ في عهد الظاهر بيبرس، وعليه رسم أسد",
+  "page": "https://commons.wikimedia.org/wiki/File:Dinar_LACMA_M.2006.143.10_%281_of_2%29.jpg"
+ },
+ "mehmed-ii": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bellini%2C_Gentile_-_Sultan_Mehmet_II.jpg/1280px-Bellini%2C_Gentile_-_Sultan_Mehmet_II.jpg",
+  "file": "Bellini, Gentile - Sultan Mehmet II.jpg",
+  "author": "Gentile Bellini",
+  "license": "ملكية عامة",
+  "caption": "صورة السلطان محمد الفاتح بريشة الرسام الإيطالي جنتيلي بليني سنة 1480",
+  "page": "https://commons.wikimedia.org/wiki/File:Bellini%2C_Gentile_-_Sultan_Mehmet_II.jpg"
+ },
+ "suleiman": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Tughra_Suleiman.jpg/1280px-Tughra_Suleiman.jpg",
+  "file": "Tughra Suleiman.jpg",
+  "author": "Thadswanek",
+  "license": "CC0",
+  "caption": "طغراء السلطان سليمان القانوني",
+  "page": "https://commons.wikimedia.org/wiki/File:Tughra_Suleiman.jpg"
+ },
+ "king-abdulaziz": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/7/75/Official_Portrait_of_King_Abdulaziz.jpg",
+  "file": "Official Portrait of King Abdulaziz.jpg",
+  "author": "وكالة الأنباء السعودية",
+  "license": "ملكية عامة",
+  "caption": "الصورة الرسمية للملك عبدالعزيز آل سعود",
+  "page": "https://commons.wikimedia.org/wiki/File:Official_Portrait_of_King_Abdulaziz.jpg"
+ },
+ "muhammad-saud": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/%D9%82%D8%B5%D8%B1_%D8%B3%D9%84%D9%88%D9%89.jpg/1280px-%D9%82%D8%B5%D8%B1_%D8%B3%D9%84%D9%88%D9%89.jpg",
+  "file": "قصر سلوى.jpg",
+  "author": "هيئة التراث",
+  "license": "CC BY-SA 4.0",
+  "caption": "قصر سلوى في حي الطريف بالدرعية",
+  "page": "https://commons.wikimedia.org/wiki/File:%D9%82%D8%B5%D8%B1_%D8%B3%D9%84%D9%88%D9%89.jpg"
+ },
+ "ibn-sina": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/The_Canon_of_Medicine.jpg/1280px-The_Canon_of_Medicine.jpg",
+  "file": "The Canon of Medicine.jpg",
+  "author": "Coffeetalkh",
+  "license": "CC BY-SA 3.0",
+  "caption": "مخطوطة فارسية من «القانون في الطب» في متحف ابن سينا بهمذان",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Canon_of_Medicine.jpg"
+ },
+ "ibn-khaldun": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Handwriting_of_Ibn_Khald%C5%ABn%2C_al-Muqaddima%2C_MS_At%C4%B1f_Efendi_1936%2C_f._7a.png/1280px-Handwriting_of_Ibn_Khald%C5%ABn%2C_al-Muqaddima%2C_MS_At%C4%B1f_Efendi_1936%2C_f._7a.png",
+  "file": "Handwriting of Ibn Khaldūn, al-Muqaddima, MS Atıf Efendi 1936, f. 7a.png",
+  "author": "بخط ابن خلدون",
+  "license": "ملكية عامة",
+  "caption": "صفحة من مسودة «المقدمة» بخط ابن خلدون",
+  "page": "https://commons.wikimedia.org/wiki/File:Handwriting_of_Ibn_Khald%C5%ABn%2C_al-Muqaddima%2C_MS_At%C4%B1f_Efendi_1936%2C_f._7a.png"
+ },
+ "ibn-battuta": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Extended_name_of_Ibn_Battuta_in_MS_Arabe_2291_%D8%AA%D8%AD%D9%81%D8%A9_%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D8%B1_%D9%81%D9%8A_%D8%BA%D8%B1%D8%A7%D8%A6%D8%A8_%D8%A7%D9%84%D8%A3%D9%85%D8%B5%D8%A7%D8%B1_%D9%88%D8%B9%D8%AC%D8%A7%D8%A6%D8%A8_%D8%A7%D9%84%D8%A3%D8%B3%D9%81%D8%A7%D8%B1_%28cropped%29.jpg/1280px-Extended_name_of_Ibn_Battuta_in_MS_Arabe_2291_%D8%AA%D8%AD%D9%81%D8%A9_%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D8%B1_%D9%81%D9%8A_%D8%BA%D8%B1%D8%A7%D8%A6%D8%A8_%D8%A7%D9%84%D8%A3%D9%85%D8%B5%D8%A7%D8%B1_%D9%88%D8%B9%D8%AC%D8%A7%D8%A6%D8%A8_%D8%A7%D9%84%D8%A3%D8%B3%D9%81%D8%A7%D8%B1_%28cropped%29.jpg",
+  "file": "Extended name of Ibn Battuta in MS Arabe 2291 تحفة النظار في غرائب الأمصار وعجائب الأسفار (cropped).jpg",
+  "author": "مخطوطة باريس (Arabe 2291)",
+  "license": "ملكية عامة",
+  "caption": "الصفحة الأولى من مخطوطة رحلة ابن بطوطة في المكتبة الوطنية الفرنسية",
+  "page": "https://commons.wikimedia.org/wiki/File:Extended_name_of_Ibn_Battuta_in_MS_Arabe_2291_%D8%AA%D8%AD%D9%81%D8%A9_%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D8%B1_%D9%81%D9%8A_%D8%BA%D8%B1%D8%A7%D8%A6%D8%A8_%D8%A7%D9%84%D8%A3%D9%85%D8%B5%D8%A7%D8%B1_%D9%88%D8%B9%D8%AC%D8%A7%D8%A6%D8%A8_%D8%A7%D9%84%D8%A3%D8%B3%D9%81%D8%A7%D8%B1_%28cropped%29.jpg"
+ },
+ "ibn-rushd": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/6/66/Averroes_closeup.jpg",
+  "file": "Averroes closeup.jpg",
+  "author": "Andrea di Bonaiuto",
+  "license": "ملكية عامة",
+  "caption": "ابن رشد كما تخيّله الرسام أندريا دي بونايوتو في القرن الرابع عشر",
+  "page": "https://commons.wikimedia.org/wiki/File:Averroes_closeup.jpg"
+ },
+ "translation-movement": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Materia_Medica_%28Arabic_translation%2C_leaf%29.jpg/1280px-Materia_Medica_%28Arabic_translation%2C_leaf%29.jpg",
+  "file": "Materia Medica (Arabic translation, leaf).jpg",
+  "author": "مدرسة بغداد في التصوير",
+  "license": "ملكية عامة",
+  "caption": "ورقة من الترجمة العربية لكتاب ديسقوريدس في الأدوية",
+  "page": "https://commons.wikimedia.org/wiki/File:Materia_Medica_%28Arabic_translation%2C_leaf%29.jpg"
+ },
+ "umayyad-mosque": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Damascus_Barada_Panel_of_Umayyad_Mosque_8131.jpg/1280px-Damascus_Barada_Panel_of_Umayyad_Mosque_8131.jpg",
+  "file": "Damascus Barada Panel of Umayyad Mosque 8131.jpg",
+  "author": "Dosseman",
+  "license": "CC BY-SA 4.0",
+  "caption": "لوحة بردى الفسيفسائية في الرواق الغربي للجامع الأموي",
+  "page": "https://commons.wikimedia.org/wiki/File:Damascus_Barada_Panel_of_Umayyad_Mosque_8131.jpg"
+ },
+ "hijra-622": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Mezquita_de_Quba%2C_Medina%2C_Arabia_Saudita%2C_2025-05-22%2C_DD_13-15_HDR.jpg/1280px-Mezquita_de_Quba%2C_Medina%2C_Arabia_Saudita%2C_2025-05-22%2C_DD_13-15_HDR.jpg",
+  "file": "Mezquita de Quba, Medina, Arabia Saudita, 2025-05-22, DD 13-15 HDR.jpg",
+  "author": "Diego Delso",
+  "license": "CC BY-SA 4.0",
+  "caption": "مسجد قباء في المدينة المنورة، أول مسجد في الإسلام",
+  "page": "https://commons.wikimedia.org/wiki/File:Mezquita_de_Quba%2C_Medina%2C_Arabia_Saudita%2C_2025-05-22%2C_DD_13-15_HDR.jpg"
+ },
+ "badr-624": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/14_martyrs_of_Badr_Al_Kabir_The_Battle_of_Badr.jpg/1280px-14_martyrs_of_Badr_Al_Kabir_The_Battle_of_Badr.jpg",
+  "file": "14 martyrs of Badr Al Kabir The Battle of Badr.jpg",
+  "author": "Pukhtunyar Afghan",
+  "license": "CC BY-SA 4.0",
+  "caption": "لوحة بأسماء شهداء بدر الأربعة عشر في موقع المعركة",
+  "page": "https://commons.wikimedia.org/wiki/File:14_martyrs_of_Badr_Al_Kabir_The_Battle_of_Badr.jpg"
+ },
+ "yarmuk": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Battlefield_of_yarmouk-mohammad_adil.jpg",
+  "file": "Battlefield of yarmouk-mohammad adil.jpg",
+  "author": "Mohammad adil",
+  "license": "CC BY-SA 3.0",
+  "caption": "وادي اليرموك وأرض المعركة، من الجانب الأردني",
+  "page": "https://commons.wikimedia.org/wiki/File:Battlefield_of_yarmouk-mohammad_adil.jpg"
+ },
+ "hattin": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hittin.jpg/1280px-Hittin.jpg",
+  "file": "Hittin.jpg",
+  "author": "Almog",
+  "license": "ملكية عامة",
+  "caption": "قرنا حطين غرب بحيرة طبريا",
+  "page": "https://commons.wikimedia.org/wiki/File:Hittin.jpg"
+ },
+ "constantinople-1453": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Walls_of_Constantinople.JPG/1280px-Walls_of_Constantinople.JPG",
+  "file": "Walls of Constantinople.JPG",
+  "author": "Bigdaddy1204",
+  "license": "CC BY-SA 3.0",
+  "caption": "جزء مرمم من أسوار القسطنطينية البرية",
+  "page": "https://commons.wikimedia.org/wiki/File:Walls_of_Constantinople.JPG"
+ },
+ "baghdad-fall": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bagdad1258.jpg/1280px-Bagdad1258.jpg",
+  "file": "Bagdad1258.jpg",
+  "author": "مخطوطة جامع التواريخ",
+  "license": "ملكية عامة",
+  "caption": "حصار المغول لبغداد سنة 1258 في مخطوطة «جامع التواريخ»",
+  "page": "https://commons.wikimedia.org/wiki/File:Bagdad1258.jpg"
+ },
+ "granada-1492": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/La_Rendici%C3%B3n_de_Granada_-_Pradilla.jpg/1280px-La_Rendici%C3%B3n_de_Granada_-_Pradilla.jpg",
+  "file": "La Rendición de Granada - Pradilla.jpg",
+  "author": "Francisco Pradilla Ortiz",
+  "license": "ملكية عامة",
+  "caption": "«تسليم غرناطة» لوحة للرسام فرانثيسكو برادييا سنة 1882",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Rendici%C3%B3n_de_Granada_-_Pradilla.jpg"
+ },
+ "masmak-1902": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Masmak_Fort_%2812753717253%29.jpg/1280px-Masmak_Fort_%2812753717253%29.jpg",
+  "file": "Masmak Fort (12753717253).jpg",
+  "author": "Francisco Anzola",
+  "license": "CC BY 2.0",
+  "caption": "قصر المصمك في الرياض",
+  "page": "https://commons.wikimedia.org/wiki/File:Masmak_Fort_%2812753717253%29.jpg"
+ },
+ "saudi-found": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/At-Turaif_District_in_ad-Dir%27iyah_%282%29.jpg/1280px-At-Turaif_District_in_ad-Dir%27iyah_%282%29.jpg",
+  "file": "At-Turaif District in ad-Dir'iyah (2).jpg",
+  "author": "Radosław Botev",
+  "license": "CC BY 3.0 pl",
+  "caption": "حي الطريف في الدرعية، عاصمة الدولة السعودية الأولى",
+  "page": "https://commons.wikimedia.org/wiki/File:At-Turaif_District_in_ad-Dir%27iyah_%282%29.jpg"
+ },
+ "diriyah-pact-1744": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Diriyyah2.JPG/1280px-Diriyyah2.JPG",
+  "file": "Diriyyah2.JPG",
+  "author": "Xristoph",
+  "license": "CC BY-SA 3.0",
+  "caption": "أطلال الدرعية القديمة على وادي حنيفة",
+  "page": "https://commons.wikimedia.org/wiki/File:Diriyyah2.JPG"
+ },
+ "andalus-start": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rock_of_Gibraltar_northwest.jpg",
+  "file": "Rock of Gibraltar northwest.jpg",
+  "author": "Gibnews.net",
+  "license": "ملكية عامة",
+  "caption": "جبل طارق من جهة الغرب",
+  "page": "https://commons.wikimedia.org/wiki/File:Rock_of_Gibraltar_northwest.jpg"
+ }
+}

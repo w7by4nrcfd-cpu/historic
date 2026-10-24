@@ -26,6 +26,13 @@ ok('mini-map has land, lakes and rivers', len(m['l']) > 100 and len(m['k']) > 10
 sw = open(os.path.join(ROOT, 'sw.js'), encoding='utf-8').read()
 ok('service worker caches the mini-map and has a new cache version', 'minimap' in sw and "atlas-static-v1'" not in sw)
 
+# الصور: من كومنز، بمصوّر ورخصة وصفحة ملف، بلا تكرار
+withimg = [i for i in TOP if E[i].get('image')]
+ok('at least 39 of the key pages have an image', len(withimg) >= 39, str(len(withimg)))
+ims = [x['image'] for x in d['entries'] + d['civilizations'] if x.get('image')]
+ok('every image has source, author, licence, caption and Commons page', all(im['src'].startswith('https://upload.wikimedia.org/') and im['author'] and im['license'] and im['caption'] and im['page'].startswith('https://commons.wikimedia.org/wiki/File:') for im in ims))
+ok('no image file used twice', len({im['file'] for im in ims}) == len(ims))
+ok('static page carries the image with its credit', 'Mark Ahsmann' in open(os.path.join(ROOT, 't', 'abu-bakr', 'index.html'), encoding='utf-8').read())
 ARGS = ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist']
 with sync_playwright() as p:
     b = p.chromium.launch(args=ARGS)
