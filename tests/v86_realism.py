@@ -30,6 +30,15 @@ ok('Siberia is taiga', at(100, 60) == 'b', str(at(100, 60)))
 ok('cover classes do not overlap', all(C[a].intersection(C[b]).area < 0.05 for a in C for b in C if a < b))
 ok('cover file is not heavy (< 220 KB gzipped)', len(__import__('gzip').compress(open(os.path.join(ROOT, 'assets', 'cover.geojson'), 'rb').read())) < 220 * 1024)
 
+import math
+def tile(lon, lat, z):
+    r = math.radians(lat); return z, int((lon + 180) / 360 * 2 ** z), int((1 - math.log(math.tan(r) + 1 / math.cos(r)) / math.pi) / 2 * 2 ** z)
+def peak(lon, lat, z=5):
+    import numpy as np
+    zz, x, y = tile(lon, lat, z); a = np.asarray(Image.open(os.path.join(ROOT, 'assets', 'dem', str(zz), str(x), f'{y}.png')).convert('RGB')).astype(float)
+    return (a[..., 0] * 256 + a[..., 1] + a[..., 2] / 256 - 32768).max()
+ok('terrain covers the whole world: Andes, Rockies, Australia and the Himalaya have relief', peak(-70, -15) > 4000 and peak(-110, 40) > 2500 and peak(140, -30) > 300 and peak(87, 28) > 6000, str([round(peak(*q)) for q in [(-70, -15), (-110, 40), (140, -30), (87, 28)]]))
+ok('all 1365 terrain tiles (zoom 0-5) present', len(glob.glob(os.path.join(ROOT, 'assets', 'dem', '*', '*', '*.png'))) == 1365)
 land = unary_union([make_valid(shape(f['geometry'])) for f in json.load(open(os.path.join(ROOT, 'assets', 'land.geojson')))['features']])
 worst_ov = worst_sea = 0; frames = 0
 for p in glob.glob(os.path.join(ROOT, 'assets', 'borders', '*.json')):
