@@ -37,7 +37,7 @@ with sync_playwright() as p:
     ok('static page keeps its title and sections', 'صلاح الدين' in pg3.title() and pg3.locator('.article-text section').count() >= 3, pg3.title())
     # الضغط على مسار يعيد الحركة
     pg.evaluate("()=>{document.getElementById('ax-panel').hidden=false}"); pg.click('[data-route="silk-road"]'); pg.wait_for_timeout(1500)
-    pg.evaluate("window.__r=0"); pg.wait_for_timeout(1000)
+    pg.evaluate("window.__r=0"); pg.wait_for_timeout(2000)  # ثانيتان: الرسم البرمجي في بيئة الاختبار بطيء الإطارات
     ok('selected route still animates', pg.evaluate("window.__r") > 3, str(pg.evaluate("window.__r")))
     ok('no page errors', not errs, str(errs))
     b.close()
