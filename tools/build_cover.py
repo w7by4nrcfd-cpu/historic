@@ -4,7 +4,7 @@
   مدموجة حسب المنطقة الحيوية ومبسطة في مشروع biome-atlas (github.com/jplaney/biome-atlas).
 - ne_50m_glaciated_areas وne_50m_antarctic_ice_shelves_polys: Natural Earth (ملكية عامة).
 - والقارة القطبية الجنوبية (جنوب خط 60° جنوبًا) كلها جليد، فـRESOLVE لا يغطيها.
-الناتج dist/assets/cover.geojson: معلم لكل فئة، والخاصية c:
+الناتج tools/base_src/cover/cover_classes.geojson (ومنه تُرسم بلاطات الصور): معلم لكل فئة، والخاصية c:
   d صحراء وشبه صحراء، s سهوب وسافانا وأعشاب، m شجيرات البحر المتوسط، f غابات معتدلة وجافة،
   r غابات مطيرة، b غابات شمالية (تايغا)، t تندرا، i جليد.
 التشغيل: python3 tools/build_cover.py"""
@@ -18,7 +18,7 @@ from shapely.validation import make_valid
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, 'base_src', 'cover')
 LAND = os.path.join(HERE, '..', 'dist', 'assets', 'land.geojson')
-OUT = os.path.join(HERE, '..', 'dist', 'assets', 'cover.geojson')
+OUT = os.path.join(HERE, 'base_src', 'cover', 'cover_classes.geojson')  # مدخل tools/build_cover_tiles.py
 EPS, IN, MIN_AREA, ND = float(os.environ.get('EPS', .15)), float(os.environ.get('IN', .1)), float(os.environ.get('MIN', .3)), 2
 
 CLASS = {
