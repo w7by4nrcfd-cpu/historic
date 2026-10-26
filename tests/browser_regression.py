@@ -60,20 +60,20 @@ with sync_playwright() as p:
   pg.goto(B+'#/saved'); pg.wait_for_timeout(500); ok('saved page lists', pg.locator('.result-card').count()==1)
   # journeys
   from re import escape
-  JA={'caliphates':[1,2,0],'rome':[1,1,2],'arabia':[1,0,1],'constantinople':[2,0,1]}
+  JA={'caliphates':[1,2,0],'rome':[1,1,2],'saudi':[1, 0, 2, 1, 0, 0, 1],'constantinople':[2,0,1]}
   for jid,ans in JA.items():
     pg.goto(B+f'#/journey/{jid}'); pg.wait_for_timeout(500)
     for step,a in enumerate(ans):
       wrong=(a+1)%3
       pg.click(f'[data-journey-answer="{wrong}"]'); pg.wait_for_timeout(150)
-      if step<2: ok(f'{jid} s{step} wrong blocks', pg.locator('[data-next]').is_disabled())
+      if step<len(ans)-1: ok(f'{jid} s{step} wrong blocks', pg.locator('[data-next]').is_disabled())
       pg.click(f'[data-journey-answer="{a}"]'); pg.wait_for_timeout(150)
-      if step<2:
+      if step<len(ans)-1:
         ok(f'{jid} s{step} correct unlocks', not pg.locator('[data-next]').is_disabled())
         pg.click('[data-next]'); pg.wait_for_timeout(200)
     pg.reload(); pg.wait_for_timeout(700)
     st=pg.evaluate("()=>JSON.parse(localStorage.getItem('atlas-v1')).journeys")
-    ok(f'{jid} done after reload', sorted(st[jid]['done'])==[0,1,2], json.dumps(st[jid]))
+    ok(f'{jid} done after reload', sorted(st[jid]['done'])==list(range(len(ans))), json.dumps(st[jid]))
   # city
   pg.goto(B+'#/city'); pg.wait_for_timeout(500)
   for i,a in enumerate([0,1,1,2]):
