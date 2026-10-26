@@ -87,6 +87,7 @@ with sync_playwright() as p:
         im = Image.open(io.BytesIO(pg.locator('#map').screenshot())).convert('RGB')
         px = [im.getpixel((int(x), int(y))) for x, y in q]
         ok(f'{theme}: sea has the same tone inside and outside the terrain area', max(abs(a - b) for a, b in zip(px[0], px[1])) <= 3 and max(abs(a - b) for a, b in zip(px[2], px[3])) <= 3, str(px))
+        ok(f'{theme}: no credits button on the map; sources link in the layers panel', pg.locator('.maplibregl-ctrl-attrib').count() == 0 and pg.locator('a.ax-credits[href="#/method"]').count() == 1)
         ok(f'{theme}: no page errors', not errs, str(errs[:2]))
         ctx.close()
     br.close()
