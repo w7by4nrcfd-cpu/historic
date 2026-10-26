@@ -1,4 +1,4 @@
-"""اختبارات V9.1: الرحلات التعليمية (12 رحلة، أغلبها 7 محطات).
+"""اختبارات V9.1: الرحلات التعليمية (13 رحلة، أغلبها 7 محطات).
 التشغيل: python3 -m http.server 8080 --directory dist ثم python3 tests/v91_journeys.py"""
 import json, os, subprocess
 from playwright.sync_api import sync_playwright
@@ -11,8 +11,8 @@ def ok(n, c, x=''):
 J = json.loads(subprocess.run(['node', '-e', f"import('{ROOT}/journeys.mjs').then(m=>console.log(JSON.stringify(m.JOURNEYS)))"], capture_output=True, text=True).stdout)
 d = json.load(open(os.path.join(ROOT, 'content.json'), encoding='utf-8'))
 by = {x['id']: x for x in d['civilizations'] + d['entries']}
-ok('12 journeys', len(J) == 12, str(len(J)))
-ok('9 journeys have 7 stops', sum(len(j['steps']) == 7 for j in J) == 9)
+ok('13 journeys', len(J) == 13, str(len(J)))
+ok('10 journeys have 7 stops', sum(len(j['steps']) == 7 for j in J) == 10)
 ok('every stop links to a real page and civilization', all((s.get('topic') or s['civ']) in by and s['civ'] in by for j in J for s in j['steps']))
 ok('every stop has a question with 3 options and a valid answer', all(len(s['options']) == 3 and 0 <= s['answer'] < 3 and s['explanation'] for j in J for s in j['steps']))
 ok('correct answers are spread over the three positions', min([a for j in J for a in [s['answer'] for s in j['steps']]].count(k) for k in range(3)) >= 15)
@@ -25,7 +25,7 @@ with sync_playwright() as p:
         ctx = br.new_context(viewport=vp); pg = ctx.new_page(); errs = []
         pg.on('pageerror', lambda e: errs.append(str(e)))
         pg.goto(B + '#/journeys'); pg.wait_for_selector('.journey-card', timeout=15000)
-        ok(f'{name}: journeys page lists all 12', pg.locator('.journey-card').count() == 12)
+        ok(f'{name}: journeys page lists all 13', pg.locator('a.journey-card[href^="#/journey/"]').count() == 13)
         ok(f'{name}: cards show their stop count', '7 محطات' in pg.inner_text('main') and '3 محطات' in pg.inner_text('main'))
         pg.goto(B + '#/'); pg.wait_for_selector('.hero', timeout=15000); pg.wait_for_timeout(500)
         ok(f'{name}: home shows the 4 featured journeys only', pg.locator('a.journey-card[href^="#/journey/"]').count() == 4 and 'قصة الدولة السعودية' in pg.inner_text('main'))
