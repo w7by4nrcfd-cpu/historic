@@ -51,7 +51,9 @@ def page(x):
         desc = cut[:i + 1] if i > 90 else cut[:cut.rfind(' ')] + '…'
         if desc.endswith('،'):
             desc = desc[:-1] + '…'
-    img = (x.get('image') or (c or {}).get('image') or {}).get('src') or BASE_URL + 'assets/og.jpg'
+    # بطاقة المشاركة الخاصة بالصفحة (tools/build_og.py)، وإلا صورة الصفحة أو صورة الموقع العامة
+    img = (f"{BASE_URL}og/{x['id']}.jpg" if os.path.exists(os.path.join(ROOT, 'og', f"{x['id']}.jpg"))
+           else (x.get('image') or (c or {}).get('image') or {}).get('src') or BASE_URL + 'assets/og.jpg')
     related = [byid[r] for r in (x.get('relatedIds') or ([x['cityId']] if x['type'] == 'civilization' else [])) if r in byid]
     if x['type'] == 'civilization':
         related += [byid[e['id']] for e in x['events'] if e['id'] in byid] + [byid[p['id']] for p in x['people'] if p['id'] in byid]
@@ -66,7 +68,7 @@ def page(x):
             f'<div class="eyebrow">{esc(TYPES.get(x["type"], ""))}</div><h1>{esc(x["title"])}</h1><p>{esc(x["summary"])}</p></div>',
             '<div class="container section" style="padding-top:0"><article class="article-text">']
     if x.get('image'):
-        body.append(f'<figure class="photo"><img src="{esc(x["image"]["src"])}" alt="{esc(x["image"]["caption"])}" loading="lazy"><figcaption>{esc(x["image"]["caption"])} · {esc(x["image"]["author"])} / {esc(x["image"]["license"])}</figcaption></figure>')
+        body.append(f'<figure class="photo"><img src="{esc(x["image"]["src"])}" alt="{esc(x["image"]["caption"])}" loading="lazy"><figcaption>{esc(x["image"]["caption"])} <a class="cr" href="{esc(x["image"]["page"])}" title="{esc(x["image"]["author"])} · {esc(x["image"]["license"])}" target="_blank" rel="noopener">©</a></figcaption></figure>')
     for s in x.get('sections', []):
         if s['text'] != x['summary']:
             body.append(f'<section><h2>{esc(s["title"])}</h2><p>{esc(s["text"])}</p></section>')
@@ -99,7 +101,8 @@ def render(title, desc, url, img, extra_head, main_html):
     h = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{esc(title)}">', h, count=1)
     h = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{esc(desc)}">', h, count=1)
     h = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{esc(url)}">', h, count=1)
-    h = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{esc(img)}">', h, count=1)
+    h = re.sub(r'<meta property="og:image" content="[^"]*">', f'<meta property="og:image" content="{esc(img)}">'
+               f'<meta property="og:image:alt" content="{esc(title)}"><meta name="twitter:image" content="{esc(img)}">', h, count=1)
     if 'og:type" content="article"' in extra_head:
         h = h.replace('<meta property="og:type" content="website">', '', 1)
     h = h.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + extra_head, 1)
