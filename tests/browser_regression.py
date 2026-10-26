@@ -75,7 +75,7 @@ with sync_playwright() as p:
     st=pg.evaluate("()=>JSON.parse(localStorage.getItem('atlas-v1')).journeys")
     ok(f'{jid} done after reload', sorted(st[jid]['done'])==list(range(len(ans))), json.dumps(st[jid]))
   # city
-  pg.goto(B+'#/city'); pg.wait_for_timeout(500)
+  pg.goto(B+'#/city/baghdad'); pg.wait_for_timeout(500)
   for i,a in enumerate([0,1,1,2]):
     pg.click(f'.hotspot[data-landmark="{i}"]'); pg.wait_for_timeout(150)
     pg.click(f'[data-city-answer="{(a+1)%3}"]'); pg.click(f'[data-city-answer="{a}"]'); pg.wait_for_timeout(150)
